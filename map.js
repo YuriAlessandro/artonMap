@@ -19,408 +19,368 @@ const citiesDef = [
     {
         coordinates: [-54.294644, -151.655273],
         options: defaultMarkerOptions,
-        name: 'Tiberus'
+        name: 'Tiberus',
+        isCapital: true,
+        description: 'Tiberus é a capital do Império de Tauron.',
     },
     {
         coordinates: [-66.178777, -146.975098],
         options: defaultMarkerOptions,
-        name: 'Nimbaraan'
+        name: 'Nimbaraan',
     },
     {
         coordinates: [-67.386961, -144.360352],
         options: defaultMarkerOptions,
-        name: 'Barud'
+        name: 'Barud',
     },
     {
         coordinates: [-70.351616, -128.693848],
         options: defaultMarkerOptions,
-        name: 'Tharthan'
+        name: 'Thartann',
+        isCapital: true,
+        description: "Thartann é a capital de Ahlen e faz parte do reinado de Deheon.",
     },
     {
         coordinates: [-63.057899, -119.311523],
         options: defaultMarkerOptions,
-        name: 'Valkaria'
+        name: 'Valkaria',
+        isCapital: true,
+        description: "Valkaria é a capital de Deheon.",
     },
     {
         coordinates: [-54.684192, -121.59668],
         options: defaultMarkerOptions,
-        name: 'Zakharin'
+        name: 'Zakharin',
+        isCapital: true,
+        description: "Zakharin é a capital de Zakharov e faz parte do reinado de Deheon.",
     },
     {
         coordinates: [-65.408365, -111.225586],
         options: defaultMarkerOptions,
-        name: 'Sophand'
+        name: 'Sophand',
+        isCapital: true,
+        description: "Sophand é a capital de Wynlla e faz parte do reinado de Deheon.",
     },
     {
         coordinates: [-53.787835, -113.972168],
         options: defaultMarkerOptions,
-        name: 'Kannilar'
+        name: 'Kannilar',
+        isCapital: true,
+        description: "Kannilar é a capital da Supremacia Purista.",
     },
     {
         coordinates: [-55.940599, -102.875977],
         options: defaultMarkerOptions,
-        name: 'Roschfallen'
+        name: 'Roschfallen',
+        isCapital: true,
+        description: "Roschfallen é a capital de Bielefeld e faz parte do reinado de Deheon.",
     },
     {
         coordinates: [-49.789846, -108.786621],
         options: defaultMarkerOptions,
-        name: 'Cidade de Svalas'
+        name: 'Cidade de Svalas',
+        isCapital: true,
+        description: "Cidade de Svalas é a capital de Svalas.",
     },
     {
         coordinates: [-43.351079, -103.139648],
         options: defaultMarkerOptions,
-        name: 'Yuton'
+        name: 'Yuton',
+        isCapital: true,
+        description: "Yuton é a capital de Salistick.",
     },
     {
         coordinates: [-52.994581, -92.329102],
         options: defaultMarkerOptions,
-        name: 'Milothiann'
+        name: 'Milothiann',
+        isCapital: true,
+        description: "Milothiann é a capital de Aslothia.",
     },
     {
         coordinates: [-50.731983, -99.448242],
         options: defaultMarkerOptions,
-        name: 'Grael'
+        name: 'Grael',
     },
     {
         coordinates: [-37.572623, -93.581543],
         options: defaultMarkerOptions,
-        name: 'Sambúrdia Geral'
+        name: 'Sambúrdia Capital',
+        isCapital: true,
+        description: "Sambúrdia Capital é a capital de Sambúrdia.",
     },
     {
         coordinates: [-30.47729, -89.604492],
         options: defaultMarkerOptions,
-        name: 'Linnanthas Shaed'
+        name: 'Linnanthas-Shaed',
+        isCapital: true,
+        description: "Linnanthas-Shaed é a capital de Pondsmânia e faz parte do reinado de Deheon.",
     },
     {
         coordinates: [-25.183249, -91.604004],
         options: defaultMarkerOptions,
-        name: 'Crovandir'
+        name: 'Crovandir',
     },
     {
         coordinates: [-8.444414, -83.210449],
         options: defaultMarkerOptions,
-        name: 'Ghallistryx'
+        name: 'Ghallistryx',
+        isCapital: true,
+        description: 'Ghallistryx é a capital de Sckharshantallas.',
     },
     {
         coordinates: [-20.348498, -105.249023],
         options: defaultMarkerOptions,
-        name: 'Mirandege'
+        name: 'Mirandege',
     },
     {
         coordinates: [-70.201921, -160.598145],
         options: defaultMarkerOptions,
-        name: 'Lysianassa'
+        name: 'Lysianassa',
     },
     {
         coordinates: [-69.872416, -100.26123],
         options: defaultMarkerOptions,
-        name: 'Valarur'
+        name: 'Valarur',
+    },
+    {
+        coordinates: [-36.10233, -102.392578],
+        options: defaultMarkerOptions,
+        name: 'Yukadar',
+    },
+    {
+        coordinates: [-37.728272, -112.807617],
+        options: defaultMarkerOptions,
+        name: 'Palthar',
+    },
+    {
+        coordinates: [-68.858936, -150.974121],
+        options: defaultMarkerOptions,
+        name: 'Nova Malpetrim',
+    },
+    {
+        coordinates: [-64.245871, -157.609863],
+        options: defaultMarkerOptions,
+        name: 'Smokestone',
+    },
+    {
+        coordinates: [-56.730393, -115.931961],
+        options: defaultMarkerOptions,
+        name: 'Villent',
+    },
+    {
+        coordinates: [-63.671957, -120.083936],
+        options: defaultMarkerOptions,
+        name: 'Ridembarr',
+    },
+    {
+        coordinates: [-61.694929, -120.918723],
+        options: defaultMarkerOptions,
+        name: 'Selentine',
+    },
+    {
+        coordinates: [-63.64999, -130.694522],
+        options: defaultMarkerOptions,
+        name: 'Gorendill',
+    },
+    {
+        coordinates: [-60.728382, -116.898563],
+        options: defaultMarkerOptions,
+        name: 'Begrond',
+    },
+    {
+        coordinates: [-57.23456, -101.213684],
+        options: defaultMarkerOptions,
+        name: 'Norm',
+    },
+    {
+        coordinates: [-58.354875, -106.925387],
+        options: defaultMarkerOptions,
+        name: 'Highter',
+    },
+    {
+        coordinates: [-56.004409, -105.73911],
+        options: defaultMarkerOptions,
+        name: 'Portfeld',
+    },
+    {
+        coordinates: [-39.396831, -110.610352],
+        options: defaultMarkerOptions,
+        name: 'Hippiontar',
+    },
+    {
+        coordinates: [-34.322459, -115.378418],
+        options: defaultMarkerOptions,
+        name: 'Yron',
+    },
+    {
+        coordinates: [-43.548589, -113.005371],
+        options: defaultMarkerOptions,
+        name: 'Suth Eleghar',
+    },
+    {
+        coordinates: [-43.482688, -117.949219],
+        options: defaultMarkerOptions,
+        name: 'Izzileria',
+    },
+    {
+        coordinates: [-65.452668, -108.566895],
+        options: defaultMarkerOptions,
+        name: 'Kresta',
+    },
+    {
+        coordinates: [-67.231993, -109.27002],
+        options: defaultMarkerOptions,
+        name: 'Velenara',
+    },
+    {
+        coordinates: [-66.02381, -111.137695],
+        options: defaultMarkerOptions,
+        name: 'Coridrian',
+    },
+    {
+        coordinates: [-72.855539, -132.956543],
+        options: defaultMarkerOptions,
+        name: 'Horeen',
+    },
+    {
+        coordinates: [-68.19854, -129.440918],
+        options: defaultMarkerOptions,
+        name: 'Shallankh’rom',
+    },
+    {
+        coordinates: [-72.350298, -134.450684],
+        options: defaultMarkerOptions,
+        name: 'Kriegerr',
+    },
+    {
+        coordinates: [-74.568963, -133.439941],
+        options: defaultMarkerOptions,
+        name: 'Var Raan',
+    },
+    {
+        coordinates: [-51.745276, -125.96923],
+        options: defaultMarkerOptions,
+        name: 'Yuvalin',
+    },
+    {
+        coordinates: [-55.106223, -116.894531],
+        options: defaultMarkerOptions,
+        name: 'Trokhard',
+    },
+    {
+        coordinates: [-55.435728, -124.365234],
+        options: defaultMarkerOptions,
+        name: 'Tahafett',
+    },
+    {
+        coordinates: [-50.866597, -121.530762],
+        options: defaultMarkerOptions,
+        name: 'Cidade de Rhond',
+    },
+    {
+        coordinates: [-46.890574, -123.837891],
+        options: defaultMarkerOptions,
+        name: 'Ahar’kadhan',
+    },
+    {
+        coordinates: [-29.116752, -91.428223],
+        options: defaultMarkerOptions,
+        name: 'Palácio-Cidadela de Hayall',
     },
 ];
 
+getMarkIcon = (marker) => {
+    if (marker.isCapital) return goldIcon;
+    return blueIcon
+}
+
 const citiesMarkers = [];
-citiesDef.forEach((marker, idx) => {
-    let thisMark = L.marker(marker.coordinates, {...marker.options, title: marker.name, color: colors[idx]});
-    thisMark.bindPopup(marker.name);
-    citiesMarkers.push(thisMark);
+const capitalsMarkers = [];
+citiesDef.forEach((marker) => {
+    let thisMark = L.marker(marker.coordinates, {...marker.options, title: marker.name, icon: getMarkIcon(marker)});
+    thisMark.bindPopup(marker.description || marker.name);
+    
+    if (marker.isCapital) capitalsMarkers.push(thisMark);
+    else citiesMarkers.push(thisMark);
 });
-// END OF CITY MARKERS
 
-// ADD REALM MARKERS
-// const realmsDef = [
-//     {
-//         coordinates: [
-//             [-62.177612, -105.908203],
-//             [-61.82614, -106.984863],
-//             [-60.398287, -107.468262],
-//             [-59.519608, -108.808594],
-//             [-58.48716, -109.423828],
-//             [-57.278977, -109.204102],
-//             [-53.939996, -104.567871],
-//             [-54.313435, -102.941895],
-//             [-56.048826, -102.019043],
-//             [-56.927505, -100.019531],
-//             [-57.278977, -98.898926],
-//             [-56.927505, -96.437988],
-//             [-56.224562, -95.603027],
-//             [-57.235043, -95.20752],
-//             [-58.377325, -95.229492],
-//             [-58.9265, -94.504395],
-//             [-60.37632, -95.603027],
-//             [-61.10123, -97.185059],
-//             [-60.178617, -99.030762],
-//             [-60.090749, -101.030273],
-//             [-61.408768, -103.688965],
-//             [-61.782206, -104.743652],
-//         ],
-//         name: 'Bielefeld'
-//     },
-//     {
-//         coordinates: [
-//             [-45.923187, -121.26709],
-//             [-45.242211, -121.508789],
-//             [-44.890739, -122.585449],
-//             [-43.990093, -123.881836],
-//             [-42.232735, -124.431152],
-//             [-40.299641, -123.75],
-//             [-39.574731, -124.211426],
-//             [-36.038048, -122.937012],
-//             [-34.698063, -120.959473],
-//             [-33.358077, -119.772949],
-//             [-32.743002, -117.158203],
-//             [-31.820389, -114.65332],
-//             [-31.359082, -110.522461],
-//             [-37.597703, -104.238281],
-//             [-38.761953, -104.348145],
-//             [-39.816368, -104.941406],
-//             [-40.826849, -105.46875],
-//             [-42.34257, -105.666504],
-//             [-43.50682, -106.743164],
-//             [-43.594687, -108.413086],
-//             [-45.703517, -120.388184],
-//         ],
-//         name: 'Namalkah'
-//     },
-//     {
-//         coordinates: [
-//             [-68.462218, -113.444824],
-//             [-67.341902, -112.543945],
-//             [-65.782247, -111.774902],
-//             [-63.827186, -111.335449],
-//             [-62.003927, -111.51123],
-//             [-61.498687, -111.181641],
-//             [-61.938026, -110.368652],
-//             [-62.113762, -109.006348],
-//             [-61.828191, -107.62207],
-//             [-62.003927, -106.325684],
-//             [-62.135729, -105.842285],
-//             [-62.882606, -105.908203],
-//             [-63.585549, -106.435547],
-//             [-64.59603, -107.160645],
-//             [-65.452742, -107.62207],
-//             [-65.650445, -108.544922],
-//             [-66.287487, -108.632812],
-//             [-66.748794, -107.973633],
-//             [-67.715341, -108.325195],
-//             [-68.198614, -108.720703],
-//             [-68.418284, -110.083008],
-//             [-69.406798, -110.478516],
-//             [-69.472699, -111.379395],
-//             [-68.681887, -111.774902],
-//             [-68.87959, -112.5],
-//         ],
-//         name: 'Wynlla'
-//     },
-//     {
-//         coordinates: [
-//             [-71.603972, -134.494629],
-//             [-70.593492, -134.450684],
-//             [-69.363341, -135.483398],
-//             [-68.199091, -135.351562],
-//             [-67.913521, -134.604492],
-//             [-67.078776, -133.659668],
-//             [-66.046328, -133.000488],
-//             [-64.926012, -131.484375],
-//             [-65.694856, -130.627441],
-//             [-66.727304, -129.660645],
-//             [-68.177124, -129.462891],
-//             [-68.243025, -128.693848],
-//             [-67.649917, -128.562012],
-//             [-67.693851, -127.792969],
-//             [-66.90304, -126.606445],
-//             [-68.374827, -125.090332],
-//             [-69.539077, -123.837891],
-//             [-70.417756, -124.189453],
-//             [-71.340369, -124.365234],
-//             [-71.91151, -125.332031],
-//             [-72.943958, -125.090332],
-//             [-73.712802, -125.969238],
-//             [-74.261976, -126.452637],
-//             [-74.657382, -126.166992],
-//             [-74.591481, -127.858887],
-//             [-74.064274, -128.605957],
-//             [-73.493132, -130.517578],
-//             [-73.031826, -131.52832],
-//             [-72.658387, -132.583008],
-//             [-71.823642, -133.242187],
-//         ],
-//         name: 'Ahlen'
-//     },
-//     {
-//         coordinates: [
-//             [-56.974785, -124.343262],
-//             [-56.425611, -124.628906],
-//             [-55.854469, -124.233398],
-//             [-55.502998, -124.782715],
-//             [-54.404649, -125.002441],
-//             [-53.811541, -125.639648],
-//             [-50.670263, -126.628418],
-//             [-49.835518, -126.474609],
-//             [-49.088641, -127.287598],
-//             [-48.122094, -127.067871],
-//             [-47.550953, -126.848145],
-//             [-46.716208, -127.001953],
-//             [-45.969331, -126.386719],
-//             [-46.079166, -125.288086],
-//             [-45.222454, -124.650879],
-//             [-44.673279, -123.903809],
-//             [-43.992303, -123.903809],
-//             [-44.51951, -122.915039],
-//             [-45.024751, -121.750488],
-//             [-45.793595, -121.26709],
-//             [-46.760142, -121.245117],
-//             [-47.814557, -121.838379],
-//             [-48.671269, -121.618652],
-//             [-49.527981, -120.915527],
-//             [-50.889933, -120.080566],
-//             [-50.977801, -119.157715],
-//             [-52.207952, -118.168945],
-//             [-52.032216, -116.564941],
-//             [-52.58139, -116.037598],
-//             [-53.569904, -116.345215],
-//             [-55.612833, -116.608887],
-//             [-55.327262, -117.531738],
-//             [-55.173493, -118.410645],
-//             [-55.151526, -119.619141],
-//             [-55.261361, -120.60791],
-//             [-55.459064, -121.68457],
-//             [-56.074139, -122.827148],
-//             [-56.513479, -123.837891],
-//         ],
-//         name: 'Zakharov'
-//     },
-//     {
-//         coordinates: [
-//             [-29.971271, -92.834473],
-//             [-29.158493, -92.219238],
-//             [-28.697187, -91.318359],
-//             [-28.411616, -90.725098],
-//             [-28.060144, -90.351562],
-//             [-28.477517, -89.450684],
-//             [-28.609319, -88.637695],
-//             [-28.389649, -88.044434],
-//             [-28.653253, -87.099609],
-//             [-29.795535, -86.352539],
-//             [-30.410611, -86.022949],
-//             [-30.981752, -86.176758],
-//             [-31.179455, -86.682129],
-//             [-31.596827, -87.561035],
-//             [-31.926332, -88.242187],
-//             [-31.948299, -88.967285],
-//             [-31.596827, -89.472656],
-//             [-31.245356, -90.153809],
-//             [-31.267323, -90.725098],
-//             [-31.772563, -91.40625],
-//             [-31.772563, -91.867676],
-//             [-31.113554, -92.307129],
-//             [-30.586347, -92.658691],
-//         ],
-//         name: 'Pondsmânia'
-//     },
-//     {
-//         coordinates: [
-//             [-45.809477, -121.289062],
-//             [-43.305242, -107.006836],
-//             [-43.524912, -106.699219],
-//             [-44.689162, -106.567383],
-//             [-44.974732, -107.028809],
-//             [-46.578321, -107.050781],
-//             [-47.105529, -108.149414],
-//             [-47.962241, -109.621582],
-//             [-48.775019, -110.368652],
-//             [-50.180905, -110.390625],
-//             [-51.411056, -109.731445],
-//             [-52.575306, -108.984375],
-//             [-52.289735, -107.753906],
-//             [-52.377603, -106.45752],
-//             [-52.004164, -105.688477],
-//             [-52.882843, -104.875488],
-//             [-53.893324, -104.458008],
-//             [-59.692605, -112.5],
-//             [-56.529361, -115.620117],
-//             [-55.936253, -115.751953],
-//             [-55.628715, -116.542969],
-//             [-54.310697, -116.806641],
-//             [-52.68514, -116.015625],
-//             [-52.113999, -116.235352],
-//             [-52.026131, -116.916504],
-//             [-52.157933, -117.861328],
-//             [-52.026131, -118.344727],
-//             [-51.213353, -118.916016],
-//             [-50.839914, -119.355469],
-//             [-50.708113, -120.102539],
-//             [-50.180905, -120.585937],
-//             [-49.368127, -121.025391],
-//             [-48.577316, -121.728516],
-//             [-47.962241, -122.01416],
-//             [-47.017661, -121.245117],
-//         ],
-//         name: 'Supremacia Purista'
-//     },
-//     {
-//         coordinates: [
-//             [-61.783956, -107.006836],
-//             [-61.783956, -107.578125],
-//             [-62.091494, -108.237305],
-//             [-62.135428, -109.094238],
-//             [-62.025593, -109.841309],
-//             [-61.981659, -110.34668],
-//             [-61.60822, -110.874023],
-//             [-61.476419, -111.181641],
-//             [-61.82789, -111.357422],
-//             [-61.212815, -111.928711],
-//             [-60.334136, -112.258301],
-//             [-59.762995, -112.763672],
-//             [-57.280726, -109.204102],
-//             [-58.401042, -109.467773],
-//             [-59.279721, -108.962402],
-//             [-59.982664, -107.86377],
-//             [-60.905277, -107.182617],
-//         ],
-//         name: 'Conflagração do Aço'
-//     },
-// ];
-// const realmMarkers = [];
-// realmsDef.forEach((realm, idx) => {
-//     let thisMark = L.polygon(realm.coordinates, {color: colors[idx]});
-//     thisMark.bindPopup(realm.name);
-//     realmMarkers.push(thisMark);
-// });
-// END OF REALM MARKERS
-
+var customMarkers = [];
+var savedMarkers = JSON.parse(sessionStorage.getItem('savedMarkers'));
+if (savedMarkers) {
+    savedMarkers.forEach(function(saved) {
+        const newMarker = L.marker(saved.coord, {...defaultMarkerOptions, title: saved.name, icon: blackIcon, riseOnHover: true});
+        newMarker.bindPopup(`<p>${saved.name}<span style="color: red;cursor:pointer;margin-left:2px;font-size:10px" id='clickHere' title="Remover todos os selecionados">X</span></p>`, {closeOnClick: false, autoClose: false});
+        customMarkers.push(newMarker);
+    });
+}
+else {
+    savedMarkers = [];
+}
 
 // Add Layers
+var capitals = L.layerGroup(capitalsMarkers);
 var cities = L.layerGroup(citiesMarkers);
-// var realms = L.layerGroup(realmMarkers);
+var customs = L.layerGroup(customMarkers);
 
 var map = L.map('map', {
     crs: L.CRS.EPSG4326,
-    layers: [cities]
+    layers: [capitals, cities, customs],
+    drawControl: true
 }).setView([-63., -119], 3.5);
 
 var layerControl = L.control.layers([], []).addTo(map);
+layerControl.addOverlay(customs, "Meus marcadores");
+layerControl.addOverlay(capitals, "Capitais");
+layerControl.addOverlay(cities, "Outras Cidades");
 
-layerControl.addOverlay(cities, "Cidades");
-// layerControl.addOverlay(realms, "Reinos");
 
-function onMapClick(e) {
-    console.log(`[${e.latlng}]`);
-    // L.circleMarker(e.latlng).addTo(map);
+map.on('popupopen', function(e) {
+    var marker = e.popup._source;
+    $('#clickHere').click(function() { 
+        map.removeLayer(marker);
+        // Remove from savedMarkers based on marker coordinates
+        savedMarkers = savedMarkers.filter((saved) => saved.coord[0] !== marker._latlng.lat && saved.coord[1] !== marker._latlng.lng);
+        sessionStorage.setItem('savedMarkers', JSON.stringify(savedMarkers));
+    });
+});
+
+function onMapClick(evt) {
+    var coord = [evt.latlng.lat, evt.latlng.lng];
+
+    let markerName = prompt("Nome do marcador", "")
+
+    const thisMark = L.marker(coord, {...defaultMarkerOptions, title: markerName, icon: blackIcon}).addTo(map);
+    thisMark.bindPopup(`<p>${markerName}<span style="color: red;cursor:pointer;margin-left:2px;font-size:10px" id='clickHere' title="Remover todos os selecionados">X</span></p>`, {closeOnClick: false, autoClose: false});
+    savedMarkers.push({'name': markerName, 'coord': coord});
+    sessionStorage.setItem('savedMarkers', JSON.stringify(savedMarkers));
+    customMarkers.push(thisMark);
 }
 
 map.on('click', onMapClick);
 
 arton.addTo(map);
 
-var searchBar = L.control.pinSearch({
-    position: 'topright',
-    placeholder: 'Buscar cidades...',
-    buttonText: 'Buscar',
-    // onSearch: function(query) {
-    //     console.log('Search query:', query);
-    //     // Handle the search query here
-    // },
-    searchBarWidth: '200px',
-    searchBarHeight: '30px',
-    maxSearchResults: 50
-}).addTo(map);
+var select = document.getElementById('search-select');
+
+const allPlaces = citiesDef.sort((a, b) => {
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+});
+
+allPlaces.forEach((place) => {
+    var opt = document.createElement('option');
+    opt.value = place.name;
+    opt.innerHTML = place.name;
+    select.appendChild(opt);
+});
+
+select.addEventListener('change', function() {
+    const selectedCity = this.value;
+    const def = allPlaces.find((place) => place.name === selectedCity);
+
+    map.setView(def.coordinates, 5);
+});
+
+// Add search selections bar
+NiceSelect.bind(select, {searchable: true, placeholder: 'Selecionar', searchtext: 'Pesquisar cidades', selectedtext: 'geselecteerd'});

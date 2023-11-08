@@ -20,7 +20,8 @@
         <meta name="theme-color" content="#ffffff">
         <meta property="og:image" content="assets/images/artonMap.webp" />
 
-
+        <link rel="stylesheet" href="assets/css/main.css"></script>
+        <link rel="stylesheet" href="assets/css/nice-select2.css" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet.pinsearch/src/Leaflet.PinSearch.css" crossorigin=""></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
             integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -29,14 +30,22 @@
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossorigin=""></script>
-        <style>
-            body { margin: 0; }
-            #map { height: 100vh; }
-        </style>
     </head>
     <body>
         <div id="map"></div>
+        <div class="search-container">
+            <select id="search-select">
+                <option value="0">Pesquisar localidades</option>
+            </select>
+        </div>
+
     </body>
-    <script src="https://unpkg.com/leaflet.pinsearch/src/Leaflet.PinSearch.js" crossorigin=""></script>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+    <script src="assets/js/nice-select2.js"></script>
+    <script src="assets/js/leaflet-color-markers.js"></script>
     <script src="./map.js"></script>
+    <script src="assets/js/main.js"></script>
 </html>
