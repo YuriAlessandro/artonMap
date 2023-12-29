@@ -77,7 +77,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Roschfallen',
         isCapital: true,
-        description: "Roschfallen é a capital de Bielefeld e faz parte do reinado de Deheon.",
+        description: "Roschfallen é a capital de Bielefeld e faz parte do reinado de Deheon. Hoje em dia, oficialmente é o Palácio Real, mas ninguém na cidade o chama assim. Por incentivo da família real, muitos burgueses ricos vieram para cá estabelecer seus negócios. Isso criou a impressão de que Roschfallen é um lugar transitório, onde se compra e se vende, mas não se vive. A capital é grande e rica, mas artificial.",
         kingdom: 'Bielefeld',
     },
     {
@@ -157,6 +157,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Palthar',
         kingdom: 'Namalkah',
+        description: 'Tem amplas ruas de paralelepípedos, imensos (mas baixos!) prédios públicos e uma elaborada infraestrutura que conta com galeria de esgotos e aquedutos, além de pequenos palácios.'
     },
     {
         coordinates: [-68.858936, -150.974121],
@@ -278,6 +279,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Norm',
         kingdom: 'Bielefeld',
+        description: 'Se Roschfallen é a capital de Bielefeld, Norm é seu coração. Guildas de ferreiros e artesãos trabalham unicamente em armas, armaduras e ferramentas para os cavaleiros. Fazendas ao redor das muralhas alimentam a Ordem. A presença dos cavaleiros estimula a devoção religiosa, multiplicando os templos.'
     },
     {
         coordinates: [-54.53382811006102, -104.04052734375],
@@ -291,36 +293,43 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Highter',
         kingdom: 'Bielefeld',
+        description: 'Num reino de tradições, Highter se destaca como algo extraordinário e inusitado: uma cidade flutuante ligada à terra por uma imensa corrente.'
     },
     {
         coordinates: [-58.94917390333543, -97.119140625],
         options: defaultMarkerOptions,
         name: 'Floresta de Jeyfar',
         kingdom: 'Bielefeld',
+        description: 'A maior área florestal de Bielefeld marca a fronteira com Aslothia e é um reduto de mistérios. Mesmo que não seja muito extensa para padrões de outros reinos, Jeyfar é fechada, escura e labiríntica. Vários aventureiros já se perderam em seu interior. Aqueles que conseguiram voltar juram que a floresta é muito maior do que os mapas mostram, estendendo-se para oeste sempre à frente do viajante.'
     },
     {
         coordinates: [-60.948455151841536, -100.283203125],
         options: defaultMarkerOptions,
-        name: 'A Cidade Perdida de Lendilkar',
+        name: 'Cidade Perdida de Lendilkar',
         kingdom: 'Bielefeld',
-    },
-    {
-        coordinates: [-60.948455151841536, -100.283203125],
-        options: defaultMarkerOptions,
-        name: 'A Cidade Perdida de Lendilkar',
-        kingdom: 'Bielefeld',
+        description: 'Lendilkar tinha tudo para ser uma metrópole capaz de rivalizar com Valkaria: ainda hoje um explorador submarino consegue encontrar imensas e complexas construções cheias de riquezas. Lendilkar era o centro econômico e estratégico de Bielefeld. Entre suas ruínas há itens mágicos, baús cheios de pedras preciosas, até mesmo restos de pergaminhos protegidos magicamente contendo segredos. Saque suficiente para ocupar um grupo de aventureiros durante anos.'
     },
     {
         coordinates: [-58.510884653067116, -108.98892083393176],
         options: defaultMarkerOptions,
         name: 'Gruta da Morte Gotejante',
         kingdom: 'Bielefeld',
+        description: 'Este complexo de túneis até hoje não é mapeado, a despeito de inúmeras tentativas. Suas paredes e teto gotejam um tipo de ácido que derrete carne, ossos, couro, metais, cerâmica… Até mesmo objetos mágicos!'
+    },
+    {
+        coordinates: [-57.91690847656102, -102.94728100180835],
+        options: defaultMarkerOptions,
+        name: 'Bosque de Fiz-grin',
+        kingdom: 'Bielefeld',
+        description: 'Domínios do dragão Fiz-grin, o Trapaceiro, um dragão-fada.'
+
     },
     {
         coordinates: [-60.75150789144517, -104.46349479395934],
         options: defaultMarkerOptions,
         name: 'O Abismo',
         kingdom: 'Bielefeld',
+        description: 'O Abismo é uma estranha formação subterrânea, um túnel praticamente vertical e parcialmente oculto pela vegetação em volta. A boca semicircular se abre para uma queda vertiginosa, então para um labirinto enterrado.'
     },
     {
         coordinates: [-56.004409, -105.73911],
@@ -333,42 +342,49 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Hippiontar',
         kingdom: 'Namalkah',
+        description: 'Hippiontar não passa de uma vastidão de estalagens, canchas de corrida, pequenas fazendas e oficinas espalhadas numa planície ao redor do rancho.'
     },
     {
         coordinates: [-34.322459, -115.378418],
         options: defaultMarkerOptions,
         name: 'Yron',
         kingdom: 'Namalkah',
+        description: 'Esta cidade fica situada às margens do Rio Amarante, segundo maior do reino (o primeiro, naturalmente, é o Rio dos Deuses). Por sua posição privilegiada, atua como ponto de entrada para grande parte das importações do país — sendo um dos entrepostos comerciais mais notáveis da região norte.',
     },
     {
         coordinates: [-43.548589, -113.005371],
         options: defaultMarkerOptions,
         name: 'Suth Eleghar',
         kingdom: 'Namalkah',
+        description: 'Como cidade mais próxima da Supremacia Purista, esta costumava ser uma grande exportadora de cavalos, o ponto comercial mais importante do sul do reino. Tudo mudou quando os puristas a invadiram, tomando seus estábulos. Cavalos destinados a corridas e torneios passaram a ser usados como montarias de combate. '
     },
     {
         coordinates: [-43.482688, -117.949219],
         options: defaultMarkerOptions,
         name: 'Izzileria',
         kingdom: 'Namalkah',
+        description: 'Situada próxima à Pista do Unicórnio Funesto, Izzileria caiu na miséria total, mal subsistindo com a raríssima passagem de tropeiros e as plantações de vegetais que podem ou não se transformar antes de serem consumidos.'
     },
     {
         coordinates: [-40.64948320357316, -117.46995496547311],
         options: defaultMarkerOptions,
         name: 'Desfiladeiros de Dópsia',
         kingdom: 'Namalkah',
+        description: 'Uma das raríssimas áreas montanhosas do reino, e consequentemente uma das mais famosas (juntamente com os Montes Nublados), os Desfiladeiros de Dópsia são resultado da erosão do Rio Ammnes, outrora vasto e caudaloso. '
     },
     {
         coordinates: [-36.40987256624999, -116.56926337499317],
         options: defaultMarkerOptions,
         name: 'Montes Nublados',
         kingdom: 'Namalkah',
+        description: 'Ponto mais alto de Namalkah, os Montes Nublados são modestos se comparados às Uivantes ou Sanguinárias.'
     },
     {
         coordinates: [-38.584595121146336, -105.54128341350699],
         options: defaultMarkerOptions,
         name: 'Refúgio de Alliah',
         kingdom: 'Namalkah',
+        description: 'O refúgio é na verdade a parte mais interna de um bosque no extremo leste do reino, com árvores medianas e espaçadas. Um druida poderia definir o lugar como não mais que um matagal.'
     },
     {
         coordinates: [-42.45218018231706, -116.6332259498509],
@@ -382,6 +398,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Ruínas de Alkav',
         kingdom: 'Namalkah',
+        description: 'Uma civilização antiga e desconhecida habitava o lugar. Há tesouros antigos, por isso o lugar costuma ser visitado por saqueadores de tumbas e expedições de aventureiros.'
     },
     {
         coordinates: [-41.44170303559754, -123.9485991115539],
@@ -394,17 +411,47 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Kresta',
         kingdom: 'Wynlla',
+        description: 'A cidade portuária de Kresta desempenha papel vital na economia nacional. Todos os dias, seus vastos ancoradouros recebem toneladas de cargas transportadas por via marítima, que então são despachadas para outros pontos do reino por meios mágicos mais eficazes, como barcaças voadoras ou mesmo por teletransporte. Dizem não existir porto maior ou mais movimentado em toda Arton.'
     },
     {
         coordinates: [-67.231993, -109.27002],
         options: defaultMarkerOptions,
         name: 'Velenara',
         kingdom: 'Wynlla',
+        description: 'Velenara é uma cidade dedicada à caça e confinamento de elementais em cativeiro.'
     },
     {
         coordinates: [-66.02381, -111.137695],
         options: defaultMarkerOptions,
         name: 'Coridrian',
+        kingdom: 'Wynlla',
+        description: 'Capital dos Golens, onde encontramos a maior concentração de golens “despertos”, aqueles que adquirem (ou são feitos com) inteligência, consciência, personalidade e anseios próprios.'
+    },
+    {
+        coordinates: [-65.95731618113423, -109.40638157503432],
+        options: defaultMarkerOptions,
+        name: 'Floresta Suplicante',
+        kingdom: 'Wynlla',
+        description: 'A maior área florestal de Wynlla possui plantas que têm formas muito diferentes e mais assustadoras do que deveriam.'
+    },
+    {
+        coordinates: [-67.34123053425009, -111.53736397977885],
+        options: defaultMarkerOptions,
+        name: 'Serra de Cristal',
+        kingdom: 'Wynlla',
+        description: 'Concentradas mais ao sul do reino, próximo à fronteira com Tyrondir, estas montanhas de picos translúcidos são claramente resultado da magia selvagem.'
+    },
+    {
+        coordinates: [-63.56427293222565, -109.58217035599317],
+        options: defaultMarkerOptions,
+        name: 'Antigo Internato',
+        kingdom: 'Wynlla',
+        description: 'As ruínas do Internato se tornariam foco de exploração por aventureiros, muitas vezes contratados por patronos para encontrar pistas sobre o acidente, resgatar sobreviventes (mesmo em sua atual forma monstruosa) ou recuperar relíquias.'
+    },
+    {
+        coordinates: [-68.2644796579208, -113.03100003053417],
+        options: defaultMarkerOptions,
+        name: 'Escola de Anões',
         kingdom: 'Wynlla',
     },
     {
@@ -574,6 +621,8 @@ function onMapClick(evt) {
     if (rulerActive || drawControl) return;
     
     var coord = [evt.latlng.lat, evt.latlng.lng];
+
+    // console.log(coord);
 
     let markerName = prompt("Nome do marcador", "")
 
