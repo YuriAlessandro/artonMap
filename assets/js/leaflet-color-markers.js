@@ -96,3 +96,30 @@ var pinkIcon = new L.Icon({
 	popupAnchor: [1, -34],
 	shadowSize: [41, 41]
 });
+
+var brownIcon = new L.Icon({
+	iconUrl: 'assets/images/markers/marker-icon-brown.png',
+	shadowUrl: 'assets/images/markers/marker-shadow.png',
+	iconSize: [45, 45],
+	iconAnchor: [22, 50],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
+var darkBlueIcon = new L.Icon({
+	iconUrl: 'assets/images/markers/marker-icon-dark-blue.png',
+	shadowUrl: 'assets/images/markers/marker-shadow.png',
+	iconSize: [45, 45],
+	iconAnchor: [22, 50],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
+var aquaIcon = new L.Icon({
+	iconUrl: 'assets/images/markers/marker-icon-aqua.png',
+	shadowUrl: 'assets/images/markers/marker-shadow.png',
+	iconSize: [45, 45],
+	iconAnchor: [22, 50],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});

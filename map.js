@@ -38,7 +38,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Thartann',
         isCapital: true,
-        description: "Thartann é a capital de Ahlen e faz parte do reinado de Deheon.",
+        description: "Thartann é a capital de Ahlen e faz parte do reinado de Deheon. Aqui a dominação da nobreza fica mais evidente do que em qualquer outro lugar. É comum ver grupos de jovens aristocratas vagando pela cidade como bandos de selvagens, desafiando plebeus para duelos.",
         kingdom: 'Ahlen',
     },
     {
@@ -46,6 +46,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Valkaria',
         isCapital: true,
+        kingdom: 'Deheon',
         description: "Valkaria é a capital do reinado. A metrópole no coração de Deheon é a maior cidade do mundo conhecido, onde tudo pode existir.",
     },
     {
@@ -70,7 +71,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Kannilar',
         isCapital: true,
-        description: "Kannilar é a capital da Supremacia Purista.",
+        description: "Kannilar é a capital da Supremacia Purista. Construída sobre um platô, um ponto elevado escolhido por sua vantagem estratégica de defesa, Kannilar é uma metrópole protegida por muralhas inclinadas de concreto repletas de canhões.",
     },
     {
         coordinates: [-55.940599, -102.875977],
@@ -100,6 +101,14 @@ const citiesDef = [
         name: 'Milothiann',
         isCapital: true,
         description: "Milothiann é a capital de Aslothia.",
+        kingdom: 'Aslothia',
+    },
+    {
+        coordinates: [-46.55766170321345, -88.64434138370783],
+        options: defaultMarkerOptions,
+        name: 'Vectora',
+        isCapital: true,
+        description: "Vectora é uma cidade-mercado voadora que muda constantemente de lugar. Esse local no mapa é apenas uma representação da cidade, não sua atual localização.",
     },
     {
         coordinates: [-50.731983, -99.448242],
@@ -112,13 +121,14 @@ const citiesDef = [
         name: 'Sambúrdia Capital',
         isCapital: true,
         description: "Sambúrdia Capital é a capital de Sambúrdia.",
+        kingdom: 'Sambúrdia'
     },
     {
         coordinates: [-30.47729, -89.604492],
         options: defaultMarkerOptions,
         name: 'Linnanthas-Shaed',
         isCapital: true,
-        description: "Linnanthas-Shaed é a capital de Pondsmânia e faz parte do reinado de Deheon.",
+        description: "Linnanthas-Shaed é a capital de Pondsmânia e faz parte do reinado de Deheon. Trata-se de uma árvore de proporções colossais localizada bem no meio dos Campos de Noryaviidd, na parte central da Pondsmânia.",
     },
     {
         coordinates: [-25.183249, -91.604004],
@@ -146,11 +156,6 @@ const citiesDef = [
         coordinates: [-69.872416, -100.26123],
         options: defaultMarkerOptions,
         name: 'Valarur',
-    },
-    {
-        coordinates: [-36.10233, -102.392578],
-        options: defaultMarkerOptions,
-        name: 'Yukadar',
     },
     {
         coordinates: [-37.728272, -112.807617],
@@ -459,23 +464,74 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Horeen',
         kingdom: 'Ahlen',
+        description: 'A antiga capital do reino de Collen é a maior cidade da ilha e capital do grão-ducado de Collen, cujo título é ostentado pela Rainha Vinala. A cidade sempre teve proporções modestas e um aspecto provinciano, mas essas características estão se perdendo depois da anexação por Ahlen.'
     },
     {
         coordinates: [-68.19854, -129.440918],
         options: defaultMarkerOptions,
         name: 'Shallankh’rom',
         kingdom: 'Ahlen',
+        description: 'Esta pequena ilha fluvial era deveras irrelevante, exceto como colônia de férias para os nobres ahlenienses, até o momento que foi conquistada por uma poderosa feiticeira-clériga chamada Gwen Haggenfar.'
     },
     {
         coordinates: [-72.350298, -134.450684],
         options: defaultMarkerOptions,
         name: 'Kriegerr',
         kingdom: 'Ahlen',
+        description: 'Kriegerr é o centro comercial da região noroeste, fazendo bom proveito de sua posição privilegiada na tríplice fronteira. Possui uma clínica de um médico de Salistick, coisa muito rara no Reinado.'
     },
     {
         coordinates: [-74.568963, -133.439941],
         options: defaultMarkerOptions,
         name: 'Var Raan',
+        kingdom: 'Ahlen',
+        description: 'Var Raan é uma cidade notória por abrigar piratas e cada vez mais se alinha aos bucaneiros do Mar de Flok.'
+    },
+    {
+        coordinates: [-69.91387507745128, -126.63125337476671],
+        options: defaultMarkerOptions,
+        name: 'Colamar',
+        kingdom: 'Ahlen',
+        description: 'Uma das capitais do ducado, Colamar se destaca por ter uma grande quantidade de oficinas.'
+    },
+    {
+        coordinates: [-69.10109998117687, -128.91601801490518],
+        options: defaultMarkerOptions,
+        name: 'Midron',
+        kingdom: 'Ahlen',
+        description: 'Uma das capitais do ducado, Midron é conhecida pela decadência e criminalidade alarmante — diz-se que a taverna mais perigosa do Reinado é a Coroa de Ferro, localizada na cidade.'
+    },
+    {
+        coordinates: [-73.71414782489643, -129.28948915800473],
+        options: defaultMarkerOptions,
+        name: 'Ni-Lodashyr',
+        kingdom: 'Ahlen',
+        description: 'Uma das capitais do ducado, Ni-Lodashyr é conhecida pela por sua classe mercantil em pé de igualdade com os nobres.'
+    },
+    {
+        coordinates: [-68.26635799040858, -126.01612443319097],
+        options: defaultMarkerOptions,
+        name: 'Colinas de Danshed',
+        kingdom: 'Ahlen',
+        description: 'As Colinas de Danshed são o principal palco de aventuras em Ahlen — pelo menos de aventuras que não envolvam intriga palaciana e espionagem sórdida.'
+    },
+    {
+        coordinates: [-73.75808161388422, -133.96886289213447],
+        options: defaultMarkerOptions,
+        name: 'Mata dos Cem Olhos',
+        kingdom: 'Ahlen',
+        description: 'Localizada no interior da ilha de Collen, esta é uma selva densa e abundante, onde animais e plantas nascem com estranhas mutações que fogem a um padrão.'
+    },
+    {
+        coordinates: [-71.95473355670133, -128.87153423884556],
+        options: defaultMarkerOptions,
+        name: 'Jayrdon',
+        kingdom: 'Ahlen',
+    },
+    {
+        coordinates: [-74.68080065599398, -135.17883881930354],
+        options: defaultMarkerOptions,
+        name: 'Lardder',
         kingdom: 'Ahlen',
     },
     {
@@ -539,6 +595,323 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Palácio-Cidadela de Hayall',
         kingdom: 'Pondsmânia',
+        description: 'Um enorme e suntuoso conjunto de castelos construídos em espiral na superfície de uma montanha chamada Hayall, o Palácio-Cidadela é o centro político da Pondsmânia.'
+    },
+    {
+        coordinates: [-31.42123838110974, -91.60979144814601],
+        options: defaultMarkerOptions,
+        name: 'Cidade Normal dos Humanos',
+        kingdom: 'Pondsmânia',
+        description: 'Depois dos recentes acontecimentos políticos do Reinado, a Rainha Thantalla resolveu criar uma cidade mais afeita às necessidades de viajantes e forasteiros.'
+    },
+    {
+        coordinates: [-30.191092289451205, -87.10616884018076],
+        options: defaultMarkerOptions,
+        name: 'Sylarwy-Ciuthnach',
+        kingdom: 'Pondsmânia',
+        description: 'A Terra das Sombras. Uma verdadeira mancha na beleza exuberante do reino, Sylarwy-Ciuthnach é um espelho perverso da capital Linnanthas-Shaed. No centro há uma torre horripilante na forma de uma montanha, apontando para uma noite eterna sem estrelas, coberta por nuvens sombrias.'
+    },
+    {
+        coordinates: [-57.89193394538427, -113.00794291620605],
+        options: defaultMarkerOptions,
+        name: 'Warton',
+        kingdom: 'Supremacia Purista',
+        description: 'Esta cidade abriga o maior centro de treinamento purista, razão pela qual é chamada de “O Quartel”.',
+    },
+    {
+        coordinates: [-51.3018655972135, -113.40338295007616],
+        options: defaultMarkerOptions,
+        name: 'Gallienn',
+        kingdom: 'Supremacia Purista',
+        description: 'Gallienn abriga a Catedral da Pureza, a sede do Templo da Pureza Divina, o que atrai milhares de fiéis e soldados todos os anos.',
+    },
+    {
+        coordinates: [-53.6774015508476, -108.87926751928002],
+        options: defaultMarkerOptions,
+        name: 'Oficina Gavanir',
+        kingdom: 'Supremacia Purista',
+        description: 'Oficina Gavanir fabrica todos os tipos de armas, de espadas a canhões e colossos. Os céus são sempre escuros de fuligem e a terra, sempre embarrada pela passagem incessante de caravanas.',
+    },
+    {
+        coordinates: [-47.6804393540122, -117.68879271827544],
+        options: defaultMarkerOptions,
+        name: 'Monte Kovith',
+        kingdom: 'Supremacia Purista',
+        description: 'O ponto mais elevado da Supremacia. O mais alto dos picos, com mais de três quilômetros de altitude, é o Monte Kovith. Embora não seja tão alto quanto as Uivantes ou as Sanguinárias, o Monte Kovith é íngreme e difícil de escalar. Na Supremacia, diz-se “é como escalar o Kovith” quando se fala de uma tarefa quase impossível.',
+    },
+    {
+        coordinates: [-51.63448036291466, -116.91988154130576],
+        options: defaultMarkerOptions,
+        name: 'Vale do Baixo Iörvaen',
+        kingdom: 'Supremacia Purista',
+        description: 'Aqui há muitas fazendas e plantações, cujas colheitas alimentam as cidades da Supremacia. Por sua importância estratégica, a região é constantemente patrulhada por batalhões puristas.',
+    },
+    {
+        coordinates: [-52.20561961975612, -109.6481786962497],
+        options: defaultMarkerOptions,
+        name: 'As Charnecas',
+        kingdom: 'Supremacia Purista',
+        description: 'Esse terreno traiçoeiro contém muitas poças de lama e areia movediça, e muitos viajantes incautos já morreram afogados aqui. Apesar disso, as Charnecas são movimentadas, pois são um fornecedor de piche e outros insumos cruciais para as usinas e fábricas da Oficina. ',
+    },
+    {
+        coordinates: [-55.89605789473175, -110.24133874705487],
+        options: defaultMarkerOptions,
+        name: 'A Prisão Hardof',
+        kingdom: 'Supremacia Purista',
+        description: 'Hardof é uma prisão, a pior da Supremacia, para onde são enviados cidadãos que se ergueram contra o regime ditatorial ou forasteiros capturados. Apenas prisioneiros importantes, que os puristas julgam possuir algum valor — seja como moeda de troca, seja por conhecerem informações úteis — são mantidos aqui.',
+    },
+    {
+        coordinates: [-51.786836994128095, -112.63577086351256],
+        options: defaultMarkerOptions,
+        name: 'A Caverna do Saber',
+        kingdom: 'Supremacia Purista',
+        description: 'Este local se tornou conhecido, especialmente entre aventureiros, por abrigar o Helladarion, um artefato inteligente que também é o sumo-sacerdote de Tanna-Toh, a Deusa do Conhecimento.',
+    },
+    {
+        coordinates: [-44.66886024385979, -111.09817067286005],
+        options: defaultMarkerOptions,
+        name: 'Drekellar',
+        kingdom: 'Supremacia Purista',
+    },
+    {
+        coordinates: [-52.70874362862811, -105.34232129097278],
+        options: defaultMarkerOptions,
+        name: 'Thornwell',
+        kingdom: 'Supremacia Purista',
+    },
+    {
+        coordinates: [-57.84904303425009, -109.86632375738579],
+        options: defaultMarkerOptions,
+        name: 'Fortaleza Grazomir',
+        kingdom: 'Conflagração do Aço',
+    },
+    {
+        coordinates: [-60.79260689643303, -110.41554602664984],
+        options: defaultMarkerOptions,
+        kingdom: 'Conflagração do Aço',
+        name: 'Castelo do Pendor',
+    },
+    {
+        coordinates: [-59.6063945937623, -111.38217722055458],
+        options: defaultMarkerOptions,
+        kingdom: 'Conflagração do Aço',
+        name: 'As Liças',
+    },
+    {
+        coordinates: [-59.82606353870133, -109.66860374045073],
+        options: defaultMarkerOptions,
+        kingdom: 'Conflagração do Aço',
+        name: 'Campo de Experimentos',
+    },
+    {
+        coordinates: [-61.49554752023791, -108.89969256348107],
+        options: defaultMarkerOptions,
+        kingdom: 'Conflagração do Aço',
+        name: 'Campina Dourada',
+    },
+    {
+        coordinates: [-61.49554752023791, -108.89969256348107],
+        options: defaultMarkerOptions,
+        kingdom: 'Conflagração do Aço',
+        name: 'Campina Dourada',
+    },
+    {
+        coordinates: [-54.513549410103664, -94.74888020478403],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Castelo Erynia',
+    },
+    {
+        coordinates: [-52.84406542856707, -90.1793509245071],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Ith',
+    },
+    {
+        coordinates: [-55.78762929075001, -94.83675576786628],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Aslavi',
+    },
+    {
+        coordinates: [-57.149576749371974, -94.30950238937277],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Cambur',
+    },
+    {
+        coordinates: [-49.92246846087804, -89.25665751214349],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Pata de Megalokk',
+    },
+    {
+        coordinates: [-49.92246846087804, -89.25665751214349],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Pata de Megalokk',
+    },
+    {
+        coordinates: [-54.513549410103664, -94.74888020478403],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Castelo Caerilech',
+    },
+    {
+        coordinates: [-54.513549410103664, -94.74888020478403],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Castelo Caerilech',
+    },
+    {
+        coordinates: [-53.25978856170736, -85.65630865535071],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Colina dos Bons Hynne',
+    },
+    {
+        coordinates: [-55.30270974964028, -87.80925995086582],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Olho de Thyatis',
+    },
+    {
+        coordinates: [-56.73055789174395, -86.62293984925547],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Volledann',
+    },
+    {
+        coordinates: [-57.69710124947567, -86.62293984925547],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Porto de Talinthar',
+    },
+    {
+        coordinates: [-58.20233982283543, -88.27060665704761],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Poço sem Fundo',
+    },
+    {
+        coordinates: [-46.95258757834761, -93.54419101074569],
+        options: defaultMarkerOptions,
+        kingdom: 'Aslothia',
+        name: 'Pilar de Rasthalhur',
+    },
+    {
+        coordinates: [-47.000306841091444, -84.31682385697425],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Mehnat',
+    },
+    {
+        coordinates: [-47.000306841091444, -84.31682385697425],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Mehnat',
+    },
+    {
+        coordinates: [-36.10233, -102.392578],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Yukadar',
+    },
+    {
+        coordinates: [-46.732918633408595, -69.35644227235679],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Collarthan',
+    },
+    {
+        coordinates: [-43.37198377584151, -75.39788723426138],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Balneário Zannar',
+    },
+    {
+        coordinates: [-39.52777723940855, -70.41094902934377],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Cataratas de Sambúrdia',
+    },
+    {
+        coordinates: [-40.428419913658566, -68.78525111232216],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Adhurian',
+    },
+    {
+        coordinates: [-35.310133496579255, -85.52554587949051],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'O Formigueiro',
+    },
+    {
+        coordinates: [-39.4187206040122, -79.24115155966255],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Torre de Érebo',
+    },
+    {
+        coordinates: [-44.3582527049452, -80.90832463467292],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Vila Angelya',
+    },
+    {
+        coordinates: [-39.682265720378055, -86.84242165559199],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Tumba de Morkh Amhor',
+    },
+    {
+        coordinates: [-37.265907326048776, -97.47536478854408],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Norba',
+    },
+    {
+        coordinates: [-30.412236243951174, -100.7047917318167],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Crisandir',
+    },
+    {
+        coordinates: [-32.91521191518292, -104.90251797638504],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Tyros',
+    },
+    {
+        coordinates: [-30.762456254780464, -104.48510905174436],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Zuri',
+    },
+    {
+        coordinates: [-30.740489360286578, -104.22148236249762],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Darian',
+    },
+    {
+        coordinates: [-34.93594150013416, -77.30925604088904],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Tallban',
+    },
+    {
+        coordinates: [-35.32935203341469, -77.06294410982764],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Fosso de Vectora',
+    },
+    {
+        coordinates: [-38.075213845152504, -99.60302604042441],
+        options: defaultMarkerOptions,
+        kingdom: 'Sambúrdia',
+        name: 'Lar de Marah',
     },
 ];
 
@@ -559,7 +932,15 @@ getMarkIcon = (marker) => {
         case 'Zakharov':
             return cyanIcon;
         case 'Pondsmânia':
-            return pinkIcon
+            return pinkIcon;
+        case 'Supremacia Purista':
+            return redIcon;
+        case 'Conflagração do Aço':
+            return brownIcon;
+        case 'Aslothia':
+            return darkBlueIcon;
+        case 'Sambúrdia':
+            return aquaIcon;
         default:
             return blueIcon;
     }
