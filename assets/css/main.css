@@ -9,7 +9,7 @@ body {
 /* A container that is on top right */
 .search-container {
     position: absolute;
-    top: 80px;
+    top: 120px;
     right: 10px;
     z-index: 1000;
     background-color: #fff;

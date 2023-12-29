@@ -549,7 +549,6 @@ var customs = L.layerGroup(customMarkers);
 var map = L.map('map', {
     crs: L.CRS.EPSG4326,
     layers: [capitals, cities, customs],
-    drawControl: true
 }).setView([-63., -119], 3.5);
 
 var layerControl = L.control.layers([], []).addTo(map);
@@ -569,6 +568,11 @@ map.on('popupopen', function(e) {
 });
 
 function onMapClick(evt) {
+    const rulerActive = $(".leaflet-ruler-clicked").length > 0;
+    const drawControl = $(".leaflet-draw-toolbar-button-enabled").length > 0;
+
+    if (rulerActive || drawControl) return;
+    
     var coord = [evt.latlng.lat, evt.latlng.lng];
 
     let markerName = prompt("Nome do marcador", "")
@@ -611,11 +615,45 @@ select.addEventListener('change', function() {
 // Add search selections bar
 NiceSelect.bind(select, {searchable: true, placeholder: 'Selecionar', searchtext: 'Pesquisar cidades', selectedtext: 'geselecteerd'});
 
-// var drawnItems = new L.featureGroup();
-// map.addLayer(drawnItems);
-// var drawControl = new L.Control.Draw({
-//     edit: {
-//         featureGroup: drawnItems
-//     }
-// });
-// map.addControl(drawControl);
+// Add ruler to map
+L.control.ruler({
+    lengthUnit: {                 // You can use custom length units. Default unit is kilometers.
+        display: 'km',              // This is the display value will be shown on the screen. Example: 'meters'
+        decimal: 2,                 // Distance result will be fixed to this value. 
+        factor: 4.86,               // This value will be used to convert from kilometers. Example: 1000 (from kilometers to meters)  
+        label: 'Distância:'           
+    },
+}).addTo(map);
+
+
+// Draw Controls
+var editableLayers = new L.FeatureGroup();
+map.addLayer(editableLayers);
+
+var options = {
+    position: 'topleft',
+    draw: {
+        marker: false,
+        circle: false,
+    },
+    edit: {
+        featureGroup: editableLayers, //REQUIRED!!
+        remove: true
+    }
+};
+
+var drawControl = new L.Control.Draw(options);
+map.addControl(drawControl);
+
+map.on(L.Draw.Event.CREATED, function (e) {
+    var type = e.layerType,
+        layer = e.layer;
+
+    if (type === 'marker') {
+        layer.bindPopup('A popup!');
+    }
+
+    editableLayers.addLayer(layer);
+});
+
+L.drawLocal.draw.toolbar.buttons.polygon = 'Criar polígono';
