@@ -1297,12 +1297,15 @@ getMarkIcon = (marker) => {
 
 const citiesMarkers = [];
 const capitalsMarkers = [];
+const allMarkers = [];
 citiesDef.forEach((marker) => {
     let thisMark = L.marker(marker.coordinates, {...marker.options, title: marker.name, icon: getMarkIcon(marker)});
     thisMark.bindPopup(`<p><strong>${marker.name} ${marker.kingdom ? `(${marker.kingdom})` : ''}</strong></p><p>${marker.description || ''}`);
     
     if (marker.isCapital) capitalsMarkers.push(thisMark);
     else citiesMarkers.push(thisMark);
+
+    allMarkers.push(thisMark);
 });
 
 var customMarkers = [];
@@ -1387,8 +1390,10 @@ allPlaces.forEach((place) => {
 select.addEventListener('change', function() {
     const selectedCity = this.value;
     const def = allPlaces.find((place) => place.name === selectedCity);
+    const marker = allMarkers.find((marker) => marker.options.title === selectedCity)
 
     map.setView(def.coordinates, 5);
+    marker.openPopup();
 });
 
 // Add search selections bar

@@ -16,6 +16,12 @@ body {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 1px 4px -1px rgba(0,0,0,.3);
+    min-width: 180px;
+}
+
+.nice-select-dropdown {
+    right: 30px !important;
+    width: 180px !important;
 }
 
 input {
