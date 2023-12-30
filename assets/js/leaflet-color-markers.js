@@ -123,3 +123,30 @@ var aquaIcon = new L.Icon({
 	popupAnchor: [1, -34],
 	shadowSize: [41, 41]
 });
+
+var peachIcon = new L.Icon({
+	iconUrl: 'assets/images/markers/marker-icon-peach.png',
+	shadowUrl: 'assets/images/markers/marker-shadow.png',
+	iconSize: [45, 45],
+	iconAnchor: [22, 50],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
+var darkRedIcon = new L.Icon({
+	iconUrl: 'assets/images/markers/marker-icon-darkred.png',
+	shadowUrl: 'assets/images/markers/marker-shadow.png',
+	iconSize: [45, 45],
+	iconAnchor: [22, 50],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});
+
+var laceIcon = new L.Icon({
+	iconUrl: 'assets/images/markers/marker-icon-lace.png',
+	shadowUrl: 'assets/images/markers/marker-shadow.png',
+	iconSize: [45, 45],
+	iconAnchor: [22, 50],
+	popupAnchor: [1, -34],
+	shadowSize: [41, 41]
+});

@@ -86,6 +86,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Cidade de Svalas',
         isCapital: true,
+        kingdom: 'Svalas',
         description: "Cidade de Svalas é a capital de Svalas.",
     },
     {
@@ -94,6 +95,7 @@ const citiesDef = [
         name: 'Yuton',
         isCapital: true,
         description: "Yuton é a capital de Salistick.",
+        kingdom: 'Salistick',
     },
     {
         coordinates: [-72.09895308735923, -4.635608080912693],
@@ -134,12 +136,14 @@ const citiesDef = [
         coordinates: [-44.869654233487026, -3.1732653317461383],
         options: defaultMarkerOptions,
         name: 'Crovandir',
+        kingdom: 'Trebuck'
     },
     {
         coordinates: [-16.68426495956282, 13.567029435422214],
         options: defaultMarkerOptions,
         name: 'Ghallistryx',
         isCapital: true,
+        kingdom: 'Sckharshantallas',
         description: 'Ghallistryx é a capital de Sckharshantallas.',
     },
     {
@@ -901,6 +905,353 @@ const citiesDef = [
         kingdom: 'Sambúrdia',
         name: 'Fross',
     },
+    {
+        coordinates: [-66.91087732700701, -28.128441648206213],
+        options: defaultMarkerOptions,
+        kingdom: 'Salistick',
+        name: 'Ergônia',
+    },
+    {
+        coordinates: [-62.08235990453666, -30.01776625447456],
+        options: defaultMarkerOptions,
+        kingdom: 'Salistick',
+        name: 'Quallist',
+    },
+    {
+        coordinates: [-64.77258315801886, -32.082841986907404],
+        options: defaultMarkerOptions,
+        kingdom: 'Salistick',
+        name: 'Pântano dos Vermes',
+    },
+    {
+        coordinates: [-71.06908482312075, -36.871216707495854],
+        options: defaultMarkerOptions,
+        kingdom: 'Svalas',
+        name: 'Castelo de Karst',
+    },
+    {
+        coordinates: [-69.03221867768714, -32.87287858725355],
+        options: defaultMarkerOptions,
+        kingdom: 'Svalas',
+        name: 'Floresta de Svalas',
+    },
+    {
+        coordinates: [-48.01688073971761, -12.714443886692864],
+        options: defaultMarkerOptions,
+        kingdom: 'Trebuck',
+        name: 'Arantar',
+    },
+    {
+        coordinates: [-48.36832909729386, 2.312277400371632],
+        options: defaultMarkerOptions,
+        kingdom: 'Trebuck',
+        name: 'Prodd',
+    },
+    {
+        coordinates: [-49.40823652540247, 13.780038382605085],
+        options: defaultMarkerOptions,
+        kingdom: 'Trebuck',
+        name: 'Barucandor',
+    },
+    {
+        coordinates: [-39.09564097704807, 20.590394521479325],
+        options: defaultMarkerOptions,
+        kingdom: 'Trebuck',
+        name: 'Akezan',
+    },
+    {
+        coordinates: [-41.54053752727591, 1.1698950803024213],
+        options: defaultMarkerOptions,
+        kingdom: 'Trebuck',
+        name: 'Cidade Fortaleza de Coravandor',
+    },
+    {
+        coordinates: [-43.35575573525406, 20.107078924526988],
+        options: defaultMarkerOptions,
+        kingdom: 'Trebuck',
+        name: 'Tyros',
+    },
+    {
+        coordinates: [-38.92495113447404, -7.661599009463581],
+        options: defaultMarkerOptions,
+        kingdom: 'Trebuck',
+        name: 'Forte Amarid',
+    },
+    {
+        coordinates: [-47.0691564254622, 22.745943997806535],
+        options: defaultMarkerOptions,
+        kingdom: 'Trebuck',
+        name: 'Triunphus',
+    },
+    {
+        coordinates: [-15.631182431818171, 21.735375022360675],
+        options: defaultMarkerOptions,
+        kingdom: 'Sckharshantallas',
+        name: 'Azolliarathan',
+    },
+    {
+        coordinates: [-20.885889042517988, 12.464503117183478],
+        options: defaultMarkerOptions,
+        kingdom: 'Sckharshantallas',
+        name: 'Durtras',
+    },
+    {
+        coordinates: [-23.36821504637615, 27.666975530412483],
+        options: defaultMarkerOptions,
+        kingdom: 'Sckharshantallas',
+        name: 'Forte Curanthor',
+    },
+    {
+        coordinates: [-37.16198795173712, 20.461179357668072],
+        options: defaultMarkerOptions,
+        kingdom: 'Sckharshantallas',
+        name: 'Hazonnd e Wondaronn',
+    },
+    {
+        coordinates: [-24.612475153646958, 5.961711449097079],
+        options: defaultMarkerOptions,
+        kingdom: 'Sckharshantallas',
+        name: 'Khershandallas',
+    },
+    {
+        coordinates: [-34.01882078182512, 13.255383184923698],
+        options: defaultMarkerOptions,
+        kingdom: 'Sckharshantallas',
+        name: 'Thenarallan',
+    },
+    {
+        coordinates: [-71.508898588233, -88.46962576438877],
+        options: defaultMarkerOptions,
+        kingdom: 'Uivantes',
+        name: 'Tundorak',
+    },
+    {
+        coordinates: [-75.5385400715003, -94.04972402011154],
+        options: defaultMarkerOptions,
+        kingdom: 'Uivantes',
+        name: 'Palácio Laponya',
+    },
+    {
+        coordinates: [-69.20771453766038, -88.29387463822427],
+        options: defaultMarkerOptions,
+        kingdom: 'Uivantes',
+        name: 'Caverna de Beluhga',
+    },
+    {
+        coordinates: [-70.53761968154447, -97.82837323264822],
+        options: defaultMarkerOptions,
+        kingdom: 'Uivantes',
+        name: 'Cidadela de Khalmyr',
+    },
+    {
+        coordinates: [-67.74135358798662, -92.7315905738778],
+        options: defaultMarkerOptions,
+        kingdom: 'Uivantes',
+        name: 'Minas de Gelo Eterno',
+    },
+    {
+        coordinates: [-69.39405954023137, -105.12204496847487],
+        options: defaultMarkerOptions,
+        kingdom: 'Uivantes',
+        name: 'Korm',
+    },
+    {
+        coordinates: [-69.05119776230946, -110.70214322419766],
+        options: defaultMarkerOptions,
+        kingdom: 'Uivantes',
+        name: 'Catedral de Gelo',
+    },
+    {
+        coordinates: [-72.89152399631864, -107.23105848244883],
+        options: defaultMarkerOptions,
+        kingdom: 'Uivantes',
+        name: 'Giluk',
+    },
+    {
+        coordinates: [-70.07916051351081, -28.310872734893472],
+        options: defaultMarkerOptions,
+        name: 'Baakan',
+    },
+    {
+        coordinates: [-65.94597860030005, -18.908187485092885],
+        options: defaultMarkerOptions,
+        name: 'Dolmens da Clareira dos Mistérios',
+    },
+    {
+        coordinates: [-76.58600365777352, -103.53235473329825],
+        options: defaultMarkerOptions,
+        name: 'Kurikondir',
+    },
+    {
+        coordinates: [-78.60149435395635, -104.58686149028522],
+        options: defaultMarkerOptions,
+        name: 'Sordh',
+    },
+    {
+        coordinates: [-78.348098138567, -108.28614512326922],
+        options: defaultMarkerOptions,
+        name: 'Ralandar',
+    },
+    {
+        coordinates: [-76.49531537070317, -109.73609191412635],
+        options: defaultMarkerOptions,
+        name: 'Karitania',
+    },
+    {
+        coordinates: [-76.7879116864331, -116.15438941966569],
+        options: defaultMarkerOptions,
+        name: 'Luvian',
+    },
+    {
+        coordinates: [-80.0095728296059, -118.21946515209854],
+        options: defaultMarkerOptions,
+        name: 'Fauchard',
+    },
+    {
+        coordinates: [-78.93485134734496, -120.89966982610711],
+        options: defaultMarkerOptions,
+        name: 'Aldeia dos Centauros',
+    },
+    {
+        coordinates: [-78.15872581689405, -108.90465546538017],
+        options: defaultMarkerOptions,
+        name: 'Fortaleza de Asidon',
+    },
+    {
+        coordinates: [-75.6041712457438, -113.60728588424823],
+        options: defaultMarkerOptions,
+        name: 'Cabana da Velha Gariann',
+    },
+    {
+        coordinates: [-79.66948939874733, -110.79267721576302],
+        options: defaultMarkerOptions,
+        name: 'Templo de Kari Khodan',
+    },
+    {
+        coordinates: [-79.23527175975038, -106.22314793548611],
+        options: defaultMarkerOptions,
+        name: 'Templo de Covariel',
+    },
+    {
+        coordinates: [-79.34055048804743, -123.888018854737],
+        options: defaultMarkerOptions,
+        name: 'Mansão de Zolkan',
+    },
+    {
+        coordinates: [-79.2671635883409, -134.16945973536008],
+        options: defaultMarkerOptions,
+        name: 'Curanmir',
+    },
+    {
+        coordinates: [-78.87717898104842, -138.255952064163],
+        options: defaultMarkerOptions,
+        name: 'Trandia',
+    },
+    {
+        coordinates: [-77.61655750177395, -139.35439660269114],
+        options: defaultMarkerOptions,
+        name: 'Kamalla',
+    },
+    {
+        coordinates: [-77.11696816551265, -141.15584564587724],
+        options: defaultMarkerOptions,
+        name: 'Altrim',
+    },
+    {
+        coordinates: [-74.21152475483407, -136.63025414714144],
+        options: defaultMarkerOptions,
+        name: 'Foz',
+    },
+    {
+        coordinates: [-74.1156115998467, -142.2103524028642],
+        options: defaultMarkerOptions,
+        name: 'Calacada',
+    },
+    {
+        coordinates: [-71.38714301015227, -128.2883790669068],
+        options: defaultMarkerOptions,
+        name: 'Boren',
+    },
+    {
+        coordinates: [-72.52972116322447, -125.52029882981597],
+        options: defaultMarkerOptions,
+        name: 'Vila Vorgunia',
+    },
+    {
+        coordinates: [-65.87257209199585, -98.27090651982839],
+        options: defaultMarkerOptions,
+        name: 'Minas de Tile',
+    },
+    {
+        coordinates: [-62.18458894504348, -90.23029249780265],
+        options: defaultMarkerOptions,
+        name: 'Marma',
+    },
+    {
+        coordinates: [-60.45617798675577, -79.37766045714496],
+        options: defaultMarkerOptions,
+        name: 'Darandaran',
+    },
+    {
+        coordinates: [-49.35570730823729, -79.37766045714498],
+        options: defaultMarkerOptions,
+        name: 'Ardile',
+    },
+    {
+        coordinates: [-17.938913006285176, 2.484127489838493],
+        options: defaultMarkerOptions,
+        name: 'Ejotó',
+    },
+    {
+        coordinates: [-58.626747474285565, 40.107151482967176],
+        options: defaultMarkerOptions,
+        name: "Trag'Merah",
+    },
+    {
+        coordinates: [-54.029823221165614, 48.85077000965089],
+        options: defaultMarkerOptions,
+        name: 'Santuário de Mãe Jaguar',
+    },
+    {
+        coordinates: [-39.50342720260028, 33.60435981488078],
+        options: defaultMarkerOptions,
+        name: 'Katiaskh',
+    },
+    {
+        coordinates: [-23.527503710349205, 39.57989810447369],
+        options: defaultMarkerOptions,
+        name: 'Sina de Doruthamm',
+    },
+    {
+        coordinates: [-82.22927900362455, -50.557533335470964],
+        options: defaultMarkerOptions,
+        name: 'Grimmere',
+    },
+    {
+        coordinates: [-82.44600746406331, -44.58199504587807],
+        options: defaultMarkerOptions,
+        name: 'Molok',
+    },
+    {
+        coordinates: [-81.70770412489065, -40.89122139642364],
+        options: defaultMarkerOptions,
+        name: 'Vila Questor',
+    },
+    {
+        coordinates: [-82.61796467022478, -41.89337075984644],
+        options: defaultMarkerOptions,
+        name: 'Sternachten',
+    },
+    {
+        coordinates: [-83.01346249730855, -37.76321929498075],
+        options: defaultMarkerOptions,
+        name: 'Vértebra',
+    },
+    {
+        coordinates: [-83.34727637964694, -34.555761242478674],
+        options: defaultMarkerOptions,
+        name: 'Khalifor',
+    },
 ];
 
 getMarkIcon = (marker) => {
@@ -928,6 +1279,16 @@ getMarkIcon = (marker) => {
         case 'Aslothia':
             return darkBlueIcon;
         case 'Sambúrdia':
+            return aquaIcon;
+        case 'Salistick':
+            return peachIcon;
+        case 'Svalas':
+            return laceIcon;
+        case 'Trebuck':
+            return laceIcon;
+        case 'Sckharshantallas':
+            return darkRedIcon;
+        case 'Uivantes':
             return aquaIcon;
         default:
             return blueIcon;
@@ -991,17 +1352,17 @@ function onMapClick(evt) {
     
     var coord = [evt.latlng.lat, evt.latlng.lng];
 
-    console.log(coord);
+    // console.log(coord);
 
-    // let markerName = prompt("Nome do marcador", "")
+    let markerName = prompt("Nome do marcador", "")
 
-    // if (!markerName) return;
+    if (!markerName) return;
 
-    // const thisMark = L.marker(coord, {...defaultMarkerOptions, title: markerName, icon: blackIcon}).addTo(map);
-    // thisMark.bindPopup(`<p>${markerName}<span style="color: red;cursor:pointer;margin-left:2px;font-size:10px" id='clickHere' title="Remover todos os selecionados">X</span></p>`, {closeOnClick: false, autoClose: false});
-    // savedMarkers.push({'name': markerName, 'coord': coord});
-    // sessionStorage.setItem('savedMarkers', JSON.stringify(savedMarkers));
-    // customMarkers.push(thisMark);
+    const thisMark = L.marker(coord, {...defaultMarkerOptions, title: markerName, icon: blackIcon}).addTo(map);
+    thisMark.bindPopup(`<p>${markerName}<span style="color: red;cursor:pointer;margin-left:2px;font-size:10px" id='clickHere' title="Remover todos os selecionados">X</span></p>`, {closeOnClick: false, autoClose: false});
+    savedMarkers.push({'name': markerName, 'coord': coord});
+    sessionStorage.setItem('savedMarkers', JSON.stringify(savedMarkers));
+    customMarkers.push(thisMark);
 }
 
 map.on('click', onMapClick);
