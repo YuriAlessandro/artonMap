@@ -1324,9 +1324,9 @@ var cities = L.layerGroup(citiesMarkers);
 var customs = L.layerGroup(customMarkers);
 
 var map = L.map('map', {
-    // crs: L.CRS.EPSG26717,
     layers: [capitals, cities, customs],
-}).setView([-63., -119], 3.5);
+    minZoom: 3,
+}).setView([-77, -58], 4);
 
 var layerControl = L.control.layers([], []).addTo(map);
 layerControl.addOverlay(customs, "Meus marcadores");
@@ -1394,6 +1394,8 @@ select.addEventListener('change', function() {
 // Add search selections bar
 NiceSelect.bind(select, {searchable: true, placeholder: 'Selecionar', searchtext: 'Pesquisar cidades', selectedtext: 'geselecteerd'});
 
+console.log(L.control)
+
 // Add ruler to map
 L.control.ruler({
     lengthUnit: {                 // You can use custom length units. Default unit is kilometers.
@@ -1438,4 +1440,26 @@ map.on(L.Draw.Event.CREATED, function (e) {
     editableLayers.addLayer(layer);
 });
 
-L.drawLocal.draw.toolbar.buttons.polygon = 'Criar polígono';
+// Draw translations
+L.drawLocal.draw.toolbar = {
+    actions: {
+        title: 'Cancelar desenho',
+        text: 'Cancelar'
+    },
+    finish: {
+        title: 'Finalizar desenho',
+        text: 'Finalizar'
+    },
+    undo: {
+        title: 'Apagar último ponto desenhado',
+        text: 'Apagar último ponto'
+    },
+    buttons: {
+        polyline: 'Desenhar usando linha',
+        polygon: 'Desenhar polígono',
+        rectangle: 'Desenhar retângulo',
+        circle: 'Desenhar círculo',
+        marker: 'Adicionar marcador',
+        circlemarker: 'Adicionar marcador circular'
+    }
+}
