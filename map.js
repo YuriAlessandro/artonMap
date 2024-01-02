@@ -1457,17 +1457,17 @@ function onMapClick(evt) {
     
     var coord = [evt.latlng.lat, evt.latlng.lng];
 
-    console.log(coord);
+    // console.log(coord);
 
-    // let markerName = prompt("Nome do marcador", "")
+    let markerName = prompt("Nome do marcador", "")
 
-    // if (!markerName) return;
+    if (!markerName) return;
 
-    // const thisMark = L.marker(coord, {...defaultMarkerOptions, title: markerName, icon: blackIcon}).addTo(map);
-    // thisMark.bindPopup(`<p>${markerName}<span style="color: red;cursor:pointer;margin-left:2px;font-size:10px" id='clickHere' title="Remover todos os selecionados">X</span></p>`, {closeOnClick: false, autoClose: false});
-    // savedMarkers.push({'name': markerName, 'coord': coord});
-    // sessionStorage.setItem('savedMarkers', JSON.stringify(savedMarkers));
-    // customMarkers.push(thisMark);
+    const thisMark = L.marker(coord, {...defaultMarkerOptions, title: markerName, icon: blackIcon}).addTo(map);
+    thisMark.bindPopup(`<p>${markerName}<span style="color: red;cursor:pointer;margin-left:2px;font-size:10px" id='clickHere' title="Remover todos os selecionados">X</span></p>`, {closeOnClick: false, autoClose: false});
+    savedMarkers.push({'name': markerName, 'coord': coord});
+    sessionStorage.setItem('savedMarkers', JSON.stringify(savedMarkers));
+    customMarkers.push(thisMark);
 }
 
 map.on('click', onMapClick);
