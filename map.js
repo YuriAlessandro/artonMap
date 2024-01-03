@@ -152,16 +152,23 @@ const citiesDef = [
         coordinates: [-37.68637378856084, -30.505766107847613],
         options: defaultMarkerOptions,
         name: 'Mirandege',
+        isCapital: true,
+        kingdom: 'Ubani',
+        description: 'Mirandege é a maior cidade de Ubani e atualmente sua capital. É feita de construções altas de dois e três andares, conectadas por tubos de baridepo e habitada por todo tipo de pessoa.'
     },
     {
         coordinates: [-80.132738898517, -141.15764554504852],
         options: defaultMarkerOptions,
         name: 'Lysianassa',
+        description: 'A única grande cidade em Galrasia, populosa e vibrante. Um posto avançado e base de operações para novas expedições. Um entreposto comercial valioso para negociar com o continente. O único lugar seguro para se viver no Mundo Perdido, protegido de suas feras.'
     },
     {
         coordinates: [-80.02617615440954, -20.546635315491088],
         options: defaultMarkerOptions,
         name: 'Valarur',
+        description: 'Valarur é um retrato vívido do intercâmbio cultural que passou a definir o arquipélago.',
+        kingdom: 'Khubar',
+        isCapital: true,
     },
     {
         coordinates: [-60.01832635297295, -45.63849750696714],
@@ -1291,46 +1298,90 @@ const citiesDef = [
         coordinates: [-60.45617798675577, -79.37766045714496],
         options: defaultMarkerOptions,
         name: 'Darandaran',
+        description: 'Darandaran é a menor das cidades ubaneri — fora de Ubani, nem seria considerada uma cidade. Trata-se de uma pista de corrida circular com um grande estábulo e uma torre de mármore em seu centro. Aqui são treinados os cavaleiros de Ubani, responsáveis por percorrer o reino com a ajuda das mais diversas montarias — cavaleiros vindos de Ardile já domaram bulettes.'
+    },
+    {
+        coordinates: [-49.69091836011181, -46.7785075749905],
+        options: defaultMarkerOptions,
+        name: 'Kivulisi',
+        kingdom: 'Ubani',
+        description: 'O porto de Ubani é Kivulisi, uma cidade que começa em palafitas sobre o Canal do Tentáculo, ligado ao Rio dos Deuses.',
     },
     {
         coordinates: [-49.35570730823729, -79.37766045714498],
         options: defaultMarkerOptions,
         name: 'Ardile',
+        kingdom: 'Ubani',
+        description: 'A única fortaleza em Ubani, de longe Ardile parece um bloco de pedra erguido no meio da Savana. Conta com muralhas protegidas por humanos e thera, mas não tem nenhum portão. A única forma de entrar na fortaleza é escalando as muralhas de dezenas de metros, com a ajuda dos mal-humorados pamgras locais.',
     },
     {
         coordinates: [-17.938913006285176, 2.484127489838493],
         options: defaultMarkerOptions,
         name: 'Ejotó',
+        kingdom: 'Ubani',
+        description: 'Ejotó é a segunda menor cidade ubaneri, maior apenas que Darandaran. Suas esparsas residências construídas em torno de motojus parecem apenas um bairro de Mirandege.',
+    },
+    {
+        coordinates: [-46.736014526241455, -130.4294163854805],
+        options: defaultMarkerOptions,
+        name: 'Ojumajele',
+        kingdom: 'Ubani',
+        description: 'Depois de ser engolida pela Tormenta nada resta de Ojumajele. Suas ruínas estão repletas de lefeu, mas algumas expedições tentam recuperar tesouros deixados para trás na fuga. Inclusive, com a quantidade de guerreiros que existia no local, acredita-se haver muitas armas mágicas perdidas aqui.',
+    },
+    {
+        coordinates: [-39.63549980021909, -86.13684156299853],
+        options: defaultMarkerOptions,
+        name: 'Megadíbula',
+        kingdom: 'Ubani',
+        description: 'No meio da Savana, como uma ferida aberta em meio ao verde, fica a Megadíbula. Dizem que essa enorme fenda na terra, com aspecto similar a uma bocarra aberta e se estendendo por centenas de quilômetros, foi criada quando a dracofera primordial Ardile foi subjugada nos tempos ancestrais.',
     },
     {
         coordinates: [-58.626747474285565, 40.107151482967176],
         options: defaultMarkerOptions,
         name: "Trag'Merah",
+        description: 'Muito mais procurada por aventureiros, sede principal da Guilda Mon’han, ou Guilda dos Caça-Monstros. Foi construída no esqueleto de alguma besta titânica, suas costelas descomunais servindo de abrigo para vários pátios e torres.'
     },
     {
         coordinates: [-54.029823221165614, 48.85077000965089],
         options: defaultMarkerOptions,
         name: 'Santuário de Mãe Jaguar',
+        description: ' Santuário da Mãe Jaguar é um refúgio escondido entre galerias e paredões onde se cultua uma das faces de Allihanna. O santuário é pequeno, não mais do que um altar construído dentro de uma gruta. As paredes são pintadas de forma rudimentar, mostrando cenas envolvendo grandes felinos, e no lado de fora há um totem sinalizando a entrada.'
     },
     {
         coordinates: [-39.50342720260028, 33.60435981488078],
         options: defaultMarkerOptions,
         name: 'Katiaskh',
+        description: 'Katiaskh é o maior povoado humano conhecido na cordilheira — sendo também o mais temerário em todo o mundo. Foi construído no topo de uma colina inquietante, entre formações rochosas afiladas e algo defensivas, talvez com a intenção de manter grandes feras afastadas.'
     },
     {
         coordinates: [-23.527503710349205, 39.57989810447369],
         options: defaultMarkerOptions,
         name: 'Sina de Doruthamm',
+        description: 'Verdadeira caverna-mundo com seus próprios biomas, incluindo florestas de fungos e lagos abissais, abrigando monstros subterrâneos desconhecidos em Arton. E também todos aqueles conhecidos, assim parece.'
+    },
+    {
+        coordinates: [-37.44213331756317, 52.151141836723106],
+        options: defaultMarkerOptions,
+        name: 'Vale Sargomera',
+        description: 'Numerosas montanhas na cordilheira são vulcões ativos e furiosos, despejando fluxos constantes de lava em forma de rios, cachoeiras e lagos magmáticos. Monstros imunes ao fogo, sobretudo dragões e elementais, tomam tais localidades como seus territórios. O Vale Sargomera é a maior região deste tipo descoberta, recebendo o nome do kaiju flamejante ali (espera-se) adormecido.'
+    },
+    {
+        coordinates: [-9.974672865612986, 59.00538304042633],
+        options: defaultMarkerOptions,
+        name: 'Dragão Adormecido',
+        description: 'Hoje, o Dragão Adormecido é foco de conflito entre os grandes dragões de Arton. As feras orgulhosas e territoriais consideram este o único lugar digno de hospedar seus covis. Batalhas devastadoras pela supremacia local são frequentes, também atraindo aventureiros que caçam estes monstros. '
     },
     {
         coordinates: [-82.22927900362455, -50.557533335470964],
         options: defaultMarkerOptions,
         name: 'Grimmere',
+        description: 'Esta cidade começou como um forte, mas sua função militar acabou quando aqui veio a morrer Gillian Cloudheart, então sumo-sacerdotisa de Marah, a Deusa da Paz. Depois que a clériga foi enterrada, uma aura de paz absoluta tomou este lugar. Desde então, nenhum ato, nenhum gesto, nenhum pensamento agressivo ocorre em Grimmere. Aqui todos são tranquilos, conformados, prestativos. Aqui ninguém discorda de nada. Aqui todos são felizes.'
     },
     {
         coordinates: [-82.44600746406331, -44.58199504587807],
         options: defaultMarkerOptions,
         name: 'Molok',
+        description: 'Outrora uma aldeia desimportante, Molok se tornou a última “cidade da fronteira”, depois da queda de Khalifor, um entreposto fortificado de onde partiam aventureiros. Paliçadas foram erguidas, inúmeras lojas de equipamentos foram abertas, mercenários e exploradores vieram de todo o continente. '
     },
     {
         coordinates: [-81.70770412489065, -40.89122139642364],
@@ -1341,6 +1392,7 @@ const citiesDef = [
         coordinates: [-82.61796467022478, -41.89337075984644],
         options: defaultMarkerOptions,
         name: 'Sternachten',
+        description: ' Sternachten se tornou um ponto de peregrinação de cientistas e clérigos de Thyatis, a suprema provação do deus para quem deseja ver o futuro. Sternachten é alvo constante de saqueadores. Suas únicas defesas são grupos de aventureiros e ocasionais duyshidakk aliados de Niebling. Vários devotos de Tanna-Toh têm vindo para cá, na crença de que defender uma ciência única, mesmo dedicada a outro deus, é uma missão valorosa.'
     },
     {
         coordinates: [-83.01346249730855, -37.76321929498075],
@@ -1351,6 +1403,48 @@ const citiesDef = [
         coordinates: [-83.34727637964694, -34.555761242478674],
         options: defaultMarkerOptions,
         name: 'Khalifor',
+        description: 'Khalifor, a cidade-fortaleza. Com suas muralhas gigantescas e suas defesas inexpugnáveis, Khalifor sempre foi um bastião de tudo que é considerado “civilizado”. Contudo, hoje em dia é ela mesma um antro — não só de selvagens e bárbaros, mas também de mortos-vivos, cultistas, assassinos e coisas ainda piores…'
+    },
+    {
+        coordinates: [-80.5960207023001, -61.661426230901476],
+        options: defaultMarkerOptions,
+        name: 'Cratera de Thwor',
+        description: 'Nos escombros da antiga capital Cosamhir fica o ponto exato onde um fragmento da Flecha de Fogo atingiu Thwor e a forma física de Ragnar, que se enfrentavam numa luta aguerrida.'
+    },
+    {
+        coordinates: [-48.92156034415503, 34.0048380602388],
+        options: defaultMarkerOptions,
+        name: 'Cemitério dos Beemotes',
+        description: 'Vale enevoado, recoberto de pântanos e ossadas monumentais. Dizem que os esqueletos de todos monstros mortos nas Sanguinárias (talvez em toda Arton?) de algum modo misterioso acabam aqui. Lendas falam sobre bestas gigantes que se arrastam até o lugar quando sentem que vão morrer.'
+    },
+    {
+        coordinates: [-79.06215721167922, -25.716163840962405],
+        options: defaultMarkerOptions,
+        name: 'Alkeram',
+        description: 'Alkeram se divide entre a Cidade Velha, as regiões históricas de quando era apenas uma ilha de pescadores; o Distrito do Fumo, onde hynne refugiados se aproveitam do solo vulcânico para plantar tabaco, e o Distrito do Chifre, onde imigrantes minotauros vivem em uma espécie de acampamento militar permanente. Seu ponto mais assombroso, porém, é uma humilde capela no Distrito do Fumo. Nela, a solícita e sorridente clériga Celene ajuda os locais com milagres e conselhos.',
+        kingdom: 'Khubar',
+    },
+    {
+        coordinates: [-24.69229215129874, -96.02446909686864],
+        options: defaultMarkerOptions,
+        name: 'A Cidade no Deserto',
+        isCapital: true,
+        kingdom: 'Halak-Tûr',
+        description: 'Cidade no Deserto não está limitada a uma única localização, sendo capaz de se teletransportar. Não existe um “mecanismo” ou aparato mágico visível; a metrópole simplesmente obedece aos comandos de seu sultão. Ela pode viajar até 100 quilômetros por dia para qualquer ponto, mas apenas dentro das areias do Deserto da Perdição.',
+    },
+    {
+        coordinates: [-16.85260477097373, -68.1639919702216],
+        options: defaultMarkerOptions,
+        name: 'Templo do Deserto',
+        kingdom: 'Halak-Tûr',
+        description: 'No centro de um vale de areias particularmente douradas cercado por diversos pequenos oásis localiza-se o Grande Templo de Azgher. Também chamado de Templo do Deserto, trata-se de uma pirâmide de proporções colossais, na qual estão entalhados trechos da história de todas as tribos sar-allan, acompanhados por padrões abstratos. No cume desta construção magistral fica um enorme sol de ouro, a representação do aspecto mais conhecido de Azgher.',
+    },
+    {
+        coordinates: [-9.630514713098243, -42.548265331746144],
+        options: defaultMarkerOptions,
+        name: 'Caverna das Maravilhas',
+        kingdom: 'Halak-Tûr',
+        description: 'A Caverna das Maravilhas, como é chamada, só pode ser encontrada durante a noite. Sua entrada, e qualquer indício de sua existência, desaparecem sob o olhar de Azgher. Não se sabe exatamente quais tesouros estão armazenados aqui, mas com base em relatos antigos, é possível estimar que o tesouro pode ser um dos maiores de toda Arton, incluindo itens mágicos lendários e até mesmo artefatos.',
     },
 ];
 
@@ -1392,6 +1486,12 @@ getMarkIcon = (marker) => {
             return aquaIcon;
         case 'Tauron':
             return darkRedIcon;
+        case 'Khubar':
+            return greyIcon;
+        case 'Ubani':
+            return orangeIcon;
+        case 'Halak-Tûr':
+            return greenIcon;
         default:
             return blueIcon;
     }
@@ -1402,7 +1502,7 @@ const capitalsMarkers = [];
 const allMarkers = [];
 citiesDef.forEach((marker) => {
     let thisMark = L.marker(marker.coordinates, {...marker.options, title: marker.name, icon: getMarkIcon(marker)});
-    thisMark.bindPopup(`<p><strong>${marker.name} ${marker.kingdom ? `(${marker.kingdom})` : ''}</strong></p><p>${marker.description || ''}`);
+    thisMark.bindPopup(`<p><strong>${marker.name} ${marker.kingdom ? `(${marker.kingdom})` : ''}</strong></p><p>${marker.description || '<a href="https://github.com/YuriAlessandro/gerador-ficha-tormenta20/discussions/367" target="_blank">Sugerir descrição</a>'}`);
     
     if (marker.isCapital) capitalsMarkers.push(thisMark);
     else citiesMarkers.push(thisMark);
