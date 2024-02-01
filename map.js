@@ -102,7 +102,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Milothiann',
         isCapital: true,
-        description: "Milothiann é a capital de Aslothia.",
+        description: "Milothiann é a capital de Aslothia. Um local tomado pelos 'Retornados', mortos-vivos que se aglomeram pela cidade após serem trazidos de volta à vida durante a Noite da Ascensão Profana.",
         kingdom: 'Aslothia',
     },
     {
@@ -735,30 +735,35 @@ const citiesDef = [
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Ith',
+        description: 'Ith passou abriga, além de seu povo, mercenários e criminosos fugitivos do Reinado. Tudo que há de ilegal e perigoso acontece ali, incluindo uma arena clandestina onde magos são obrigados a lutar até a morte. Não é um lugar para os de coração fraco.'
     },
     {
         coordinates: [-73.74608106445673, -9.686735899518307],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Aslavi',
+        description: 'Situada sobre uma colina solitária, Aslavi é uma cidade pequena que fica ao sul da capital Milothiann e herdou muito de sua arquitetura e falta de planejamento, repleta de vielas estreitíssimas, barrancos e becos suspeitos.'
     },
     {
         coordinates: [-74.49132686029375, -8.544353579449078],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Cambur',
+        description: 'O ritual realizado por Ferren Asloth transformou a população de Cambur em mortos-vivos — e os cavaleiros ali ocultos em servos do Arquilich. Quem se atreve a circular pela área se depara com a mais profana das visões: corpos carcomidos patrulhando a cidade, envergando orgulhosamente armaduras da Ordem da Luz.'
     },
     {
         coordinates: [-70.12025025493567, 1.4734606119272577],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Pata de Megalokk',
+        description: 'A Pata de Megalokk é uma enorme clareira existente desde muito antes da chegada do povo do sul, que lembra vagamente o formato da pata de um imenso animal reptiliano. Segundo estudiosos e bardos na mesma proporção, esta teria sido a marca deixada pelo Deus dos Monstros ao tomar impulso para deixar Arton depois da guerra que deu fim à Era dos Monstros.'
     },
     {
         coordinates: [-73.06869291406456, -9.55492255489494],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Castelo Caerilech',
+        description: 'No passado, Caerilech foi um ponto de resistência contra Ferren Asloth, comandado pelo mago Caerilech Gotravon. Depois da Noite da Ascensão Profana, porém, o lugar foi encontrado surpreendentemente vazio. Ninguém sabe se algo aconteceu com Caerilech ou se ele simplesmente resolveu fugir por alguma das várias passagens subterrâneas que supostamente existem sob a fortificação e levam para fora do reino.'
     },
     {
         coordinates: [-72.31061432907157, 8.635319003130526],
@@ -795,6 +800,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Pilar de Rasthalhur',
+        description: 'O Pilar de Rasthalhur é uma enorme construção cilíndrica e sólida, na parte norte de Aslothia. É toda feita de uma pedra tão negra que parece engolir a própria luz de Azgher. Subindo em forma de espiral, escritos enigmáticos ornam toda a sua superfície.'
     },
     {
         coordinates: [-68.03533700753054, 11.359461458680226],
