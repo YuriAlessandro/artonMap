@@ -919,6 +919,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Lar de Marah',
+        description: 'Uma comunidade que conta com templos, dormitórios e hortas, seus habitantes são soldados aposentados, ex-criminosos, pessoas que querem paz na vida. O Lar as vezes é atacado por servos de Keenn e Sszzaas, ou pessoas contratadas por eles.'
     },
     {
         coordinates: [-55.64959259367196, -21.191920383865384],
