@@ -17,7 +17,7 @@
         <link rel="manifest" href="assets/favicon/site.webmanifest">
         <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.14/leaflet.draw.css"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.css" integrity="sha384-P9DABSdtEY/XDbEInD3q+PlL+BjqPCXGcF8EkhtKSfSTr/dS5PBKa9+/PMkW2xsY" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/leaflet.measure.css?v=1">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
         <meta property="og:image" content="assets/images/artonMap.webp" />
@@ -34,6 +34,15 @@
             crossorigin=""></script>
     </head>
     <body>
+        <div class="nav">
+            <div class="nav-content">
+                <Button class="mapSelectionBtn" data-map="index">Arton</Button>
+                <Button class="mapSelectionBtn" data-map="doherimm">Doherimm</Button>
+                <Button class="mapSelectionBtn" data-map="lamnor">Lamnor</Button>
+                <Button class="mapSelectionBtn" data-map="moreania">Moreania</Button>
+                <Button class="mapSelectionBtn" data-map="tamura">Tamu-ra</Button>
+            </div>
+        </div>
         <div id="map"></div>
         <div class="search-container">
             <select id="search-select">
@@ -48,7 +57,8 @@
         crossorigin="anonymous"></script>
     <script src="assets/js/nice-select2.js"></script>
     <script src="assets/js/leaflet-color-markers.js?v=3"></script>
-    <script src="assets/js/leaflet-ruler.js?v=1"></script>
+    <script src="assets/js/leaflet.measure.js?v=1"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.14/leaflet.draw.js"></script>
-    <script src="./map.js?v=9"></script>
+    <script src="./map.js?v=2"></script>
+    <script src="./index.js?v=1"></script>
 </html>
