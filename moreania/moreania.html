@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mapa de Arton - Fichas de Nimb</title>
+
+        <meta name="description" content="Um mapa interativo - em construção - de Arton, o mapa oficial de Tormenta 20, o maior sistema de RPG brasileiro.">
+        <meta name="keywords" content="arton, mapa, tormenta, tormenta20, tormenta rpg, tormenta 20, fichas de nimb, nimb, interativo, mapa de arton, arton mapa">
+        <meta name="robots" content="">
+        <meta name="revisit-after" content="14 day">
+        <meta name="language" content="Portuguese">
+        <meta name="generator" content="N/A">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <link rel="apple-touch-icon" sizes="60x60" href="../assets/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+        <link rel="manifest" href="../assets/favicon/site.webmanifest">
+        <link rel="mask-icon" href="../assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.14/leaflet.draw.css"/>
+        <link rel="stylesheet" href="../assets/css/leaflet.measure.css?v=1">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <meta property="og:image" content="../assets/images/artonMap.webp" />
+
+        <link rel="stylesheet" href="../assets/css/main.css?v=2"></script>
+        <link rel="stylesheet" href="../assets/css/nice-select2.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.pinsearch/src/Leaflet.PinSearch.css" crossorigin=""></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""/>
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="nav-content">
+                <Button class="mapSelectionBtn" data-map="index">Arton</Button>
+                <Button class="mapSelectionBtn" data-map="doherimm">Doherimm</Button>
+                <Button class="mapSelectionBtn" data-map="lamnor">Lamnor</Button>
+                <Button class="mapSelectionBtn" data-map="moreania">Moreania</Button>
+                <Button class="mapSelectionBtn" data-map="tamura">Tamu-ra</Button>
+            </div>
+        </div>
+        <div id="map"></div>
+        <div class="search-container">
+            <select id="search-select">
+                <option value="0">Pesquisar localidades</option>
+            </select>
+        </div>
+        <span><small><a target="_blank" href="https://icons8.com/icon/7880/location">Marker</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></small></span>
+    </body>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+    <script src="../assets/js/nice-select2.js"></script>
+    <script src="../assets/js/leaflet-color-markers.js?v=3"></script>
+    <script src="../assets/js/leaflet.measure.js?v=1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.14/leaflet.draw.js"></script>
+    <script src="./moreaniaMap.js?v=1"></script>
+    <script src="../index.js?v=1"></script>
+</html>

@@ -1,6 +1,15 @@
-var arton = L.tileLayer('./map_tiles/{z}/{x}/{y}.png', {
+const SAVED_MARKERS_KEY = 'savedMarkers_V2';
+
+var arton = L.tileLayer('./map_tiles/arton/{z}/{x}/{y}.png', {
     maxZoom: 5,
     minZoom: 3,
+    tms:true,
+    attribution: '&copy; <a href="https://fichasdenimb.com.br/">Fichas de Nimb</a>'
+});
+
+var doherimm = L.tileLayer('./map_tiles/doherimm/{z}/{x}/{y}.png', {
+    maxZoom: 4,
+    minZoom: 2,
     tms:true,
     attribution: '&copy; <a href="https://fichasdenimb.com.br/">Fichas de Nimb</a>'
 });
@@ -17,24 +26,26 @@ const defaultMarkerOptions = {
 // ADD CITY MARKERS
 const citiesDef = [
     {
-        coordinates: [-72.91635209524551, -123.3613778857506],
+        coordinates: [-80.15093177108302, 40.27949584541001],
         options: defaultMarkerOptions,
         name: 'Tiberus',
         isCapital: true,
         description: 'Tiberus é a capital do Império de Tauron. A maior metrópole do oeste, Tiberus é a sede do poder do Império de Tauron. Além disso, é a única cidade conhecida atacada pela Tormenta… e ainda habitada!',
     },
     {
-        coordinates: [-78.65254601496805, -113.87081707286775],
+        coordinates: [-97.05381383258553, 46.96779623161251],
         options: defaultMarkerOptions,
         name: 'Nimbaraan',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-79.10998688267568, -108.68615885101508],
+        coordinates: [-98.74087132971724, 50.623238657358755],
         options: defaultMarkerOptions,
         name: 'Barud',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-80.18286901779733, -77.35852061219347],
+        coordinates: [-102.95851507254653, 72.9620534813636],
         options: defaultMarkerOptions,
         name: 'Thartann',
         isCapital: true,
@@ -42,7 +53,7 @@ const citiesDef = [
         kingdom: 'Ahlen',
     },
     {
-        coordinates: [-77.35724163806816, -58.64102567567453],
+        coordinates: [-92.6487192567416, 86.33409927811053],
         options: defaultMarkerOptions,
         name: 'Valkaria',
         isCapital: true,
@@ -50,7 +61,7 @@ const citiesDef = [
         description: "Valkaria é a capital do reinado. A metrópole no coração de Deheon é a maior cidade do mundo conhecido, onde tudo pode existir.",
     },
     {
-        coordinates: [-73.14801475520291, -63.20615447412987],
+        coordinates: [-80.71434955480984, 83.0535740242357],
         options: defaultMarkerOptions,
         name: 'Zakharin',
         isCapital: true,
@@ -59,7 +70,7 @@ const citiesDef = [
         description: 'Construída quando humanos e anões ainda confiavam uns nos outros, Zakharin tem muito da arquitetura anã: estruturas sólidas de pedra, feitas para durar. Suas muralhas e jardins são adornados com imagens de Khalmyr, Tenebra, Zakharov e numerosas divindades menores dos anões.'
     },
     {
-        coordinates: [-78.35546081806469, -42.42358380517809],
+        coordinates: [-95.99159244550259, 97.86280231315638],
         options: defaultMarkerOptions,
         name: 'Sophand',
         isCapital: true,
@@ -67,14 +78,14 @@ const citiesDef = [
         kingdom: 'Wynlla',
     },
     {
-        coordinates: [-72.57847586794989, -48.00368206090085],
+        coordinates: [-79.3397101127025, 93.86368581319468],
         options: defaultMarkerOptions,
         name: 'Kannilar',
         isCapital: true,
         description: "Kannilar é a capital da Supremacia Purista. Construída sobre um platô, um ponto elevado escolhido por sua vantagem estratégica de defesa, Kannilar é uma metrópole protegida por muralhas inclinadas de concreto repletas de canhões.",
     },
     {
-        coordinates: [-73.83455242695135, -25.727226819550864],
+        coordinates: [-82.432648857444, 109.7351794224177],
         options: defaultMarkerOptions,
         name: 'Roschfallen',
         isCapital: true,
@@ -82,7 +93,7 @@ const citiesDef = [
         kingdom: 'Bielefeld',
     },
     {
-        coordinates: [-70.03362593390948, -37.63436561719555],
+        coordinates: [-73.68494331676102, 101.23705685999907],
         options: defaultMarkerOptions,
         name: 'Cidade de Svalas',
         isCapital: true,
@@ -90,7 +101,7 @@ const citiesDef = [
         description: "Cidade de Svalas é a capital de Svalas. Svalas é um reino pequeno e cheio de paradoxos. É antiquado — preserva os costumes feudais ancestrais que mantiveram a chama acesa durante todo o período de conquista.",
     },
     {
-        coordinates: [-65.14510740183847, -26.34235576112659],
+        coordinates: [-64.59357791555122, 109.29777605523438],
         options: defaultMarkerOptions,
         name: 'Yuton',
         isCapital: true,
@@ -98,7 +109,7 @@ const citiesDef = [
         kingdom: 'Salistick',
     },
     {
-        coordinates: [-72.09895308735923, -4.635608080912693],
+        coordinates: [-78.27748872561958, 124.66938010196218],
         options: defaultMarkerOptions,
         name: 'Milothiann',
         isCapital: true,
@@ -106,20 +117,20 @@ const citiesDef = [
         kingdom: 'Aslothia',
     },
     {
-        coordinates: [-67.84120821141246, 2.6580636549139274],
+        coordinates: [-68.15514374282928, 129.88697741050595],
         options: defaultMarkerOptions,
         name: 'Vectora',
         isCapital: true,
         description: "Vectora é uma cidade-mercado voadora que muda constantemente de lugar. Esse local no mapa é apenas uma representação da cidade, não sua atual localização.",
     },
     {
-        coordinates: [-70.69662221808377, -18.868595066823065],
+        coordinates: [-75.06093485096588, 114.57847386771044],
         options: defaultMarkerOptions,
         name: 'Grael',
         description: 'Localizada bem no centro dos reinos, Grael foi o ponto de partida da procissão de bárbaros corrompidos que rumou à guerra, sendo o ponto inicial da Trilha Vermelha. Hoje, pouco resta nessa cidade desprezada e menos ainda desejam viver nela. Tornou-se conhecida como a Cidade Proibida.',
     },
     {
-        coordinates: [-59.80017054210538, -7.140061628756793],
+        coordinates: [-56.347093355004816, 122.95162403950526],
         options: defaultMarkerOptions,
         name: 'Sambúrdia Capital',
         isCapital: true,
@@ -127,21 +138,21 @@ const citiesDef = [
         kingdom: 'Sambúrdia'
     },
     {
-        coordinates: [-51.88678229867238, 0.781135006955056],
+        coordinates: [-46.22474837221452, 128.54413851992047],
         options: defaultMarkerOptions,
         name: 'Linnanthas-Shaed',
         isCapital: true,
         description: "Linnanthas-Shaed é a capital de Pondsmânia e faz parte do reinado de Deheon. Trata-se de uma árvore de proporções colossais localizada bem no meio dos Campos de Noryaviidd, na parte central da Pondsmânia.",
     },
     {
-        coordinates: [-44.869654233487026, -3.1732653317461383],
+        coordinates: [-38.66423144062424, 125.73225973088488],
         options: defaultMarkerOptions,
         name: 'Crovandir',
         kingdom: 'Trebuck',
         description: 'Crovandir é a única grande cidade da região. Porém, hoje está esvaziada e decadente. Não faz parte de nenhum feudo e, desde a dissolução da coroa, é governada por um conselho mais preocupado em encher seus bolsos com os impostos que cobram dos mercadores do que em cuidar da população.',
     },
     {
-        coordinates: [-16.68426495956282, 13.567029435422214],
+        coordinates: [-14.951701064272903, 137.63587993780214],
         options: defaultMarkerOptions,
         name: 'Ghallistryx',
         isCapital: true,
@@ -149,7 +160,7 @@ const citiesDef = [
         description: 'Ghallistryx é a capital de Sckharshantallas. Ghallistryx é uma das maiores metrópoles de Arton. Tudo na cidade é grandioso e ornamentado com motivos dracônicos.',
     },
     {
-        coordinates: [-37.68637378856084, -30.505766107847613],
+        coordinates: [-31.854042288936398, 106.29475973088489],
         options: defaultMarkerOptions,
         name: 'Mirandege',
         isCapital: true,
@@ -157,13 +168,13 @@ const citiesDef = [
         description: 'Mirandege é a maior cidade de Ubani e atualmente sua capital. É feita de construções altas de dois e três andares, conectadas por tubos de baridepo e habitada por todo tipo de pessoa.'
     },
     {
-        coordinates: [-80.132738898517, -141.15764554504852],
+        coordinates: [-102.66292032101451, 27.616025707827347],
         options: defaultMarkerOptions,
         name: 'Lysianassa',
         description: 'A única grande cidade em Galrasia, populosa e vibrante. Um posto avançado e base de operações para novas expedições. Um entreposto comercial valioso para negociar com o continente. O único lugar seguro para se viver no Mundo Perdido, protegido de suas feras.'
     },
     {
-        coordinates: [-80.02617615440954, -20.546635315491088],
+        coordinates: [-102.3027321589075, 113.39687661678121],
         options: defaultMarkerOptions,
         name: 'Valarur',
         description: 'Valarur é um retrato vívido do intercâmbio cultural que passou a definir o arquipélago.',
@@ -171,173 +182,174 @@ const citiesDef = [
         isCapital: true,
     },
     {
-        coordinates: [-60.01832635297295, -45.63849750696714],
+        coordinates: [-56.59119331676102, 95.55632930442002],
         options: defaultMarkerOptions,
         name: 'Palthar',
         kingdom: 'Namalkah',
         description: 'Tem amplas ruas de paralelepípedos, imensos (mas baixos!) prédios públicos e uma elaborada infraestrutura que conta com galeria de esgotos e aquedutos, além de pequenos palácios.'
     },
     {
-        coordinates: [-79.67766844085631, -121.90952336045979],
+        coordinates: [-100.83971011270252, 41.30885556234203],
         options: defaultMarkerOptions,
         name: 'Nova Malpetrim',
-        description: 'Nova Malpetrim (ou apenas Malpetrim, como ainda é chamada) é tudo, menos horizontal. Mais que decididos a evitar qualquer vagalhão catastrófico futuro, seus habitantes optaram por reconstruir a cidade no alto de uma grande formação rochosa próxima, muito acima do nível do mar.'
+        description: 'Nova Malpetrim (ou apenas Malpetrim, como ainda é chamada) é tudo, menos horizontal. Mais que decididos a evitar qualquer vagalhão catastrófico futuro, seus habitantes optaram por reconstruir a cidade no alto de uma grande formação rochosa próxima, muito acima do nível do mar.',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-77.88661852254424, -135.1347956043382],
+        coordinates: [-94.34141456819518, 31.935926265556787],
         options: defaultMarkerOptions,
         name: 'Smokestone',
         description: 'Conhecida como “Covil dos Pistoleiros”, “Cidade dos Fora da Lei”, “Capital da Pólvora”, “Aquele Buraco Desgraçado Onde Tentaram me Matar Várias Vezes” e outros epítetos menos elegantes, Smokestone fica em algum lugar perdido nas planícies da província de Petrynia, no que resta do Império de Tauron. Mas não pertence ao Império, nem ao Reinado ou a nenhum reino. Não respeita nenhuma lei de fora, não tem nobres ou governantes e se rebela contra tudo e todos que tentem controlá-la. '
     },
     {
-        coordinates:  [-74.29469862509224, -51.82876180236654],
+        coordinates: [-83.62547528085852, 91.17283942123953],
         options: defaultMarkerOptions,
         name: 'Villent',
         description: 'Villent é a segunda maior cidade do reino, atrás apenas da capital.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-77.90323481452684, -59.030483726359165],
+        coordinates: [-94.31017276269273, 85.9864852103517],
         options: defaultMarkerOptions,
         name: 'Pequena Colina',
         description: 'Uma das maiores comunidades hynne fora das Repúblicas Livres de Sambúrdia, abriga cerca de 2.000 desses seres e fica a poucos dias da capital.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-77.6427171491212, -60.12892826488727],
+        coordinates: [-93.4978858196293, 85.23665086660888],
         options: defaultMarkerOptions,
         name: 'Ridembarr',
         description: 'Uma profusão de aldeias e cidades menores cerca a capital, tão minúsculas que nem constam nos mapas. Ridembarr está entre as mais típicas.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-76.76738404885792, -61.79856396345],
+        coordinates: [-90.74860693541466, 84.04941315568274],
         options: defaultMarkerOptions,
         name: 'Selentine',
         description: 'A vila de Selentine fica a cinco dias de viagem de Valkaria, nas margens do Rio Nerull. É conhecida por seus trabalhos em vidro e cristal.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-77.63331148408491, -81.3508767492503],
+        coordinates: [-93.46664401412687, 70.11499160112868],
         options: defaultMarkerOptions,
         name: 'Gorendill',
         description: 'Situada na fronteira oeste de Deheon, essa cidade fica à margem do Rio Panteão e próxima às Uivantes, tendo um clima temperado.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-76.29674899139022, -53.714012159883126],
+        coordinates: [-89.28024207680002, 89.7981431243777],
         options: defaultMarkerOptions,
         name: 'Begrond',
         description: 'Este povoado modesto fica a uma semana de caminhada a nordeste da capital. Pouco mais que uma rua cercada de propriedades rurais, é uma típica cidadezinha artoniana, visitada por quem ruma para Valkaria e pelos fazendeiros das redondezas.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-76.37976230134272, -48.08997612261921],
+        coordinates: [-89.46769290981464, 93.76601652668344],
         options: defaultMarkerOptions,
         name: 'A Desolação',
         description: 'Uma área vasta e completamente erma no nordeste de Deheon. O terreno é plano, mas rochoso, contendo pedras de todos os tamanhos. O plantio e a criação de gado são impossíveis, de modo que o lugar logo foi esquecido pelos fazendeiros.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-78.24815841812382, -48.30966503032483],
+        coordinates: [-94.74755803972687, 93.64104413605965],
         options: defaultMarkerOptions,
         name: 'Colinas de Marah',
         description: 'Localizadas a algumas semanas de marcha da capital, estas colinas são assim chamadas porque, de acordo com seus habitantes, a própria Deusa da Paz teria sido vista aqui. Na forma de uma dama vestindo um manto de pura luz branca, ela surgiu durante um duelo entre dois inimigos mortais. Comovidos com a presença da deusa, ambos jogaram fora as armas, fizeram as pazes e fundaram uma aldeia que existe até hoje.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-75.19386477207061, -50.15505185505205],
+        coordinates: [-85.46874180550245, 92.51629262044543],
         options: defaultMarkerOptions,
         name: 'Floresta dos Basiliscos',
         description: 'Essa floresta pantanosa ficou conhecida por ser habitada por basiliscos — tipo perigoso de lagarto mágico que pode transformar pessoas em pedra com seu olhar',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-75.42781058095616, -57.316910246255325],
+        coordinates: [-85.87488527703414, 87.29869531190164],
         options: defaultMarkerOptions,
         name: 'Bosque dos Trolls',
         description: 'Todo tipo de troll parece habitar essa mata e, apesar dos maiores esforços de caçadores para controlar sua população, estes se mostraram impossíveis de exterminar, sempre voltando em grandes números. Isso se deve a um segredo tão terrível quanto impossível: o bosque inteiro é o corpo adormecido de um troll gigantesco.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-79.77017702373573, -54.68064335378785],
+        coordinates: [-101.21461177873178, 89.07955187829083],
         options: defaultMarkerOptions,
         name: 'Monte Palidor',
         description: 'O ponto mais elevado de Deheon, com 4.600 metros de altitude. Não faz parte de nenhuma das formações rochosas do reino e não se sabe como ocorreu sua formação. Sabe-se apenas que aqui teria sido o covil de um dragão, que em eras longínquas assolava todos os assentamentos da região, até ter sido derrotado por aventureiros. ',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-74.64526222315641, -62.54550624964911],
+        coordinates: [-84.53148764042926, 83.54952359318753],
         options: defaultMarkerOptions,
         name: 'Quedas de Hynn',
         description: 'As Quedas de Hynn têm quase duzentos metros de altura. Em suas proximidades existe uma grande caverna, que dizem ser o covil de um dragão.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-79.75456022429134, -67.20291109300827],
+        coordinates: [-100.49605025217568, 79.92532426509725],
         options: defaultMarkerOptions,
         name: 'Mata dos Galhos Partidos',
         description: 'Esta pequena mata fica ao sul do reino, no ponto onde se encontram as fronteiras de Deheon, Ahlen e as Ruínas de Tyrondir. É difícil viajar entre Valkaria e qualquer região ao sul sem passar por aqui.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-79.39688110414777, -49.232358442688444],
+        coordinates: [-99.05892719906348, 93.10991147590849],
         options: defaultMarkerOptions,
         name: 'Pântano dos Juncos',
         description: 'Lugar ermo, malcheiroso e cheio de detritos, o Pântano dos Juncos é úmido e quente.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-74.32800504547899, -66.98322218530265],
+        coordinates: [-83.75044250286828, 80.3314845346246],
         options: defaultMarkerOptions,
         name: 'Estalagem do Velho Malcolm',
         description: 'O velho que dá nome à estalagem é uma figura estranha.',
         kingdom: 'Deheon',
     },
     {
-        coordinates: [-74.56361718210168, -22.430311702602634],
+        coordinates: [-84.31279500191219, 112.04322865541468],
         options: defaultMarkerOptions,
         name: 'Norm',
         kingdom: 'Bielefeld',
         description: 'Se Roschfallen é a capital de Bielefeld, Norm é seu coração. Guildas de ferreiros e artesãos trabalham unicamente em armas, armaduras e ferramentas para os cavaleiros. Fazendas ao redor das muralhas alimentam a Ordem. A presença dos cavaleiros estimula a devoção religiosa, multiplicando os templos.'
     },
     {
-        coordinates: [-73.03241919952417, -28.05434773986654],
+        coordinates: [-80.49446051964888, 107.96495371077295],
         options: defaultMarkerOptions,
         name: 'Muncy',
         description: 'Gruta Negra é um lugar público. Boa parte do povo do condado vive aqui, trabalhando para a família nobre. Outros vêm ao Castelo da Gruta Negra para vender produtos nos dias de feira ou para ter com o conde, responsável por impor a lei e arbitrar disputas.',
         kingdom: 'Bielefeld',
     },
     {
-        coordinates: [-75.14888913290966, -33.81019712175382],
+        coordinates: [-85.9305346770733, 103.9345941131553],
         options: defaultMarkerOptions,
         name: 'Highter',
         kingdom: 'Bielefeld',
         description: 'Num reino de tradições, Highter se destaca como algo extraordinário e inusitado: uma cidade flutuante ligada à terra por uma imensa corrente.'
     },
     {
-        coordinates: [-75.64725197412974, -14.126070991330154],
+        coordinates: [-85.86805106606842, 117.93150186302125],
         options: defaultMarkerOptions,
         name: 'Floresta de Jeyfar',
         kingdom: 'Bielefeld',
         description: 'A maior área florestal de Bielefeld marca a fronteira com Aslothia e é um reduto de mistérios. Mesmo que não seja muito extensa para padrões de outros reinos, Jeyfar é fechada, escura e labiríntica. Vários aventureiros já se perderam em seu interior. Aqueles que conseguiram voltar juram que a floresta é muito maior do que os mapas mostram, estendendo-se para oeste sempre à frente do viajante.'
     },
     {
-        coordinates: [-76.25668543938833, -24.97370247529435],
+        coordinates: [-89.1171988383221, 110.27694293731331],
         options: defaultMarkerOptions,
         name: 'Cidade Perdida de Lendilkar',
         kingdom: 'Bielefeld',
         description: 'Lendilkar tinha tudo para ser uma metrópole capaz de rivalizar com Valkaria: ainda hoje um explorador submarino consegue encontrar imensas e complexas construções cheias de riquezas. Lendilkar era o centro econômico e estratégico de Bielefeld. Entre suas ruínas há itens mágicos, baús cheios de pedras preciosas, até mesmo restos de pergaminhos protegidos magicamente contendo segredos. Saque suficiente para ocupar um grupo de aventureiros durante anos.'
     },
     {
-        coordinates: [-75.2404541232356, -38.02322359300827],
+        coordinates: [-86.27419453760012, 100.93525673818401],
         options: defaultMarkerOptions,
         name: 'Gruta da Morte Gotejante',
         kingdom: 'Bielefeld',
         description: 'Este complexo de túneis até hoje não é mapeado, a despeito de inúmeras tentativas. Suas paredes e teto gotejam um tipo de ácido que derrete carne, ossos, couro, metais, cerâmica… Até mesmo objetos mágicos!'
     },
     {
-        coordinates: [-74.9466217715419, -25.896395887657967],
+        coordinates: [-84.74334606798061, 109.62083788653834],
         options: defaultMarkerOptions,
         name: 'Bosque de Fiz-grin',
         kingdom: 'Bielefeld',
@@ -345,381 +357,387 @@ const citiesDef = [
 
     },
     {
-        coordinates: [-76.31917047379292, -28.97204059553667],
+        coordinates: [-89.33589147683918, 107.43382105062179],
         options: defaultMarkerOptions,
         name: 'O Abismo',
         kingdom: 'Bielefeld',
         description: 'O Abismo é uma estranha formação subterrânea, um túnel praticamente vertical e parcialmente oculto pela vegetação em volta. A boca semicircular se abre para uma queda vertiginosa, então para um labirinto enterrado.'
     },
     {
-        coordinates: [-73.89694087942672, -31.476494143380748],
+        coordinates: [-82.52517787730743, 105.59047828892069],
         options: defaultMarkerOptions,
         name: 'Portfeld',
         kingdom: 'Bielefeld',
     },
     {
-        coordinates: [-61.629427516418, -41.23068164551035],
+        coordinates: [-87.58812857467328, 114.38993976101177],
+        options: defaultMarkerOptions,
+        name: 'Torre de Prata',
+        kingdom: 'Bielefeld',
+    },
+    {
+        coordinates: [-58.969323614829264, 98.65179108574424],
         options: defaultMarkerOptions,
         name: 'Hippiontar',
         kingdom: 'Namalkah',
         description: 'Hippiontar não passa de uma vastidão de estalagens, canchas de corrida, pequenas fazendas e oficinas espalhadas numa planície ao redor do rancho.'
     },
     {
-        coordinates: [-56.39355728520683, -50.7651802399343],
+        coordinates: [-51.627499321756055, 91.90328199205885],
         options: defaultMarkerOptions,
         name: 'Yron',
         kingdom: 'Namalkah',
         description: 'Esta cidade fica situada às margens do Rio Amarante, segundo maior do reino (o primeiro, naturalmente, é o Rio dos Deuses). Por sua posição privilegiada, atua como ponto de entrada para grande parte das importações do país — sendo um dos entrepostos comerciais mais notáveis da região norte.',
     },
     {
-        coordinates: [-65.33114947319321, -46.063837615034025],
+        coordinates: [-64.87402485479026, 95.27753653890154],
         options: defaultMarkerOptions,
         name: 'Suth Eleghar',
         kingdom: 'Namalkah',
         description: 'Como cidade mais próxima da Supremacia Purista, esta costumava ser uma grande exportadora de cavalos, o ponto comercial mais importante do sul do reino. Tudo mudou quando os puristas a invadiram, tomando seus estábulos. Cavalos destinados a corridas e torneios passaram a ser usados como montarias de combate. '
     },
     {
-        coordinates: [-65.25770005510861, -55.90590068024585],
+        coordinates: [-64.78029943828295, 88.31032576162451],
         options: defaultMarkerOptions,
         name: 'Izzileria',
         kingdom: 'Namalkah',
         description: 'Situada próxima à Pista do Unicórnio Funesto, Izzileria caiu na miséria total, mal subsistindo com a raríssima passagem de tropeiros e as plantações de vegetais que podem ou não se transformar antes de serem consumidos.'
     },
     {
-        coordinates: [-63.05663543255789, -54.7195805786355],
+        coordinates: [-59.750368752390244, 88.87270151943162],
         options: defaultMarkerOptions,
         name: 'Desfiladeiros de Dópsia',
         kingdom: 'Namalkah',
         description: 'Uma das raríssimas áreas montanhosas do reino, e consequentemente uma das mais famosas (juntamente com os Montes Nublados), os Desfiladeiros de Dópsia são resultado da erosão do Rio Ammnes, outrora vasto e caudaloso. '
     },
     {
-        coordinates: [-58.542794189506715, -53.40144713240177],
+        coordinates: [-54.56422903898533, 89.903723742078],
         options: defaultMarkerOptions,
         name: 'Montes Nublados',
         kingdom: 'Namalkah',
         description: 'Ponto mais alto de Namalkah, os Montes Nublados são modestos se comparados às Uivantes ou Sanguinárias.'
     },
     {
-        coordinates: [-61.1879128577901, -31.168929672592885],
+        coordinates: [-56.81363903516096, 105.83770354661291],
         options: defaultMarkerOptions,
         name: 'Refúgio de Alliah',
         kingdom: 'Namalkah',
         description: 'O refúgio é na verdade a parte mais interna de um bosque no extremo leste do reino, com árvores medianas e espaçadas. Um druida poderia definir o lugar como não mais que um matagal.'
     },
     {
-        coordinates: [-64.43613521878933, -53.2696337877784],
+        coordinates: [-63.40565999617562, 90.12242542566966],
         options: defaultMarkerOptions,
         name: 'Pista do Unicórnio Funesto',
         kingdom: 'Namalkah',
         description: 'Esta arena de jogos foi abandonada devido a um incidente trágico, ocorrido há mais de 50 anos.'
     },
     {
-        coordinates: [-62.93694933625841, -37.27628130680917],
+        coordinates: [-60.93755736148293, 101.5261560700917],
         options: defaultMarkerOptions,
         name: 'Ruínas de Alkav',
         kingdom: 'Namalkah',
         description: 'Uma civilização antiga e desconhecida habitava o lugar. Há tesouros antigos, por isso o lugar costuma ser visitado por saqueadores de tumbas e expedições de aventureiros.'
     },
     {
-        coordinates: [-63.47168884657239, -67.98879060405503],
+        coordinates: [-61.78108611004879, 79.68723080858209],
         options: defaultMarkerOptions,
         name: 'Mínua',
         kingdom: 'Namalkah',
     },
     {
-        coordinates: [-78.3741580096427, -37.14446796218578],
+        coordinates: [-96.05401869502455, 101.61724866763277],
         options: defaultMarkerOptions,
         name: 'Kresta',
         kingdom: 'Wynlla',
         description: 'A cidade portuária de Kresta desempenha papel vital na economia nacional. Todos os dias, seus vastos ancoradouros recebem toneladas de cargas transportadas por via marítima, que então são despachadas para outros pontos do reino por meios mágicos mais eficazes, como barcaças voadoras ou mesmo por teletransporte. Dizem não existir porto maior ou mais movimentado em toda Arton.'
     },
     {
-        coordinates: [-79.06989812987709, -38.55047697150177],
+        coordinates: [-98.55336313521968, 100.58622644498638],
         options: defaultMarkerOptions,
         name: 'Velenara',
         kingdom: 'Wynlla',
         description: 'Velenara é uma cidade dedicada à caça e confinamento de elementais em cativeiro.'
     },
     {
-        coordinates: [-78.61946751531897, -42.285188402497326],
+        coordinates: [-96.92878924909284, 97.96180624188652],
         options: defaultMarkerOptions,
         name: 'Coridrian',
         kingdom: 'Wynlla',
         description: 'Capital dos Golens, onde encontramos a maior concentração de golens “despertos”, aqueles que adquirem (ou são feitos com) inteligência, consciência, personalidade e anseios próprios.'
     },
     {
-        coordinates: [-78.76590612416135, -38.5944147530429],
+        coordinates: [-97.14748188760993, 100.52374024967449],
         options: defaultMarkerOptions,
         name: 'Floresta Suplicante',
         kingdom: 'Wynlla',
         description: 'A maior área florestal de Wynlla possui plantas que têm formas muito diferentes e mais assustadoras do que deveriam.'
     },
     {
-        coordinates: [-79.11147154527934, -43.07606847023757],
+        coordinates: [-98.61584674622456, 97.33694428876751],
         options: defaultMarkerOptions,
         name: 'Serra de Cristal',
         kingdom: 'Wynlla',
         description: 'Concentradas mais ao sul do reino, próximo à fronteira com Tyrondir, estas montanhas de picos translúcidos são claramente resultado da magia selvagem.'
     },
     {
-        coordinates: [-77.68173229709325, -41.27461942705147],
+        coordinates: [-93.64839967133673, 98.68039748797338],
         options: defaultMarkerOptions,
         name: 'Antigo Internato',
         kingdom: 'Wynlla',
         description: 'As ruínas do Internato se tornariam foco de exploração por aventureiros, muitas vezes contratados por patronos para encontrar pistas sobre o acidente, resgatar sobreviventes (mesmo em sua atual forma monstruosa) ou recuperar relíquias.'
     },
     {
-        coordinates: [-79.46261272173837, -46.10777539657516],
+        coordinates: [-99.99048618833189, 95.21241364816285],
         options: defaultMarkerOptions,
         name: 'Escola de Anões',
         kingdom: 'Wynlla',
     },
     {
-        coordinates: [-81.00915594669347, -85.95934325437486],
+        coordinates: [-106.48878173283924, 66.93741026952736],
         options: defaultMarkerOptions,
         name: 'Horeen',
         kingdom: 'Ahlen',
         description: 'A antiga capital do reino de Collen é a maior cidade da ilha e capital do grão-ducado de Collen, cujo título é ostentado pela Rainha Vinala. A cidade sempre teve proporções modestas e um aspecto provinciano, mas essas características estão se perdendo depois da anexação por Ahlen.'
     },
     {
-        coordinates: [-79.43848199543721, -78.88536042625387],
+        coordinates: [-99.86551896632213, 71.93630589447949],
         options: defaultMarkerOptions,
         name: 'Shallankh’rom',
         kingdom: 'Ahlen',
         description: 'Esta pequena ilha fluvial era deveras irrelevante, exceto como colônia de férias para os nobres ahlenienses, até o momento que foi conquistada por uma poderosa feiticeira-clériga chamada Gwen Haggenfar.'
     },
     {
-        coordinates: [-80.85684257997083, -88.81529905454795],
+        coordinates: [-105.86394562279045, 64.8753658242346],
         options: defaultMarkerOptions,
         name: 'Kriegerr',
         kingdom: 'Ahlen',
         description: 'Kriegerr é o centro comercial da região noroeste, fazendo bom proveito de sua posição privilegiada na tríplice fronteira. Possui uma clínica de um médico de Salistick, coisa muito rara no Reinado.'
     },
     {
-        coordinates: [-81.52917168297421, -86.96991222982071],
+        coordinates: [-108.98812617303437, 66.18757592578454],
         options: defaultMarkerOptions,
         name: 'Var Raan',
         kingdom: 'Ahlen',
         description: 'Var Raan é uma cidade notória por abrigar piratas e cada vez mais se alinha aos bucaneiros do Mar de Flok.'
     },
     {
-        coordinates: [-80.0560598269531, -73.17344882590771],
+        coordinates: [-102.42734701752215, 75.93542239444119],
         options: defaultMarkerOptions,
         name: 'Colamar',
         kingdom: 'Ahlen',
         description: 'Uma das capitais do ducado, Colamar se destaca por ter uma grande quantidade de oficinas.'
     },
     {
-        coordinates: [-79.74796336193904, -77.83085366926687],
+        coordinates: [-101.24015840842945, 72.6236540429104],
         options: defaultMarkerOptions,
         name: 'Midron',
         kingdom: 'Ahlen',
         description: 'Uma das capitais do ducado, Midron é conhecida pela decadência e criminalidade alarmante — diz-se que a taverna mais perigosa do Reinado é a Coroa de Ferro, localizada na cidade.'
     },
     {
-        coordinates: [-81.27966963941435, -78.48992039238374],
+        coordinates: [-107.73845395293681, 72.12376448041519],
         options: defaultMarkerOptions,
         name: 'Ni-Lodashyr',
         kingdom: 'Ahlen',
         description: 'Uma das capitais do ducado, Ni-Lodashyr é conhecida pela por sua classe mercantil em pé de igualdade com os nobres.'
     },
     {
-        coordinates: [-79.4706441775725, -71.94319094275623],
+        coordinates: [-100.52159688187336, 76.81022912880782],
         options: defaultMarkerOptions,
         name: 'Colinas de Danshed',
         kingdom: 'Ahlen',
         description: 'As Colinas de Danshed são o principal palco de aventuras em Ahlen — pelo menos de aventuras que não envolvam intriga palaciana e espionagem sórdida.'
     },
     {
-        coordinates: [-81.27966963941435, -87.67291673447872],
+        coordinates: [-107.80093756394169, 65.62520016797743],
         options: defaultMarkerOptions,
         name: 'Mata dos Cem Olhos',
         kingdom: 'Ahlen',
         description: 'Localizada no interior da ilha de Collen, esta é uma selva densa e abundante, onde animais e plantas nascem com estranhas mutações que fogem a um padrão.'
     },
     {
-        coordinates: [-80.71615720703198, -77.74297810618462],
+        coordinates: [-105.30159312374656, 72.74862643353421],
         options: defaultMarkerOptions,
         name: 'Jayrdon',
         kingdom: 'Ahlen',
     },
     {
-        coordinates: [-81.56791368734088, -90.30918362694617],
+        coordinates: [-109.20681881155144, 63.75061430862037],
         options: defaultMarkerOptions,
         name: 'Lardder',
         kingdom: 'Ahlen',
     },
     {
-        coordinates: [-71.38450203824272, -71.8992531612151],
+        coordinates: [-76.62161567250739, 76.84147222646376],
         options: defaultMarkerOptions,
         name: 'Yuvalin',
         description: 'Yuvalin nasceu como uma colônia de mineração. Tinha a importante tarefa de prover o reino com as matérias-primas necessárias à fabricação de armas, ferramentas e outros utensílios metálicos, função que exerce até hoje — especialmente com a partida dos anões, antes provedores de minério aos humanos.',
         kingdom: 'Zakharov',
     },
     {
-        coordinates: [-73.40226460343503, -53.70901160318964],
+        coordinates: [-81.37037010887815, 89.7761146560274],
         options: defaultMarkerOptions,
         name: 'Trokhard',
         description: 'No extremo sudeste do reino, próxima à junção entre as fronteiras de Deheon e a Supremacia Purista, fica a cidade de Trokhard. Aqui também a tradição das armas é forte — mas um pouco diferente.',
         kingdom: 'Zakharov',
     },
     {
-        coordinates: [-73.55219889328626, -68.69179510871304],
+        coordinates: [-81.77651358040984, 79.15346145300413],
         options: defaultMarkerOptions,
         name: 'Tahafett',
         description: 'Uma cidade almadiçoada em que os habitantes não podem sair. Qualquer ser inteligente que entre na cidade tem grande dificuldade em sair — façanha que exige imensa força de vontade. ',
         kingdom: 'Zakharov',
     },
     {
-        coordinates: [-70.757471921843, -63.023821289907985],
+        coordinates: [-75.30945984140494, 83.12133485530988],
         options: defaultMarkerOptions,
         name: 'Cidade de Rhond',
         description: 'Esta cidade é famosa não apenas por abrigar o templo central do culto de Rhond, o Deus Menor das Armas e dos Armeiros — mas também porque aqui vive o próprio Rhond!',
         kingdom: 'Zakharov',
     },
     {
-        coordinates:  [-67.9583684139047, -67.68122613326717],
+        coordinates: [-69.62345123996101, 79.90329579674695],
         options: defaultMarkerOptions,
         name: 'Ahar’kadhan',
         description: 'Mais conhecida como a Cidade na Tormenta, por longos anos Ahar’kadhan foi um lugar de pesadelo, uma chaga aberrante no coração da Tormenta em Zakharov. Isso mudaria após a saga épica cantada pelos bardos como Coração de Rubi. Mas não muito.',
         kingdom: 'Zakharov',
     },
     {
-        coordinates: [-68.20436622060743, -71.41593756426272],
+        coordinates: [-70.18580373900491, 77.34136178895898],
         options: defaultMarkerOptions,
         name: 'Estepes da Aflição',
         description: 'Antes conhecida apenas como “Estepes do Norte”, a região setentrional de Zakharov era semelhante ao norte das Uivantes, com terreno plano e vegetação rasteira de clima frio. Lugar de aridez hostil, ruim demais para a agricultura, pecuária e mineração. Sem grandes cidades, habitada apenas por nômades.',
         kingdom: 'Zakharov',
     },
     {
-        coordinates: [-70.90174042298452, -66.84640828398581],
+        coordinates: [-75.59063609092689, 80.65313014048976],
         options: defaultMarkerOptions,
         name: 'Colinas Centrais',
         description: 'O nome insuspeito, assim como a baixa elevação quando vista à distância, na verdade esconde uma vastidão perigosa de ravinas, desfiladeiros, paredões e gargantas.',
         kingdom: 'Zakharov',
     },
     {
-        coordinates:  [-72.78914040699027, -69.83417742878225],
+        coordinates: [-79.83952163925862, 78.30989781629346],
         options: defaultMarkerOptions,
         name: 'Fortaleza de Destrukto',
         description: 'Um dos alvos mais visitados pelos caçadores de tesouro locais, este antigo forte teria sido o quartel-general de Destrukto — na verdade, Turukuto Desu, nativo de Tamu-ra.',
         kingdom: 'Zakharov',
     },
     {
-        coordinates: [-50.20392692199694, -2.876070991330151],
+        coordinates: [-44.34228318493661, 125.96220657784137],
         options: defaultMarkerOptions,
         name: 'Palácio-Cidadela de Hayall',
         kingdom: 'Pondsmânia',
         description: 'Um enorme e suntuoso conjunto de castelos construídos em espiral na superfície de uma montanha chamada Hayall, o Palácio-Cidadela é o centro político da Pondsmânia.'
     },
     {
-        coordinates: [-52.933660274988995, -3.5351377144470035],
+        coordinates: [-47.466463735180525, 125.64977560128186],
         options: defaultMarkerOptions,
         name: 'Cidade Normal dos Humanos',
         kingdom: 'Pondsmânia',
         description: 'Depois dos recentes acontecimentos políticos do Reinado, a Rainha Thantalla resolveu criar uma cidade mais afeita às necessidades de viajantes e forasteiros.'
     },
     {
-        coordinates: [-51.67110441363419, 5.779671972271317],
+        coordinates: [-45.43574637752198, 132.14833991371964],
         options: defaultMarkerOptions,
         name: 'Sylarwy-Ciuthnach',
         kingdom: 'Pondsmânia',
         description: 'A Terra das Sombras. Uma verdadeira mancha na beleza exuberante do reino, Sylarwy-Ciuthnach é um espelho perverso da capital Linnanthas-Shaed. No centro há uma torre horripilante na forma de uma montanha, apontando para uma noite eterna sem estrelas, coberta por nuvens sombrias.'
     },
     {
-        coordinates: [-74.90932560898482, -46.02297246471418],
+        coordinates: [-85.2378065876295, 95.28148467969767],
         options: defaultMarkerOptions,
         name: 'Warton',
         kingdom: 'Supremacia Purista',
         description: 'Esta cidade abriga o maior centro de treinamento purista, razão pela qual é chamada de “O Quartel”.',
     },
     {
-        coordinates: [-71.05545857106978, -46.68203918783105],
+        coordinates: [-75.92774854790262, 94.8128382148584],
         options: defaultMarkerOptions,
         name: 'Gallienn',
         kingdom: 'Supremacia Purista',
         description: 'Gallienn abriga a Catedral da Pureza, a sede do Templo da Pureza Divina, o que atrai milhares de fiéis e soldados todos os anos.',
     },
     {
-        coordinates: [-72.55011390826701, -37.76266953498283],
+        coordinates: [-79.23937993116118, 101.18643013667237],
         options: defaultMarkerOptions,
         name: 'Oficina Gavanir',
         kingdom: 'Supremacia Purista',
         description: 'Oficina Gavanir fabrica todos os tipos de armas, de espadas a canhões e colossos. Os céus são sempre escuros de fuligem e a terra, sempre embarrada pela passagem incessante de caravanas.',
     },
     {
-        coordinates: [-68.62034740524987, -55.42565771451479],
+        coordinates: [-70.80409244550259, 88.62670487898015],
         options: defaultMarkerOptions,
         name: 'Monte Kovith',
         kingdom: 'Supremacia Purista',
         description: 'O ponto mais elevado da Supremacia. O mais alto dos picos, com mais de três quilômetros de altitude, é o Monte Kovith. Embora não seja tão alto quanto as Uivantes ou as Sanguinárias, o Monte Kovith é íngreme e difícil de escalar. Na Supremacia, diz-se “é como escalar o Kovith” quando se fala de uma tarefa quase impossível.',
     },
     {
-        coordinates: [-71.25413302352936, -53.79995979749318],
+        coordinates: [-76.58382646345385, 89.06410824616346],
         options: defaultMarkerOptions,
         name: 'Vale do Baixo Iörvaen',
         kingdom: 'Supremacia Purista',
         description: 'Aqui há muitas fazendas e plantações, cujas colheitas alimentam as cidades da Supremacia. Por sua importância estratégica, a região é constantemente patrulhada por batalhões puristas.',
     },
     {
-        coordinates: [-71.68693016676521, -39.30049188892217],
+        coordinates: [-76.89624451847824, 100.03043552340219],
         options: defaultMarkerOptions,
         name: 'As Charnecas',
         kingdom: 'Supremacia Purista',
         description: 'Esse terreno traiçoeiro contém muitas poças de lama e areia movediça, e muitos viajantes incautos já morreram afogados aqui. Apesar disso, as Charnecas são movimentadas, pois são um fornecedor de piche e outros insumos cruciais para as usinas e fábricas da Oficina. ',
     },
     {
-        coordinates: [-73.80817844693448, -40.48681199053252],
+        coordinates: [-82.48852770341485, 99.21811498434747],
         options: defaultMarkerOptions,
         name: 'A Prisão Hardof',
         kingdom: 'Supremacia Purista',
         description: 'Hardof é uma prisão, a pior da Supremacia, para onde são enviados cidadãos que se ergueram contra o regime ditatorial ou forasteiros capturados. Apenas prisioneiros importantes, que os puristas julgam possuir algum valor — seja como moeda de troca, seja por conhecerem informações úteis — são mantidos aqui.',
     },
     {
-        coordinates: [-71.42282540348147, -45.23209239697396],
+        coordinates: [-76.67755187996116, 95.81261733984883],
         options: defaultMarkerOptions,
         name: 'A Caverna do Saber',
         kingdom: 'Supremacia Purista',
         description: 'Este local se tornou conhecido, especialmente entre aventureiros, por abrigar o Helladarion, um artefato inteligente que também é o sumo-sacerdote de Tanna-Toh, a Deusa do Conhecimento.',
     },
     {
-        coordinates: [-66.22747685419007, -42.20038547063638],
+        coordinates: [-66.46711110048784, 97.9650745010761],
         options: defaultMarkerOptions,
         name: 'Drekellar',
         kingdom: 'Supremacia Purista',
     },
     {
-        coordinates: [-71.94740722659921, -30.6447489253207],
+        coordinates: [-77.87037010887813, 106.18200918459117],
         options: defaultMarkerOptions,
         name: 'Thornwell',
         kingdom: 'Supremacia Purista',
     },
     {
-        coordinates: [-74.8864325728312, -39.783807485874526],
+        coordinates: [-85.27467801295623, 99.71468796980935],
         options: defaultMarkerOptions,
         name: 'Fortaleza Grazomir',
         kingdom: 'Conflagração do Aço',
     },
     {
-        coordinates: [-76.3268093058069, -40.88225202440263],
+        coordinates: [-89.39859633927819, 98.96485362606653],
         options: defaultMarkerOptions,
         kingdom: 'Conflagração do Aço',
         name: 'Castelo do Pendor',
     },
     {
-        coordinates: [-75.75458239277896, -42.77157663067101],
+        coordinates: [-87.71153884214647, 97.55891423154874],
         options: defaultMarkerOptions,
         kingdom: 'Conflagração do Aço',
         name: 'As Liças',
     },
     {
-        coordinates: [-75.84081408217892, -39.38836745200444],
+        coordinates: [-87.96147328616598, 99.9958758487129],
         options: defaultMarkerOptions,
         kingdom: 'Conflagração do Aço',
         name: 'Campo de Experimentos',
     },
     {
-        coordinates: [-76.67546994361714, -37.89448287960619],
+        coordinates: [-90.46081772636113, 101.08938426667117],
         options: defaultMarkerOptions,
         kingdom: 'Conflagração do Aço',
         name: 'Campina Dourada',
@@ -731,293 +749,293 @@ const citiesDef = [
     //     name: 'Castelo Erynia',
     // },
     {
-        coordinates: [-72.02811306630035, -0.37192621279996907],
+        coordinates: [-78.15154635840008, 127.77098966485318],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Ith',
         description: 'Ith passou abriga, além de seu povo, mercenários e criminosos fugitivos do Reinado. Tudo que há de ilegal e perigoso acontece ali, incluindo uma arena clandestina onde magos são obrigados a lutar até a morte. Não é um lugar para os de coração fraco.'
     },
     {
-        coordinates: [-73.74608106445673, -9.686735899518307],
+        coordinates: [-82.27546468472207, 121.1474529617916],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Aslavi',
         description: 'Situada sobre uma colina solitária, Aslavi é uma cidade pequena que fica ao sul da capital Milothiann e herdou muito de sua arquitetura e falta de planejamento, repleta de vielas estreitíssimas, barrancos e becos suspeitos.'
     },
     {
-        coordinates: [-74.49132686029375, -8.544353579449078],
+        coordinates: [-84.14997301486841, 121.89728730553442],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Cambur',
         description: 'O ritual realizado por Ferren Asloth transformou a população de Cambur em mortos-vivos — e os cavaleiros ali ocultos em servos do Arquilich. Quem se atreve a circular pela área se depara com a mais profana das visões: corpos carcomidos patrulhando a cidade, envergando orgulhosamente armaduras da Ordem da Luz.'
     },
     {
-        coordinates: [-70.12025025493567, 1.4734606119272577],
+        coordinates: [-73.9339026155708, 129.145685961715],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Pata de Megalokk',
         description: 'A Pata de Megalokk é uma enorme clareira existente desde muito antes da chegada do povo do sul, que lembra vagamente o formato da pata de um imenso animal reptiliano. Segundo estudiosos e bardos na mesma proporção, esta teria sido a marca deixada pelo Deus dos Monstros ao tomar impulso para deixar Arton depois da guerra que deu fim à Era dos Monstros.'
     },
     {
-        coordinates: [-73.06869291406456, -9.55492255489494],
+        coordinates: [-80.52592357658547, 121.27242535241541],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Castelo Caerilech',
         description: 'No passado, Caerilech foi um ponto de resistência contra Ferren Asloth, comandado pelo mago Caerilech Gotravon. Depois da Noite da Ascensão Profana, porém, o lugar foi encontrado surpreendentemente vazio. Ninguém sabe se algo aconteceu com Caerilech ou se ele simplesmente resolveu fugir por alguma das várias passagens subterrâneas que supostamente existem sob a fortificação e levam para fora do reino.'
     },
     {
-        coordinates: [-72.31061432907157, 8.635319003130526],
+        coordinates: [-78.713898857444, 134.20706778197905],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Colina dos Bons Hynne',
     },
     {
-        coordinates: [-73.53572184399108, 4.285478630559201],
+        coordinates: [-81.65062857467328, 131.08275801638396],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Olho de Thyatis',
     },
     {
-        coordinates: [-74.26655654402721, 6.7020566153210535],
+        coordinates: [-83.55637871032206, 132.83237148511722],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Volledann',
     },
     {
-        coordinates: [-74.83986363770947, 6.745994396862157],
+        coordinates: [-85.05598537443915, 132.7698852898053],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Porto de Talinthar',
     },
     {
-        coordinates: [-75.04530208716416, 3.4067229997367314],
+        coordinates: [-85.71206328999037, 130.42665296560898],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Poço sem Fundo',
     },
     {
-        coordinates: [-67.96951240288027, -7.138344570133107],
+        coordinates: [-69.466324428722, 122.95955262583675],
         options: defaultMarkerOptions,
         kingdom: 'Aslothia',
         name: 'Pilar de Rasthalhur',
         description: 'O Pilar de Rasthalhur é uma enorme construção cilíndrica e sólida, na parte norte de Aslothia. É toda feita de uma pedra tão negra que parece engolir a própria luz de Azgher. Subindo em forma de espiral, escritos enigmáticos ornam toda a sua superfície.'
     },
     {
-        coordinates: [-68.03533700753054, 11.359461458680226],
+        coordinates: [-69.74565691629277, 136.05214993438054],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Mehnat',
         description: 'Mehnat fica na costa da Baía Dourada e é o principal porto do sul, com saída para o Grande Oceano, que permite tanto acessar os mercados de Bielefeld e Wynlla quanto empreender a busca por especiarias no distante Império de Jade.',
     },
     {
-        coordinates: [-58.21284283768043, -24.801332749665054],
+        coordinates: [-54.218479581580496, 110.40156675884492],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Yukadar',
         description: 'Yukadar é o principal porto de água doce. Localizado na região noroeste, às margens do Rio Vermelho, ali as embarcações têm acesso ao Rio dos Deuses e seus afluentes, podendo chegar tanto a Deheon quanto à Supremacia Purista — pois os mercadores samburs são livres para negociar com todos os reinos, independente de coalizões.'
     },
     {
-        coordinates: [-67.83730049020214, 41.23715290664476],
+        coordinates: [-69.40199705576593, 157.35994253573898],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Collarthan',
         description: 'Collarthan é o maior centro urbano da região, uma metrópole calma e cercada de vilas menores, achatada contra a costa de areia branca.',
     },
     {
-        coordinates: [-65.15962223289888, 29.198200764376683],
+        coordinates: [-64.65324261939519, 148.73684758269656],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Balneário Zannar',
         description: 'Apenas os mais abastados frequentam esse pequeno povoado de estalagens luxuosas que fica no topo de uma colina. É possível ver o mar a partir dos mirantes, mas os frequentadores não querem se misturar ao que julgam ralé. Em vez disso, voltam-se para as piscinas de águas termais oferecidas em pequenos clubes fechados.'
     },
     {
-        coordinates: [-61.74769512690168, 39.128139392670796],
+        coordinates: [-59.248410267473204, 155.86027384825334],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Cataratas de Sambúrdia',
         description: ' Cataratas de Sambúrdia são um complexo de cachoeiras no Rio Bastav, que nasce nas Montanhas Sanguinárias e deságua no mar. Um destino mais radical para quem gosta de ficar em contato com a natureza… vez ou outra se deparando com algum peixe monstruoso que tenha descido com a correnteza.'
     },
     {
-        coordinates: [-62.608833504824716, 42.46741078979622],
+        coordinates: [-60.43559887656589, 158.23474927010562],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Adhurian',
         description: 'Adhurian é um feudo remanescente da antiga estrutura de governo.'
     },
     {
-        coordinates: [-57.55890966241473, 8.898945692377268],
+        coordinates: [-53.12501638899512, 134.30253646564728],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'O Formigueiro',
         description: 'A montanha incisiva com um enorme buraco no cume na verdade é um formigueiro de proporções colossais! Dependendo da época do ano, nas florestas próximas é possível encontrar gigantescas formigas deformadas decepando troncos com suas mandíbulas em pinça e levando embora árvores inteiras. Há também insetos voadores e centípedes venenosos nas imediações — os animais de tamanho normal há muito fugiram ou foram devorados. ',
     },
     {
-        coordinates: [-61.5390288361844, 21.50908899467993],
+        coordinates: [-59.02971762895613, 143.3005485905611],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Torre de Érebo',
         description: 'Essa torre pertence a Érebo, arcanista afamado por destruir vilas indefesas com violência extrema, tramar assassinatos de figuras de grande importância política e desenvolver profunda pesquisa nas artes necromânticas. Há décadas ele não é visto, e não se sabe se foi derrotado por heróis ou se obteve êxito em se tornar um lich.',
     },
     {
-        coordinates: [-65.99567387208029, 18.13847911021243],
+        coordinates: [-65.99664025600006, 140.89483007105292],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Vila Angelya',
         description: 'Vila Angelya é o novo lar dos hynne que moravam em Hongari e tiveram que fugir às pressas quando Aslothia se tornou um reino amaldiçoado e estendeu seus domínios sobre Hongari.',
     },
     {
-        coordinates: [-61.93819150530677, 6.23069265010444],
+        coordinates: [-59.373377489482955, 132.4591937039462],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Tumba de Morkh Amhor',
     },
     {
-        coordinates: [-59.53415440576008, -14.903380271176319],
+        coordinates: [-55.93677888421465, 117.337534438466],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Norba',
     },
     {
-        coordinates: [-51.83779971990965, -21.406171939262716],
+        coordinates: [-46.189335567453625, 112.77604218069717],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Crisandir',
     },
     {
-        coordinates: [-54.82713648579288, -29.88616377669971],
+        coordinates: [-49.68841778372681, 106.74612433309866],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Tyros de Sambúrdia',
     },
     {
-        coordinates: [-52.189319276929, -29.358910398206213],
+        coordinates: [-46.59547903898533, 107.46471557918554],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Zuri',
     },
     {
-        coordinates: [-52.216244919365785, -28.172590296595853],
+        coordinates: [-46.68920445549265, 107.9333620440248],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Darian',
     },
     {
-        coordinates: [-57.06512522464836, 25.3436276204935],
+        coordinates: [-52.625147500956096, 146.0499411842848],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Tallban',
     },
     {
-        coordinates: [-57.4453400913178, 25.870880998987023],
+        coordinates: [-53.12501638899512, 146.3623721608443],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Fosso de Vectora',
         description: 'Trata-se de um enorme buraco em meio à floresta impregnado com magia de voo, assolado por versões voadoras de monstros terrestres, como ogros, basiliscos e feras-cactus.'
     },
     {
-        coordinates: [-60.39176646796447, -19.209282862206503],
+        coordinates: [-57.03024207680002, 114.33819706349472],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Lar de Marah',
         description: 'Uma comunidade que conta com templos, dormitórios e hortas, seus habitantes são soldados aposentados, ex-criminosos, pessoas que querem paz na vida. O Lar as vezes é atacado por servos de Keenn e Sszzaas, ou pessoas contratadas por eles.'
     },
     {
-        coordinates: [-55.64959259367196, -21.191920383865384],
+        coordinates: [-50.75063917080975, 112.90101457132099],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Buraco de Jorsharif',
     },
     {
-        coordinates: [-47.60474122134328, -21.503107245872467],
+        coordinates: [-41.56554835309263, 112.68231288772932],
         options: defaultMarkerOptions,
         kingdom: 'Sambúrdia',
         name: 'Fross',
     },
     {
-        coordinates: [-66.91087732700701, -28.128441648206213],
+        coordinates: [-67.55809955480984, 107.96206162861634],
         options: defaultMarkerOptions,
         kingdom: 'Salistick',
         name: 'Ergônia',
         description: 'Uma cidade repleta de natureza exuberante e mágica, Ergônia é cercada pela Mata das Grandes Sombras, uma floresta habitada por seres místicos e gigantes guardiões das árvores.',
     },
     {
-        coordinates: [-62.08235990453666, -30.01776625447456],
+        coordinates: [-59.65392276269273, 106.61860842941046],
         options: defaultMarkerOptions,
         kingdom: 'Salistick',
         name: 'Quallist',
         description: 'O segundo maior porto do reino. Em sua margem leste localiza-se o Ginásio de Formação para a Excelência Balium. É uma filial do Colégio Real, dirigido pela família homônima.',
     },
     {
-        coordinates: [-64.77258315801886, -32.082841986907404],
+        coordinates: [-63.527906644995184, 106.30617745285095],
         options: defaultMarkerOptions,
         kingdom: 'Salistick',
         name: 'Pântano dos Vermes',
         description: 'Este pântano, situado perto da fronteira de Namalkah, é coberto por uma espessa neblina e por gases tóxicos que pairam no ar. O nome faz referência tanto às criaturas rastejantes e asquerosas que se alimentam de carne podre quanto ao temível dragão das trevas que supostamente vive nas sombras deste charco e controla os mortos-vivos vagando pelo local.',
     },
     {
-        coordinates: [-71.06908482312075, -36.871216707495854],
+        coordinates: [-75.95518810653684, 101.77966936321275],
         options: defaultMarkerOptions,
         kingdom: 'Svalas',
         name: 'Castelo de Karst',
         description: 'Baronato de Karst. Essa terra, governada por Lady Ayleth.'
     },
     {
-        coordinates: [-69.03221867768714, -32.87287858725355],
+        coordinates: [-72.04996241873195, 105.02895151943162],
         options: defaultMarkerOptions,
         kingdom: 'Svalas',
         name: 'Floresta de Svalas',
     },
     {
-        coordinates: [-48.01688073971761, -12.714443886692864],
+        coordinates: [-41.96410371988301, 118.96337307398568],
         options: defaultMarkerOptions,
         kingdom: 'Trebuck',
         name: 'Arantar',
         description: 'Arantar é um feudo próspero. Suas terras são férteis e, sob a sombra das muralhas do castelo, seguras.',
     },
     {
-        coordinates: [-48.36832909729386, 2.312277400371632],
+        coordinates: [-42.27652177490741, 129.61726937466491],
         options: defaultMarkerOptions,
         kingdom: 'Trebuck',
         name: 'Prodd',
         description: 'Este pequeno feudo ao sul é um lugar pacato, de colinas suaves e floridas. Aqui o povo vive vidas tranquilas, cuidando de suas plantações e pastos sob a guarda do barão de Prodd.',
     },
     {
-        coordinates: [-49.40823652540247, 13.780038382605085],
+        coordinates: [-43.15129232897571, 138.8964693784823],
         options: defaultMarkerOptions,
         kingdom: 'Trebuck',
         name: 'Barucandor',
         description: 'Barucandor possui plantações que se estendem do castelo no coração do feudo até o horizonte, além de grandes rebanhos de porcos, ovelhas e trobos.',
     },
     {
-        coordinates: [-39.09564097704807, 20.590394521479325],
+        coordinates: [-33.12267276269273, 142.6456410971964],
         options: defaultMarkerOptions,
         kingdom: 'Trebuck',
         name: 'Akezan',
         description: '. Apesar da terra árida, não é um feudo pobre: minas de pedras preciosas garantem que o senhor de Akezan, o paladino Bartholomeu Bardy, tenha dinheiro para comprar comida das terras mais férteis ao sul, além de erguer muralhas para proteger seus domínios.',
     },
     {
-        coordinates: [-41.54053752727591, 1.1698950803024213],
+        coordinates: [-35.37208275886835, 128.83619193326615],
         options: defaultMarkerOptions,
         kingdom: 'Trebuck',
         name: 'Cidade Fortaleza de Coravandor',
         description: 'A maior fortaleza dos feudos, Coravandor foi construída por ordens da coroa após o ataque da Tormenta, para proteger a corte bucker.',
     },
     {
-        coordinates: [-43.35575573525406, 20.107078924526988],
+        coordinates: [-37.27783289451714, 142.30196702298093],
         options: defaultMarkerOptions,
         kingdom: 'Trebuck',
         name: 'Tyros de Trebuck',
         description: 'Esta cidade mineradora foi fundada por Zarllach Fariell, um viajante do antigo reino de Callistia, para explorar os veios de pedras preciosas das Sanguinárias. Saudoso de sua terra natal, Zarllach batizou seu novo lar com o mesmo nome da cidade onde nascera: Tyros.',
     },
     {
-        coordinates: [-38.92495113447404, -7.661599009463581],
+        coordinates: [-33.02894734618541, 122.46260001145217],
         options: defaultMarkerOptions,
         kingdom: 'Trebuck',
         name: 'Forte Amarid',
         description: 'Antes um orgulhoso castelo, hoje uma fortaleza aberrante feita de carapaça, ossos e metal enferrujado no centro da área de Tormenta.'
     },
     {
-        coordinates: [-47.0691564254622, 22.745943997806535],
+        coordinates: [-40.9956077493074, 144.176552882338],
         options: defaultMarkerOptions,
         kingdom: 'Trebuck',
         name: 'Triunphus',
@@ -1025,42 +1043,42 @@ const citiesDef = [
         description: 'As torres da cidadela fortificada se erguem acima das copas das árvores, suas bandeirolas coloridas tremulando ao vento, contrastando com as escuras Sanguinárias ao longe. Estradas de terra batida cortam os bosques, onde fazendeiros e mercadores perambulam com suas carroças.'
     },
     {
-        coordinates: [-15.631182431818171, 21.735375022360675],
+        coordinates: [-14.252622239219463, 143.45796163625113],
         options: defaultMarkerOptions,
         kingdom: 'Sckharshantallas',
         name: 'Azolliarathan',
         description: 'Azolliarathan é um vulcão que  tem uma cratera com dezenas de quilômetros de diâmetro; em seu interior, a lava permanece sempre ativa.',
     },
     {
-        coordinates: [-20.885889042517988, 12.464503117183478],
+        coordinates: [-18.126606121521924, 136.83442493318955],
         options: defaultMarkerOptions,
         kingdom: 'Sckharshantallas',
         name: 'Durtras',
         description: 'Durtras possui duas atividades muito respeitadas: a caça aos dragões e a política.',
     },
     {
-        coordinates: [-23.36821504637615, 27.666975530412483],
+        coordinates: [-20.001114451668272, 147.64453672214853],
         options: defaultMarkerOptions,
         kingdom: 'Sckharshantallas',
         name: 'Forte Curanthor',
         description: 'A proximidade com as Montanhas Sanguinárias foi um dos principais motivos que levaram à ascensão de Sckhar. Diante dos incontáveis monstros nas montanhas, todos se sentiam e se sentem muito mais seguros estando sob a proteção de um monstro maior e mais assustador. Por isso foi estabelecido o Forte Curanthor.'
     },
     {
-        coordinates: [-37.16198795173712, 20.461179357668072],
+        coordinates: [-31.43561526556101, 142.4581825112607],
         options: defaultMarkerOptions,
         kingdom: 'Sckharshantallas',
         name: 'Hazonnd e Wondaronn',
         description: 'As vilas de Hazonnd e Wondaronn foram destruídas durante a formação de Sckharshantallas e são atualmente ruínas.',
     },
     {
-        coordinates: [-24.612475153646958, 5.961711449097079],
+        coordinates: [-21.032094033248768, 132.24168957776476],
         options: defaultMarkerOptions,
         kingdom: 'Sckharshantallas',
         name: 'Khershandallas',
         description: 'As terras mais férteis do reino rodeiam a cidade de Khershandallas. Essas terras contêm a maior concentração de treckod do reino.',
     },
     {
-        coordinates: [-34.01882078182512, 13.255383184923698],
+        coordinates: [-28.686336381346365, 137.42804378865262],
         options: defaultMarkerOptions,
         kingdom: 'Sckharshantallas',
         name: 'Thenarallan',
@@ -1081,358 +1099,399 @@ const citiesDef = [
         description: 'Laponya é uma belíssima qareen de pele azulada e resplandecente com cristais de gelo, o cabelo branco como pelagem de raposa das neves. Veste luxuosas peles e joias de ouro branco, uma névoa leitosa acompanhando seus movimentos quando surge nas sacadas marmóreas. Até onde se sabe, ela vive ali sozinha — mas em certas ocasiões os ventos que sopram da estrutura parecem trazer lamentos torturados.'
     },
     {
-        coordinates: [-69.20771453766038, -88.29387463822427],
+        coordinates: [-72.18375511461471, 65.56010488661494],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Caverna de Beluhga',
         description: 'A Caverna de Beluhga é onde reside o corpo de Beluhga, a Dragoa-Rainha do Gelo. A Caverna de Beluhga permanece como local de peregrinação para seus devotos, que acreditam em sua ressurreição.'
     },
     {
-        coordinates: [-70.53761968154447, -97.82837323264822],
+        coordinates: [-74.8080667768196, 58.530407914026],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Cidadela de Khalmyr',
         description: 'Cidadela de Khalmyr é lar de anões vigorosos que moldam metal em forjas profundas, alimentadas com gordura de mamute.',
     },
     {
-        coordinates: [-73.32644636319102, -79.10704503806156],
+        coordinates: [-81.33760412682938, 71.74623822249319],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Mavallam (Floresta de Gelo)',
         description: 'Existem diversas florestas de pinheiros nas Uivantes, dentre as quais a Mavallam se destaca. Também chamada “Floresta de Gelo”, na verdade é formada por árvores de clima ameno, mas congeladas e fossilizadas.',
     },
     {
-        coordinates: [-67.74135358798662, -92.7315905738778],
+        coordinates: [-69.1532999808781, 62.06087794914844],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Minas de Gelo Eterno',
     },
     {
-        coordinates: [-69.39405954023137, -105.12204496847487],
+        coordinates: [-72.43368955863421, 53.25032441017031],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Korm',
         description: ' Korm é povoada por guerreiros valorosos e devotos do Grande Chifre — líder de uma gigantesca manada de rinocerontes lanosos.',
     },
     {
-        coordinates: [-72.01888569278128, -99.58318088005682],
+        coordinates: [-78.11969816007814, 57.624358082003425],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'O Grande Lago',
         description: 'O Grande Lago ocupa boa porção da região central. Praticamente um mar, a maior parte de sua superfície permanece congelada durante o ano todo.',
     },
     {
-        coordinates: [-74.04218611566736, -105.95302955968847],
+        coordinates: [-82.93093620745378, 52.6254624570513],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Cabana de Ian',
     },
     {
-        coordinates: [-69.05119776230946, -110.70214322419766],
+        coordinates: [-71.74636983758056, 49.31369410552051],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Catedral de Gelo - Emerware',
         description: 'Erguendo-se majestosa sobre o topo de uma montanha, é a única construção em Arton erigida inteiramente com o materiel de gelo eterno. Contém dezenas de aposentos, corredores e escadas, que descem cada vez mais fundo na montanha, formando uma masmorra complexa. Ninguém tem qualquer ideia sobre quem a teria construído, ou como. ',
     },
     {
-        coordinates: [-69.74724277616988, -99.14437541752012],
+        coordinates: [-73.12100927968788, 57.624358082003425],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Montanha Invencível',
         description: 'Situada na região noroeste, a Montanha Invencível é o ponto mais alto das Uivantes — talvez mais alto que o próprio Monte do Dragão Adormecido nas Sanguinárias.',
     },
     {
-        coordinates: [-72.89152399631864, -107.23105848244883],
+        coordinates: [-80.11917371223426, 51.78189882034062],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Giluk',
         description: 'Giluk, a maior cidade nas Uivantes, abriga quase metade dos humanos do reino. O modo de vida é simples: adultos passam a maior parte do tempo em expedições de caça e pesca, enquanto os jovens e idosos cuidam das tarefas domésticas, que incluem a preparação de comida, peles, medicamentos e cuidados com a criação de mamutes — Giluk é a única comunidade com mamutes domesticados.',
     },
     {
-        coordinates: [-70.07916051351081, -28.310872734893472],
+        coordinates: [-73.77937346005857, 107.86602005039201],
         options: defaultMarkerOptions,
         name: 'Baakan',
         description: 'A antiga capital do reino de Baarkalar hoje abriga a tribo Zallar, representando o maior centro de corrupção fora de uma área de Tormenta.',
     },
     {
-        coordinates: [-65.94597860030005, -18.908187485092885],
+        coordinates: [-66.18761472296585, 114.36458436282979],
         options: defaultMarkerOptions,
         name: 'Dolmens da Clareira dos Mistérios',
         description: 'No extremo norte dos Ermos, dentro de uma floresta particularmente densa, fica a Clareira dos Mistérios, contendo um estranho monumento erguido em louvor à Deusa da Natureza. Enormes pedras (dólmens) estão dispostas em uma complicada formação retangular, com pedras maiores nas linhas mais exteriores e dólmens menores no centro. Os maiores dólmens chegam a ter oito metros de altura.',
     },
     {
-        coordinates: [-76.58600365777352, -103.53235473329825],
+        coordinates: [-90.15109566103425, 54.31235505077497],
         options: defaultMarkerOptions,
         name: 'Kurikondir',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-78.60149435395635, -104.58686149028522],
+        coordinates: [-96.86808384405867, 53.65625],
         options: defaultMarkerOptions,
         name: 'Sordh',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-78.348098138567, -108.28614512326922],
+        coordinates: [-95.93082967898549, 51.00058669924418],
         options: defaultMarkerOptions,
         name: 'Ralandar',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-76.49531537070317, -109.73609191412635],
+        coordinates: [-89.83867760600985, 49.9695644765978],
         options: defaultMarkerOptions,
         name: 'Karitania',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-76.7879116864331, -116.15438941966569],
+        coordinates: [-90.68220635457571, 45.43931531648494],
         options: defaultMarkerOptions,
         name: 'Luvian',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-80.0095728296059, -118.21946515209854],
+        coordinates: [-102.14794897397088, 43.97088972665525],
         options: defaultMarkerOptions,
         name: 'Fauchard',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-78.93485134734496, -120.89966982610711],
+        coordinates: [-98.05527245315136, 42.0338176719863],
         options: defaultMarkerOptions,
         name: 'Aldeia dos Centauros',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-78.15872581689405, -108.90465546538017],
+        coordinates: [-95.27475176343427, 50.56318333206087],
         options: defaultMarkerOptions,
         name: 'Fortaleza de Asidon',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-75.6041712457438, -113.60728588424823],
+        coordinates: [-87.33933316581471, 47.251414980530086],
         options: defaultMarkerOptions,
         name: 'Cabana da Velha Gariann',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-79.66948939874733, -110.79267721576302],
+        coordinates: [-100.83579314286844, 49.219730132854984],
         options: defaultMarkerOptions,
         name: 'Templo de Kari Khodan',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-79.23527175975038, -106.22314793548611],
+        coordinates: [-99.2112192567416, 52.50025538672982],
         options: defaultMarkerOptions,
-        name: 'Templo de Covariel',
+        name: 'Torre de Covariel',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-79.34055048804743, -123.888018854737],
+        coordinates: [-99.58612092277087, 39.9405301290376],
         options: defaultMarkerOptions,
         name: 'Mansão de Zolkan',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-79.2671635883409, -134.16945973536008],
+        coordinates: [-99.33618647875136, 32.5671590822332],
         options: defaultMarkerOptions,
         name: 'Curanmir',
+        description: 'Curanmir é uma cidade litorânea constantemente ameaçada pelo ataque de elfos-do-mar. Temendo que a cidade fosse tomada, as autoridades locais ergueram o Forte Hedryl para protegê-la.',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-78.87717898104842, -138.255952064163],
+        coordinates: [-97.80533800913184, 29.692794097885724],
         options: defaultMarkerOptions,
         name: 'Trandia',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-77.61655750177395, -139.35439660269114],
+        coordinates: [-93.43148523879036, 28.911716656486956],
         options: defaultMarkerOptions,
         name: 'Kamalla',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-77.11696816551265, -141.15584564587724],
+        coordinates: [-91.74442774165864, 27.63074965259297],
         options: defaultMarkerOptions,
         name: 'Altrim',
+        description: 'Altrim era a antiga capital do antigo reino de Petrynia, que foi incorporado ao Império de Tauron.',
+        kingdom: 'Tauron',
     },
     {
-        coordinates: [-74.21152475483407, -136.63025414714144],
+        coordinates: [-83.40286567250737, 30.817545613499952],
         options: defaultMarkerOptions,
         name: 'Foz',
         kingdom: 'Tauron',
     },
     {
-        coordinates: [-74.1156115998467, -142.2103524028642],
+        coordinates: [-83.15293122848786, 26.9121584065061],
         options: defaultMarkerOptions,
         name: 'Calacala',
         kingdom: 'Tauron',
         description: 'A terceira maior cidade táurica é um grande porto e, assim como Marma, um importante ponto comercial. Em seus enormes estaleiros ancoram navios do Império, do Reinado e de lugares ainda mais distantes, levando e trazendo mercadorias de todo tipo.',
     },
     {
-        coordinates: [-71.38714301015227, -128.2883790669068],
+        coordinates: [-76.62339387847808, 36.78497726578656],
         options: defaultMarkerOptions,
         name: 'Boren',
         kingdom: 'Tauron',
     },
     {
-        coordinates: [-72.52972116322447, -125.52029882981597],
+        coordinates: [-79.27894734618542, 38.78453551576741],
         options: defaultMarkerOptions,
         name: 'Vila Vorgunia',
         description: 'Situada a um dia de viagem de Tiberus, esta é a propriedade de campo da tradicional família Vorgunia, cujo patriarca, Turius Vorgunia, é um senador respeitado.',
         kingdom: 'Tauron',
     },
     {
-        coordinates: [-65.27540683813773, -92.29927679789198],
+        coordinates: [-64.1266716775024, 62.49804663663408],
         options: defaultMarkerOptions,
         name: 'Charco de Possum',
         description: 'Este pântano é formado por uma região alagada do Rio dos Deuses.',
         kingdom: 'Tauron',
     },
     {
-        coordinates: [-57.61277361142585, -98.88994402906063],
+        coordinates: [-55.06654808179505, 57.74909579292956],
         options: defaultMarkerOptions,
         name: 'Floresta de Megalokk',
         description: 'Esta região de matas densas e fechadas é habitada por feras e monstros gigantes, que eventualmente partem em busca de comida, atacando viajantes, fazendas e até mesmo os muros das cidades.',
         kingdom: 'Tauron',
     },
     {
-        coordinates: [-73.11070083880738, -156.84387788180356],
+        coordinates: [-80.59110317728786, 16.445720691762578],
         options: defaultMarkerOptions,
         name: 'Grutas de Zalah',
         description: 'Estas cavernas aparentemente escavadas pelo mar na verdade são a entrada para um vasto complexo subterrâneo, com passagens que podem levar a pontos distantes do Império — e, dizem, até mesmo a Doherimm.',
         kingdom: 'Tauron',
     },
     {
-        coordinates: [-65.87257209199585, -98.27090651982839],
+        coordinates: [-65.81372917463412, 58.12401296480097],
         options: defaultMarkerOptions,
         name: 'Minas de Tile',
         kingdom: 'Tauron',
         description: 'Um complexo de minas, Tile é o maior produtor de mármore, carvão, ferro, ouro e prata do Império.',
     },
     {
-        coordinates: [-62.18458894504348, -90.23029249780265],
+        coordinates: [-59.84654432366824, 63.81025673818401],
         options: defaultMarkerOptions,
         name: 'Marma',
         kingdom: 'Tauron',
         description: 'Situada à margem do Rio dos Deuses, no nordeste do reino, Marma é um importante ponto comercial do Império de Tauron. Recebe barcos provenientes do Rio dos Deuses, caravanas que cruzam a Grande Savana e é um dos pontos de parada de Vectora.',
     },
     {
-        coordinates: [-60.45617798675577, -79.37766045714496],
+        coordinates: [-84.01446886077574, 34.00132086954652],
+        options: defaultMarkerOptions,
+        name: 'Ruínas do Coliseu Fantasma',
+        kingdom: 'Tauron',
+    },
+    {
+        coordinates: [-82.8585220571855, 39.781293935897416],
+        options: defaultMarkerOptions,
+        name: 'Templo de Litz',
+        kingdom: 'Tauron',
+    },
+    {
+        coordinates: [-101.72857258065875, 40.59361447495213],
+        options: defaultMarkerOptions,
+        name: 'Torre de Azazel',
+        kingdom: 'Tauron',
+    },
+    {
+        coordinates: [-57.15974905045847, 71.52730185920386],
         options: defaultMarkerOptions,
         name: 'Darandaran',
         description: 'Darandaran é a menor das cidades ubaneri — fora de Ubani, nem seria considerada uma cidade. Trata-se de uma pista de corrida circular com um grande estábulo e uma torre de mármore em seu centro. Aqui são treinados os cavaleiros de Ubani, responsáveis por percorrer o reino com a ajuda das mais diversas montarias — cavaleiros vindos de Ardile já domaram bulettes.'
     },
     {
-        coordinates: [-49.69091836011181, -46.7785075749905],
+        coordinates: [-43.84958448226331, 94.73782426509723],
         options: defaultMarkerOptions,
         name: 'Kivulisi',
         kingdom: 'Ubani',
         description: 'O porto de Ubani é Kivulisi, uma cidade que começa em palafitas sobre o Canal do Tentáculo, ligado ao Rio dos Deuses.',
     },
     {
-        coordinates: [-49.35570730823729, -79.37766045714498],
+        coordinates: [-43.41219920522916, 71.55544580438173],
         options: defaultMarkerOptions,
         name: 'Ardile',
         kingdom: 'Ubani',
         description: 'A única fortaleza em Ubani, de longe Ardile parece um bloco de pedra erguido no meio da Savana. Conta com muralhas protegidas por humanos e thera, mas não tem nenhum portão. A única forma de entrar na fortaleza é escalando as muralhas de dezenas de metros, com a ajuda dos mal-humorados pamgras locais.',
     },
     {
-        coordinates: [-17.938913006285176, 2.484127489838493],
+        coordinates: [-15.9785178410925, 129.79795676108836],
         options: defaultMarkerOptions,
         name: 'Ejotó',
         kingdom: 'Ubani',
         description: 'Ejotó é a segunda menor cidade ubaneri, maior apenas que Darandaran. Suas esparsas residências construídas em torno de motojus parecem apenas um bairro de Mirandege.',
     },
     {
-        coordinates: [-46.736014526241455, -130.4294163854805],
+        coordinates: [-40.690785993521885, 35.318829449493094],
         options: defaultMarkerOptions,
         name: 'Ojumajele',
         kingdom: 'Ubani',
         description: 'Depois de ser engolida pela Tormenta nada resta de Ojumajele. Suas ruínas estão repletas de lefeu, mas algumas expedições tentam recuperar tesouros deixados para trás na fuga. Inclusive, com a quantidade de guerreiros que existia no local, acredita-se haver muitas armas mágicas perdidas aqui.',
     },
     {
-        coordinates: [-39.63549980021909, -86.13684156299853],
+        coordinates: [-33.72386336647795, 66.65565639841176],
         options: defaultMarkerOptions,
         name: 'Megadíbula',
         kingdom: 'Ubani',
         description: 'No meio da Savana, como uma ferida aberta em meio ao verde, fica a Megadíbula. Dizem que essa enorme fenda na terra, com aspecto similar a uma bocarra aberta e se estendendo por centenas de quilômetros, foi criada quando a dracofera primordial Ardile foi subjugada nos tempos ancestrais.',
     },
     {
-        coordinates: [-58.626747474285565, 40.107151482967176],
+        coordinates: [-54.711588009131845, 156.58424547224428],
         options: defaultMarkerOptions,
         name: "Trag'Merah",
         description: 'Muito mais procurada por aventureiros, sede principal da Guilda Mon’han, ou Guilda dos Caça-Monstros. Foi construída no esqueleto de alguma besta titânica, suas costelas descomunais servindo de abrigo para vários pátios e torres.'
     },
     {
-        coordinates: [-54.029823221165614, 48.85077000965089],
+        coordinates: [-48.83812857467328, 162.77037880812253],
         options: defaultMarkerOptions,
         name: 'Santuário de Mãe Jaguar',
-        description: ' Santuário da Mãe Jaguar é um refúgio escondido entre galerias e paredões onde se cultua uma das faces de Allihanna. O santuário é pequeno, não mais do que um altar construído dentro de uma gruta. As paredes são pintadas de forma rudimentar, mostrando cenas envolvendo grandes felinos, e no lado de fora há um totem sinalizando a entrada.'
+        description: 'Santuário da Mãe Jaguar é um refúgio escondido entre galerias e paredões onde se cultua uma das faces de Allihanna. O santuário é pequeno, não mais do que um altar construído dentro de uma gruta. As paredes são pintadas de forma rudimentar, mostrando cenas envolvendo grandes felinos, e no lado de fora há um totem sinalizando a entrada.'
     },
     {
-        coordinates: [-39.50342720260028, 33.60435981488078],
+        coordinates: [-33.592127489482955, 151.96026701916355],
         options: defaultMarkerOptions,
         name: 'Katiaskh',
         description: 'Katiaskh é o maior povoado humano conhecido na cordilheira — sendo também o mais temerário em todo o mundo. Foi construído no topo de uma colina inquietante, entre formações rochosas afiladas e algo defensivas, talvez com a intenção de manter grandes feras afastadas.'
     },
     {
-        coordinates: [-23.527503710349205, 39.57989810447369],
+        coordinates: [-20.18939292893654, 156.14684210506095],
         options: defaultMarkerOptions,
         name: 'Sina de Doruthamm',
         description: 'Verdadeira caverna-mundo com seus próprios biomas, incluindo florestas de fungos e lagos abissais, abrigando monstros subterrâneos desconhecidos em Arton. E também todos aqueles conhecidos, assim parece.'
     },
     {
-        coordinates: [-37.44213331756317, 52.151141836723106],
+        coordinates: [-31.561410131824406, 164.92615254638315],
         options: defaultMarkerOptions,
         name: 'Vale Sargomera',
         description: 'Numerosas montanhas na cordilheira são vulcões ativos e furiosos, despejando fluxos constantes de lava em forma de rios, cachoeiras e lagos magmáticos. Monstros imunes ao fogo, sobretudo dragões e elementais, tomam tais localidades como seus territórios. O Vale Sargomera é a maior região deste tipo descoberta, recebendo o nome do kaiju flamejante ali (espera-se) adormecido.'
     },
     {
-        coordinates: [-9.974672865612986, 59.00538304042633],
+        coordinates: [-9.723388085619419, 170.0500205619591],
         options: defaultMarkerOptions,
         name: 'Dragão Adormecido',
         description: 'Hoje, o Dragão Adormecido é foco de conflito entre os grandes dragões de Arton. As feras orgulhosas e territoriais consideram este o único lugar digno de hospedar seus covis. Batalhas devastadoras pela supremacia local são frequentes, também atraindo aventureiros que caçam estes monstros. '
     },
     {
-        coordinates: [-82.22927900362455, -50.557533335470964],
+        coordinates: [-112.58600483482383, 92.04710006803057],
         options: defaultMarkerOptions,
         name: 'Grimmere',
         description: 'Esta cidade começou como um forte, mas sua função militar acabou quando aqui veio a morrer Gillian Cloudheart, então sumo-sacerdotisa de Marah, a Deusa da Paz. Depois que a clériga foi enterrada, uma aura de paz absoluta tomou este lugar. Desde então, nenhum ato, nenhum gesto, nenhum pensamento agressivo ocorre em Grimmere. Aqui todos são tranquilos, conformados, prestativos. Aqui ninguém discorda de nada. Aqui todos são felizes.'
     },
     {
-        coordinates: [-82.44600746406331, -44.58199504587807],
+        coordinates: [-113.6794680274092, 96.32740444689583],
         options: defaultMarkerOptions,
         name: 'Molok',
         description: 'Outrora uma aldeia desimportante, Molok se tornou a última “cidade da fronteira”, depois da queda de Khalifor, um entreposto fortificado de onde partiam aventureiros. Paliçadas foram erguidas, inúmeras lojas de equipamentos foram abertas, mercenários e exploradores vieram de todo o continente. '
     },
     {
-        coordinates: [-81.70770412489065, -40.89122139642364],
+        coordinates: [-109.89920956161406, 98.8893384546838],
         options: defaultMarkerOptions,
         name: 'Vila Questor',
     },
     {
-        coordinates: [-82.61796467022478, -41.89337075984644],
+        coordinates: [-114.58548038697992, 98.20199030625288],
         options: defaultMarkerOptions,
         name: 'Sternachten',
-        description: ' Sternachten se tornou um ponto de peregrinação de cientistas e clérigos de Thyatis, a suprema provação do deus para quem deseja ver o futuro. Sternachten é alvo constante de saqueadores. Suas únicas defesas são grupos de aventureiros e ocasionais duyshidakk aliados de Niebling. Vários devotos de Tanna-Toh têm vindo para cá, na crença de que defender uma ciência única, mesmo dedicada a outro deus, é uma missão valorosa.'
+        description: 'Sternachten se tornou um ponto de peregrinação de cientistas e clérigos de Thyatis, a suprema provação do deus para quem deseja ver o futuro. Sternachten é alvo constante de saqueadores. Suas únicas defesas são grupos de aventureiros e ocasionais duyshidakk aliados de Niebling. Vários devotos de Tanna-Toh têm vindo para cá, na crença de que defender uma ciência única, mesmo dedicada a outro deus, é uma missão valorosa.'
     },
     {
-        coordinates: [-83.01346249730855, -37.76321929498075],
+        coordinates: [-116.8036485776531, 101.13884148591225],
         options: defaultMarkerOptions,
         name: 'Vértebra',
     },
     {
-        coordinates: [-83.34727637964694, -34.555761242478674],
+        coordinates: [-118.8656077408141, 103.41958761479667],
         options: defaultMarkerOptions,
         name: 'Khalifor',
         description: 'Khalifor, a cidade-fortaleza. Com suas muralhas gigantescas e suas defesas inexpugnáveis, Khalifor sempre foi um bastião de tudo que é considerado “civilizado”. Contudo, hoje em dia é ela mesma um antro — não só de selvagens e bárbaros, mas também de mortos-vivos, cultistas, assassinos e coisas ainda piores…'
     },
     {
-        coordinates: [-80.5960207023001, -61.661426230901476],
+        coordinates: [-115.05271576991238, 102.96208914323527],
+        options: defaultMarkerOptions,
+        name: 'Dagba',
+    },
+    {
+        coordinates: [-104.68182804270671, 84.11135326341906],
         options: defaultMarkerOptions,
         name: 'Cratera de Thwor',
         description: 'Nos escombros da antiga capital Cosamhir fica o ponto exato onde um fragmento da Flecha de Fogo atingiu Thwor e a forma física de Ragnar, que se enfrentavam numa luta aguerrida.'
     },
     {
-        coordinates: [-48.92156034415503, 34.0048380602388],
+        coordinates: [-42.635602314862496, 152.15881995807996],
         options: defaultMarkerOptions,
         name: 'Cemitério dos Beemotes',
         description: 'Vale enevoado, recoberto de pântanos e ossadas monumentais. Dizem que os esqueletos de todos monstros mortos nas Sanguinárias (talvez em toda Arton?) de algum modo misterioso acabam aqui. Lendas falam sobre bestas gigantes que se arrastam até o lugar quando sentem que vão morrer.'
     },
     {
-        coordinates: [-79.06215721167922, -25.716163840962405],
+        coordinates: [-98.56233474506757, 109.72691775910383],
         options: defaultMarkerOptions,
         name: 'Alkeram',
         description: 'Alkeram se divide entre a Cidade Velha, as regiões históricas de quando era apenas uma ilha de pescadores; o Distrito do Fumo, onde hynne refugiados se aproveitam do solo vulcânico para plantar tabaco, e o Distrito do Chifre, onde imigrantes minotauros vivem em uma espécie de acampamento militar permanente. Seu ponto mais assombroso, porém, é uma humilde capela no Distrito do Fumo. Nela, a solícita e sorridente clériga Celene ajuda os locais com milagres e conselhos.',
         kingdom: 'Khubar',
     },
     {
-        coordinates: [-24.69229215129874, -96.02446909686864],
+        coordinates: [-20.83272265499889, 59.737961509582526],
         options: defaultMarkerOptions,
         name: 'A Cidade no Deserto',
         isCapital: true,
@@ -1440,14 +1499,14 @@ const citiesDef = [
         description: 'Cidade no Deserto não está limitada a uma única localização, sendo capaz de se teletransportar. Não existe um “mecanismo” ou aparato mágico visível; a metrópole simplesmente obedece aos comandos de seu sultão. Ela pode viajar até 100 quilômetros por dia para qualquer ponto, mas apenas dentro das areias do Deserto da Perdição.',
     },
     {
-        coordinates: [-16.85260477097373, -68.1639919702216],
+        coordinates: [-14.553119749008616, 79.85851640001485],
         options: defaultMarkerOptions,
         name: 'Templo do Deserto',
         kingdom: 'Halak-Tûr',
         description: 'No centro de um vale de areias particularmente douradas cercado por diversos pequenos oásis localiza-se o Grande Templo de Azgher. Também chamado de Templo do Deserto, trata-se de uma pirâmide de proporções colossais, na qual estão entalhados trechos da história de todas as tribos sar-allan, acompanhados por padrões abstratos. No cume desta construção magistral fica um enorme sol de ouro, a representação do aspecto mais conhecido de Azgher.',
     },
     {
-        coordinates: [-9.630514713098243, -42.548265331746144],
+        coordinates: [-9.96057434015006, 87.8255063022823],
         options: defaultMarkerOptions,
         name: 'Caverna das Maravilhas',
         kingdom: 'Halak-Tûr',
@@ -1518,11 +1577,11 @@ citiesDef.forEach((marker) => {
 });
 
 var customMarkers = [];
-var savedMarkers = JSON.parse(sessionStorage.getItem('savedMarkers'));
+var savedMarkers = JSON.parse(sessionStorage.getItem(SAVED_MARKERS_KEY));
 if (savedMarkers) {
     savedMarkers.forEach(function(saved) {
         const newMarker = L.marker(saved.coord, {...defaultMarkerOptions, title: saved.name, icon: blackIcon, riseOnHover: true});
-        newMarker.bindPopup(`<p>${saved.name}<span style="color: red;cursor:pointer;margin-left:2px;font-size:10px" id='clickHere' title="Remover todos os selecionados">X</span></p>`, {closeOnClick: false, autoClose: false});
+        newMarker.bindPopup(`<p>${saved.name}<span style="color: red;cursor:pointer;margin-left:2px;font-size:10px" id='clickHere' title="Remover todos os selecionados">🗑</span></p>`, {closeOnClick: false, autoClose: false});
         customMarkers.push(newMarker);
     });
 }
@@ -1537,14 +1596,13 @@ var customs = L.layerGroup(customMarkers);
 
 var map = L.map('map', {
     layers: [capitals, cities, customs],
-    minZoom: 3,
-}).setView([-77, -58], 4);
+    crs: L.CRS.Simple,
+});
 
 var layerControl = L.control.layers([], []).addTo(map);
 layerControl.addOverlay(customs, "Meus marcadores");
 layerControl.addOverlay(capitals, "Capitais");
 layerControl.addOverlay(cities, "Outras localidades");
-
 
 map.on('popupopen', function(e) {
     var marker = e.popup._source;
@@ -1552,34 +1610,34 @@ map.on('popupopen', function(e) {
         map.removeLayer(marker);
         // Remove from savedMarkers based on marker coordinates
         savedMarkers = savedMarkers.filter((saved) => saved.coord[0] !== marker._latlng.lat && saved.coord[1] !== marker._latlng.lng);
-        sessionStorage.setItem('savedMarkers', JSON.stringify(savedMarkers));
+        sessionStorage.setItem(SAVED_MARKERS_KEY, JSON.stringify(savedMarkers));
     });
 });
 
 function onMapClick(evt) {
-    const rulerActive = $(".leaflet-ruler-clicked").length > 0;
+    const rulerActive = document.getElementById("map").style.cursor === 'crosshair';
     const drawControl = $(".leaflet-draw-toolbar-button-enabled").length > 0;
 
     if (rulerActive || drawControl) return;
     
     var coord = [evt.latlng.lat, evt.latlng.lng];
 
-    // console.log(coord);
+    console.log(coord);
 
     let markerName = prompt("Nome do marcador", "")
 
     if (!markerName) return;
 
     const thisMark = L.marker(coord, {...defaultMarkerOptions, title: markerName, icon: blackIcon}).addTo(map);
-    thisMark.bindPopup(`<p>${markerName}<span style="color: red;cursor:pointer;margin-left:2px;font-size:10px" id='clickHere' title="Remover todos os selecionados">X</span></p>`, {closeOnClick: false, autoClose: false});
+    thisMark.bindPopup(`<p>${markerName}<span style="color: red;cursor:pointer;margin-left:2px;font-size:10px" id='clickHere' title="Remover todos os selecionados">🗑</span></p>`, {closeOnClick: false, autoClose: false});
     savedMarkers.push({'name': markerName, 'coord': coord});
-    sessionStorage.setItem('savedMarkers', JSON.stringify(savedMarkers));
+    sessionStorage.setItem(SAVED_MARKERS_KEY, JSON.stringify(savedMarkers));
     customMarkers.push(thisMark);
 }
 
 map.on('click', onMapClick);
-
 arton.addTo(map);
+map.setView([-76, 93], 4);
 
 var select = document.getElementById('search-select');
 
@@ -1608,18 +1666,15 @@ select.addEventListener('change', function() {
 // Add search selections bar
 NiceSelect.bind(select, {searchable: true, placeholder: 'Selecionar', searchtext: 'Pesquisar cidades', selectedtext: 'geselecteerd'});
 
-console.log(L.control)
+// console.log(L.control)
 
-// Add ruler to map
-L.control.ruler({
-    lengthUnit: {                 // You can use custom length units. Default unit is kilometers.
-        display: 'km',              // This is the display value will be shown on the screen. Example: 'meters'
-        decimal: 2,                 // Distance result will be fixed to this value.         
-        factor: 2.57,               // This value will be used to convert from kilometers. Example: 1000 (from kilometers to meters)  
-        label: 'Distância:'           
-    },
+// Add ruler measure to map
+L.control.measure({
+    position: 'topright',
+    formatDistance: function (val) {
+      return Math.round(val * 43) + 'km';
+    }
 }).addTo(map);
-
 
 // Draw Controls
 var editableLayers = new L.FeatureGroup();
