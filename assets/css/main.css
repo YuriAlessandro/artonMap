@@ -22,7 +22,7 @@ body {
 /* A container that is on top right */
 .search-container {
     position: absolute;
-    top: 195px;
+    top: 8px;
     right: 10px;    
     z-index: 1000;
     background-color: #fff;
