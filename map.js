@@ -2635,6 +2635,8 @@ map.on('popupopen', function(e) {
 function onMapClick(evt) {
     const rulerActive = document.getElementById("map").style.cursor === 'crosshair';
     const drawControl = $(".leaflet-draw-toolbar-button-enabled").length > 0;
+    
+    console.log(evt.target);
 
     if (rulerActive || drawControl) return;
     
@@ -2690,7 +2692,12 @@ NiceSelect.bind(select, {searchable: true, placeholder: 'Selecionar', searchtext
 L.control.measure({
     position: 'topright',
     formatDistance: function (val) {
-      return Math.round(val * 43) + 'km';
+        const distance = Math.round(val * 43);
+        const travelDays = Math.round(distance / 36);
+        return `
+            <strong>${distance}km</strong>
+            <br>🕒: ${travelDays} dias
+        `;
     }
 }).addTo(map);
 
@@ -2750,7 +2757,3 @@ L.drawLocal.draw.toolbar = {
         circlemarker: 'Adicionar marcador circular'
     }
 }
-
-map.on(L.Draw.Event.CREATED, function (e) {
-    console.log(e.layer.editing.latlngs);
-});
