@@ -61,7 +61,7 @@ citiesDef.forEach((marker) => {
 });
 
 var customMarkers = [];
-var savedMarkers = JSON.parse(sessionStorage.getItem(SAVED_MARKERS_TAMURA_KEY));
+var savedMarkers = JSON.parse(localStorage.getItem(SAVED_MARKERS_TAMURA_KEY));
 if (savedMarkers) {
     savedMarkers.forEach(function(saved) {
         const newMarker = L.marker(saved.coord, {...defaultMarkerOptions, title: saved.name, riseOnHover: true});
@@ -92,7 +92,7 @@ map.on('popupopen', function(e) {
         map.removeLayer(marker);
         // Remove from savedMarkers based on marker coordinates
         savedMarkers = savedMarkers.filter((saved) => saved.coord[0] !== marker._latlng.lat && saved.coord[1] !== marker._latlng.lng);
-        sessionStorage.setItem(SAVED_MARKERS_TAMURA_KEY, JSON.stringify(savedMarkers));
+        localStorage.setItem(SAVED_MARKERS_TAMURA_KEY, JSON.stringify(savedMarkers));
     });
 });
 
@@ -111,7 +111,7 @@ function onMapClick(evt) {
     const thisMark = L.marker(coord, {...defaultMarkerOptions, title: markerName}).addTo(map);
     thisMark.bindPopup(`<p>${markerName}<span style="color: red;cursor:pointer;margin-left:2px;font-size:10px" id='clickHere' title="Remover todos os selecionados">🗑</span></p>`, {closeOnClick: false, autoClose: false});
     savedMarkers.push({'name': markerName, 'coord': coord});
-    sessionStorage.setItem(SAVED_MARKERS_TAMURA_KEY, JSON.stringify(savedMarkers));
+    localStorage.setItem(SAVED_MARKERS_TAMURA_KEY, JSON.stringify(savedMarkers));
     customMarkers.push(thisMark);
 }
 
