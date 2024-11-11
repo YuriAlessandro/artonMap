@@ -53,7 +53,7 @@ const citiesDef = [
         coordinates: [-88.93490767849805, 26.994975093532194],
         options: defaultMarkerOptions,
         name: 'Ruínas de Kharadantur',
-        description: '',
+        description: 'Próxima a uma floresta de cogumelos, Kharadantur foi palco do primeiro ataque Trollkyrka a Doherimm, em 1203. A investida começou com o envio de hordas de mycotann lobotomizados magicamente, preparando - com um ataque suicida - o terreno para a invasão direta e massiva das tropas finntroll que se seguiu. Essa brusca manobra devastou a cidade e marcou oficialmente o início da permaguerra.',
         kingdom: 'Doherimm'
     },
     {
