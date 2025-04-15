@@ -1085,14 +1085,14 @@ const citiesDef = [
         description: 'Thenarallan é um ponto obrigatório de peregrinação para os fiéis de Sckhar. Eles são recebidos por um povo manso de olhos tristes, talvez as únicas pessoas em todo o reino que entendem serem brinquedos de um monstro, sem nenhum poder para fazer qualquer coisa a respeito disso.',
     },
     {
-        coordinates: [-71.508898588233, -88.46962576438877],
+        coordinates: [-76.875, 65.09375],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Tundorak',
         description: ' Tundorak é a maior aldeia dos temíveis bugbears do gelo — similares aos goblins gigantes de Lamnor, mas brancos e mais peludos. Vivem em grandes cabanas feitas com peles e ossos de mamute, sua caça favorita.',
     },
     {
-        coordinates: [-75.5385400715003, -94.04972402011154],
+        coordinates: [-87.03125, 61.09375],
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Palácio Laponya',
@@ -1144,6 +1144,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         kingdom: 'Uivantes',
         name: 'Cabana de Ian',
+        description: 'Dizem que lan, o Ermitão, era um próspero pescador de Trebuck - até que testemunhou, além do Rio dos Deuses, o surgimento de uma área de Tormenta que até hoje ameaça o reino. A visão perturbou tanto sua mente que ele teria ficado louco, e decidiu viver aqui pelo resto de seus dias. Isso, pelo menos, é o que dizem. Mas alguns aventureiros garantem que lan tem poderes mágicos adivinhatórios. Ele seria capaz de revelar a localização de pessoas, criaturas ou itens perdidos em qualquer pontos das Uivantes. Mas conseguir esse favor é um problema, pois lan gosta de ficar sozinho e costuma provocar desmoronamentos sobre qualquer pessoa que tente se aproximar de sua cabana.'
     },
     {
         coordinates: [-71.74636983758056, 49.31369410552051],
@@ -1213,12 +1214,21 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Fauchard',
         kingdom: 'Tauron',
+        description: 'É um importante porto comercial: recebe grande parte dos navios e cargas que chegam do Reinado.'
     },
     {
         coordinates: [-98.05527245315136, 42.0338176719863],
         options: defaultMarkerOptions,
         name: 'Aldeia dos Centauros',
         kingdom: 'Tauron',
+        description: 'A região descampada ao sul dos Bosques de Allihanna é território de um grande rebanho de centauros. Sua antiga líder, Odara de Allihanna, teve atuação importante durante a saga dos Rubis da Virtude. Após um incidente envolvendo a Tormenta, seu paradeiro é desconhecido; hoje o bando é liderado por sua aprendiz Hipólita. Diferente da antecessora, esta druida atrevida não se acanha em galopar até Nova Malpetrim e convocar aventureiros para matar monstros que eventualmente ameaçam a tribo.'
+    },
+    {
+        coordinates: [-97.21875, 41.15625],
+        options: defaultMarkerOptions,
+        name: 'Planalto dos Kobolds',
+        kingdom: 'Tauron',
+        description: 'Em um planalto oculto nos Bosques de Allihanna, onde cavernas e túneis que atravessam o planalto escondem centenas, talvez milhares de criaturas. Como outros de seu tipo, estes também ficaram mais perigosos após o retorno de Kallyadranoch ao Panteão, mas ganharam ainda mais poder quando o dragão Xiuhdrake assumiu a liderança do bando. Sob comando do “enviado”, os kobolds atacam aldeias e fazendas vizinhas, capturando vítimas — especialmente crianças — para sacrifícios rituais ao Deus dos Dragões.'
     },
     {
         coordinates: [-95.27475176343427, 50.56318333206087],
@@ -1249,6 +1259,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Mansão de Zolkan',
         kingdom: 'Tauron',
+        description: 'Pertenceu ao poderoso mago Zolkan, desaparecido há mais de 100 anos. Rumores dizem que a mansão é assombrada e maldita, algo atestado por heróis que a visitaram. Fantasmas e aparições infestam seus aposentos — que retornam magicamente ao normal logo após a passagem de aventureiros, não importando quanta coisa foi destruída ou quantas criaturas foram vencidas. Também dizem que Zolkan se tornou um monstro e devora todos que entram. Parte desse boato é verdade; o arcanista realmente se tornou “algo” graças a um experimento fracassado. Uma passagem mágica leva a um laboratório secreto longe dali, em uma caverna oculta, onde o monstro-Zolkan passa os dias tentando reverter seu atual estado.'
     },
     {
         coordinates: [-99.33618647875136, 32.5671590822332],
@@ -1268,6 +1279,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Kamalla',
         kingdom: 'Tauron',
+        description: 'Este é o típico vilarejo de pescadores que encontramos aos milhares pela região do antigo reino de Petrynia. O modo de vida é simples: os homens pescam no mar ou na costa, enquanto as mulheres cuidam das colheitas.'
     },
     {
         coordinates: [-91.74442774165864, 27.63074965259297],
@@ -1354,6 +1366,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Torre de Azazel',
         kingdom: 'Tauron',
+        description: 'Situada em uma ilhota próxima à costa, esta grande torre pertence a Azazel, o Louco. Este velho de pele azulada — que muitos acreditam ser um tritão, embora não exista certeza sobre isso — mantém sua torre protegida por monstros marinhos, jamais tolerando a presença de invasores. Muitos navios foram afundados por suas criaturas porque se aproximaram demais. As histórias sobre a origem de Azazel seriam muitas; a mais conhecida diz que ele teria se apaixonado por uma sereia, mas foi rejeitado, e agora passa a vida pensando em formas de capturá-la e conquistar seu amor.'
     },
     {
         coordinates: [-57.15974905045847, 71.52730185920386],
@@ -2636,13 +2649,11 @@ function onMapClick(evt) {
     const rulerActive = document.getElementById("map").style.cursor === 'crosshair';
     const drawControl = $(".leaflet-draw-toolbar-button-enabled").length > 0;
     
-    console.log(evt.target);
-
     if (rulerActive || drawControl) return;
     
     var coord = [evt.latlng.lat, evt.latlng.lng];
 
-    // console.log(coord);
+    console.log(coord);
 
     let markerName = prompt("Nome do marcador", "")
 
