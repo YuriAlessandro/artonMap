@@ -984,6 +984,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         kingdom: 'Svalas',
         name: 'Floresta de Svalas',
+        description: 'Praticamente metade do território de Svalas é coberto por uma floresta densa e escura. Diziam que a floresta era assombrada pelos espíritos dos soldados svalanos que morreram durante a invasão.'
     },
     {
         coordinates: [-41.96410371988301, 118.96337307398568],
