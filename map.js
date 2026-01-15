@@ -1462,6 +1462,7 @@ const citiesDef = [
         coordinates: [-109.89920956161406, 98.8893384546838],
         options: defaultMarkerOptions,
         name: 'Vila Questor',
+        description: 'Questor é uma das raras comunidades costeiras. Situada em um dos raríssimos pontos navegáveis em toda a costa do reino, tem uma bem sucedida economia pesqueira. O artesanato local, à base de conchas, também é bastante apreciado - proporcionando um crescimento rápido para a cidade.',
     },
     {
         coordinates: [-114.58548038697992, 98.20199030625288],
@@ -1484,6 +1485,7 @@ const citiesDef = [
         coordinates: [-115.05271576991238, 102.96208914323527],
         options: defaultMarkerOptions,
         name: 'Dagba',
+        description: 'Situada nos limites da Cordilheira de Kanter, nunca chegou a atingir grandes proporções. Atualmente a cidade está quase abandonada.',
     },
     {
         coordinates: [-104.68182804270671, 84.11135326341906],
