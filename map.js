@@ -43,6 +43,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Barud',
         kingdom: 'Tauron',
+        description: 'Barud é a capital de Lomatubar e o único lugar do reino que ainda mantém alguma ordem após a devastação causada pela Praga Coral. Cercada por muralhas e protegida por uma guarda que examina rigorosamente todos os viajantes para impedir a entrada de infectados, a cidade conseguiu se manter livre da doença, mas vive em grande pobreza e escassez devido à destruição do interior do reino. Conquistada facilmente pelos minotauros nas Guerras Táuricas, Barud é governada pelo governador táurico Arlonus Meraxus, que governa como um tirano e pouco se importa com o restante da província, limitando-se a proteger a cidade enquanto o resto de Lomatubar permanece abandonado, tomado por doença, monstros e saqueadores.',
     },
     {
         coordinates: [-102.95851507254653, 72.9620534813636],
@@ -171,7 +172,22 @@ const citiesDef = [
         coordinates: [-102.66292032101451, 27.616025707827347],
         options: defaultMarkerOptions,
         name: 'Lysianassa',
+        kingdom: 'Galrasia',
         description: 'A única grande cidade em Galrasia, populosa e vibrante. Um posto avançado e base de operações para novas expedições. Um entreposto comercial valioso para negociar com o continente. O único lugar seguro para se viver no Mundo Perdido, protegido de suas feras.'
+    },
+    {
+        coordinates: [-117.58184339504413, 34.18408273793277],
+        options: defaultMarkerOptions,
+        name: 'Covil da Serpente',
+        kingdom: 'Galrasia',
+        description: 'O Covil da Serpente é um vulcão próximo à costa leste da ilha. Está extinto, mas não parece assim observado à distância, pois emana fumaça e chamas constantes. A cratera e seus túneis são agora habitados pela antiga princesa eiradaan Obassa, hoje transformada em uma criatura serpentiforme flamejante. O covil também é habitado por uma população de outros elementais do fogo.'
+    },
+    {
+        coordinates: [-112.39570368163922, 18.934082737932766],
+        options: defaultMarkerOptions,
+        name: 'Torre da Morte',
+        kingdom: 'Galrasia',
+        description: 'A Torre da Morte configura a maior estrutura erguida na ilha. No passado era muito bela, a habitação pessoal de Galron, de onde vigiava todo o Reino de Lena; hoje ergue-se enegrecida e macabra, vários prolongamentos parecidos com pernas insetoides nascendo em sua base — como se a torre inteira fosse algum inseto gigantesco, semienterrado. Seus muitos pavimentos abrigam bibliotecas, laboratórios e relicários contendo tesouros fabulosos, dizem. No entanto, também se especula que o próprio Galron ainda estaria ali, poderoso e rancoroso como nunca. Explorar a torre pode ser o desafio mais perigoso em toda a ilha.'
     },
     {
         coordinates: [-102.3027321589075, 113.39687661678121],
@@ -1185,18 +1201,21 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Kurikondir',
         kingdom: 'Tauron',
+        description: 'A cidadela orc de Kurikondir é atualmente a maior comunidade desta raça existente no reino. Encravada em algum ponto das Montanhas Gull-Kor, ela é quase inteiramente subterrânea. Mesmo assim, seus habitantes foram dizimados pela Praga - e apenas em tempos recentes ela voltou a ser habitada. O rápido ciclo reprodutivo dos orcs permitiu repovoar Kurikondir em relativamente pouco tempo. Hoje eles são quase cinco mil, e aumentando. Sob o comando do rei orc Rugor Stonewill, a população da raça está crescendo em ritmo assustador. No momento, sua preocupação é retomar o domínio de suas próprias montanhas. Mais tarde, quando suas tropas forem mais numerosas, ele pretende avançar sobre os malditos humanos e dar ao povo orc sua grande vingança.',
     },
     {
         coordinates: [-96.86808384405867, 53.65625],
         options: defaultMarkerOptions,
         name: 'Sordh',
         kingdom: 'Tauron',
+        description: 'Sordh é uma das centenas de cidades fantasma encontradas por todo o reino. Seus habitantes foram os primeiros humanos a mostrar sinais da doença. Antes que se pudesse descobrir a verdadeira extensão do perigo, a cidade inteira estava contaminada. Quase ninguém sobreviveu exceto alguns raros escolhidos, que acabaram se tornando Feiticeiros Vermelhos. Sordh era uma grande cidade, à margem do Rio Kodai. Tinha uma próspera relação comercial com o reino vizinho de Tollon, trocando mercadorias através de uma grande ponte. Quando a Praga veio, os tollianos apavorados destruíram a ponte a golpes de machado, cortando qualquer ligação com a cidade amaldiçoada. Hoje em dia Sordh é habitada apenas por mortos-vivos contaminados, que se arrastam pelas ruas e atacam qualquer coisa viva.',
     },
     {
         coordinates: [-95.93082967898549, 51.00058669924418],
         options: defaultMarkerOptions,
         name: 'Ralandar',
         kingdom: 'Tauron',
+        description: ' Em Ralandar encontramos uma típica cidade menor de Lomatubar, que resiste à Praga Coral como pode. Seus heróis locais protegem o lugar contra mortos-vivos e feras contaminadas, enquanto o povo tenta levar uma vida normal à base da agricultura e pecuária. Ralandar tem um templo devotado a Lena, a Deusa da Cura, e pelo menos duas clérigas residentes. Dizem que uma vítima da Praga levada para este templo ainda no primeiro estágio da doença pode ser salva com magias de cura menores o que normalmente não acontece fora do templo. Os camponeses de Lomatubar também desenvolveram o hábito de cultivar e consumir uma grande variedade de ervas medicinais, que supostamente teriam o poder de afastar a Praga. Cada cidade tem sua própria coleção de receitas. Embora essa "medicina natural" seja efetiva contra doenças comuns, nada disso funciona contra a Praga Coral.',
     },
     {
         coordinates: [-89.83867760600985, 49.9695644765978],
@@ -1254,6 +1273,7 @@ const citiesDef = [
         options: defaultMarkerOptions,
         name: 'Torre de Covariel',
         kingdom: 'Tauron',
+        description: 'Neste local o mago Thursten Covariel criou a Praga Coral, uma doença mágica e mortífera, para destruir as tribos orcs que ameaçavam a região. O plano funcionara: os orcs foram dizimados, contudo, após essas décadas de paz, a praga voltou e contaminou todo tipo de humanoide — incluindo humanos e animais. Este costuma ser o primeiro local procurado por heróis que buscam uma cura. A torre já foi saqueada por muitos aventureiros, mas algumas passagens e câmaras secretas ainda não foram reveladas. Elas escondem laboratórios repletos de livros, anotações, ingredientes mágicos, amostras diversas da Praga e até mesmo algumas criaturas em cativeiro.',
     },
     {
         coordinates: [-99.58612092277087, 39.9405301290376],
@@ -2577,6 +2597,8 @@ getMarkIcon = (marker) => {
         case 'Ubani':
             return orangeIcon;
         case 'Halak-Tûr':
+            return greenIcon;
+        case 'Galrasia':
             return greenIcon;
         default:
             return blueIcon;
